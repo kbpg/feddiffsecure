@@ -1,0 +1,734 @@
+================================================================================
+FedDiffSecure minimal prototype
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\fashion_fed_full_long100_portal.yaml",
+  "started_at": "2026-04-18T17:02:10.271888+08:00",
+  "device": "cuda",
+  "dataset": "fashion_mnist",
+  "model_params_total": 18745,
+  "model_params_trainable": 4816,
+  "num_clients": 4,
+  "rounds": 100,
+  "clients_per_round": 4,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 20,
+  "dirichlet_alpha": 0.5,
+  "lr": 0.0005,
+  "batch_size": 128,
+  "ema_decay": 0.0,
+  "x0_loss_weight": 0.0,
+  "semantic_eval_every": 0,
+  "trainable_param_tensors": 66,
+  "unfreeze_param_prefixes": [],
+  "enabled_extra_params": 0,
+  "save_carriers": true
+}
+================================================================================
+
+[Round 1] selected clients: [0, 1, 2, 3]
+  client=0 loss=1.1129 samples=19101 payload=38557B verified=True
+  client=1 loss=1.1130 samples=5147 payload=38557B verified=True
+  client=2 loss=1.1097 samples=15516 payload=38557B verified=True
+  client=3 loss=1.1119 samples=20236 payload=38557B verified=True
+[Round 1] avg_client_loss=1.1119, proxy_fid=26.0473, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 2] selected clients: [0, 1, 2, 3]
+  client=0 loss=1.0237 samples=19101 payload=38557B verified=True
+  client=1 loss=1.0164 samples=5147 payload=38557B verified=True
+  client=2 loss=1.0165 samples=15516 payload=38557B verified=True
+  client=3 loss=1.0214 samples=20236 payload=38557B verified=True
+[Round 2] avg_client_loss=1.0195, proxy_fid=26.5782, total_samples=60000, aggregated_clients=4, round_sec=2.0
+
+[Round 3] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.9404 samples=19101 payload=38557B verified=True
+  client=1 loss=0.9369 samples=5147 payload=38557B verified=True
+  client=2 loss=0.9357 samples=15516 payload=38557B verified=True
+  client=3 loss=0.9391 samples=20236 payload=38557B verified=True
+[Round 3] avg_client_loss=0.9380, proxy_fid=26.9006, total_samples=60000, aggregated_clients=4, round_sec=2.0
+
+[Round 4] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.8607 samples=19101 payload=38557B verified=True
+  client=1 loss=0.8619 samples=5147 payload=38557B verified=True
+  client=2 loss=0.8571 samples=15516 payload=38557B verified=True
+  client=3 loss=0.8609 samples=20236 payload=38557B verified=True
+[Round 4] avg_client_loss=0.8601, proxy_fid=27.7681, total_samples=60000, aggregated_clients=4, round_sec=2.7
+
+[Round 5] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.7950 samples=19101 payload=38557B verified=True
+  client=1 loss=0.7909 samples=5147 payload=38557B verified=True
+  client=2 loss=0.7904 samples=15516 payload=38557B verified=True
+  client=3 loss=0.7967 samples=20236 payload=38557B verified=True
+[Round 5] avg_client_loss=0.7933, proxy_fid=29.2780, total_samples=60000, aggregated_clients=4, round_sec=2.5
+
+[Round 6] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.7250 samples=19101 payload=38557B verified=True
+  client=1 loss=0.7310 samples=5147 payload=38557B verified=True
+  client=2 loss=0.7188 samples=15516 payload=38557B verified=True
+  client=3 loss=0.7309 samples=20236 payload=38557B verified=True
+[Round 6] avg_client_loss=0.7264, proxy_fid=30.4187, total_samples=60000, aggregated_clients=4, round_sec=2.1
+
+[Round 7] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.6734 samples=19101 payload=38557B verified=True
+  client=1 loss=0.6680 samples=5147 payload=38557B verified=True
+  client=2 loss=0.6633 samples=15516 payload=38557B verified=True
+  client=3 loss=0.6714 samples=20236 payload=38557B verified=True
+[Round 7] avg_client_loss=0.6690, proxy_fid=31.2946, total_samples=60000, aggregated_clients=4, round_sec=4.3
+
+[Round 8] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.6105 samples=19101 payload=38557B verified=True
+  client=1 loss=0.6193 samples=5147 payload=38557B verified=True
+  client=2 loss=0.6161 samples=15516 payload=38557B verified=True
+  client=3 loss=0.6218 samples=20236 payload=38557B verified=True
+[Round 8] avg_client_loss=0.6169, proxy_fid=31.8423, total_samples=60000, aggregated_clients=4, round_sec=5.6
+
+[Round 9] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.5826 samples=19101 payload=38557B verified=True
+  client=1 loss=0.5723 samples=5147 payload=38557B verified=True
+  client=2 loss=0.5690 samples=15516 payload=38557B verified=True
+  client=3 loss=0.5740 samples=20236 payload=38557B verified=True
+[Round 9] avg_client_loss=0.5745, proxy_fid=32.2601, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 10] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.5322 samples=19101 payload=38557B verified=True
+  client=1 loss=0.5367 samples=5147 payload=38557B verified=True
+  client=2 loss=0.5288 samples=15516 payload=38557B verified=True
+  client=3 loss=0.5385 samples=20236 payload=38557B verified=True
+[Round 10] avg_client_loss=0.5341, proxy_fid=30.7987, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 11] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.5000 samples=19101 payload=38557B verified=True
+  client=1 loss=0.4935 samples=5147 payload=38557B verified=True
+  client=2 loss=0.4866 samples=15516 payload=38557B verified=True
+  client=3 loss=0.5100 samples=20236 payload=38557B verified=True
+[Round 11] avg_client_loss=0.4975, proxy_fid=31.3135, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 12] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.4675 samples=19101 payload=38557B verified=True
+  client=1 loss=0.4658 samples=5147 payload=38557B verified=True
+  client=2 loss=0.4555 samples=15516 payload=38557B verified=True
+  client=3 loss=0.4744 samples=20236 payload=38557B verified=True
+[Round 12] avg_client_loss=0.4658, proxy_fid=29.0156, total_samples=60000, aggregated_clients=4, round_sec=7.0
+
+[Round 13] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.4335 samples=19101 payload=38557B verified=True
+  client=1 loss=0.4382 samples=5147 payload=38557B verified=True
+  client=2 loss=0.4413 samples=15516 payload=38557B verified=True
+  client=3 loss=0.4442 samples=20236 payload=38557B verified=True
+[Round 13] avg_client_loss=0.4393, proxy_fid=28.7558, total_samples=60000, aggregated_clients=4, round_sec=6.6
+
+[Round 14] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.4131 samples=19101 payload=38557B verified=True
+  client=1 loss=0.4136 samples=5147 payload=38557B verified=True
+  client=2 loss=0.4154 samples=15516 payload=38557B verified=True
+  client=3 loss=0.4380 samples=20236 payload=38557B verified=True
+[Round 14] avg_client_loss=0.4200, proxy_fid=26.8854, total_samples=60000, aggregated_clients=4, round_sec=7.0
+
+[Round 15] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3969 samples=19101 payload=38557B verified=True
+  client=1 loss=0.4026 samples=5147 payload=38557B verified=True
+  client=2 loss=0.4035 samples=15516 payload=38557B verified=True
+  client=3 loss=0.4234 samples=20236 payload=38557B verified=True
+[Round 15] avg_client_loss=0.4066, proxy_fid=27.4868, total_samples=60000, aggregated_clients=4, round_sec=7.0
+
+[Round 16] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3895 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3956 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3682 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3983 samples=20236 payload=38557B verified=True
+[Round 16] avg_client_loss=0.3879, proxy_fid=26.9680, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 17] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3725 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3661 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3692 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3890 samples=20236 payload=38557B verified=True
+[Round 17] avg_client_loss=0.3742, proxy_fid=26.6337, total_samples=60000, aggregated_clients=4, round_sec=6.8
+
+[Round 18] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3679 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3705 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3594 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3827 samples=20236 payload=38557B verified=True
+[Round 18] avg_client_loss=0.3701, proxy_fid=25.2315, total_samples=60000, aggregated_clients=4, round_sec=7.2
+
+[Round 19] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3605 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3539 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3482 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3701 samples=20236 payload=38557B verified=True
+[Round 19] avg_client_loss=0.3582, proxy_fid=26.1551, total_samples=60000, aggregated_clients=4, round_sec=6.3
+
+[Round 20] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3458 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3403 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3379 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3558 samples=20236 payload=38557B verified=True
+[Round 20] avg_client_loss=0.3449, proxy_fid=27.6069, total_samples=60000, aggregated_clients=4, round_sec=6.7
+
+[Round 21] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3337 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3352 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3224 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3537 samples=20236 payload=38557B verified=True
+[Round 21] avg_client_loss=0.3362, proxy_fid=27.0612, total_samples=60000, aggregated_clients=4, round_sec=6.7
+
+[Round 22] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3282 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3295 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3173 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3475 samples=20236 payload=38557B verified=True
+[Round 22] avg_client_loss=0.3306, proxy_fid=25.1062, total_samples=60000, aggregated_clients=4, round_sec=6.3
+
+[Round 23] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3190 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3194 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3142 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3256 samples=20236 payload=38557B verified=True
+[Round 23] avg_client_loss=0.3196, proxy_fid=26.9891, total_samples=60000, aggregated_clients=4, round_sec=6.7
+
+[Round 24] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3184 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3190 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3041 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3275 samples=20236 payload=38557B verified=True
+[Round 24] avg_client_loss=0.3172, proxy_fid=26.3179, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 25] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3145 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3110 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3051 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3210 samples=20236 payload=38557B verified=True
+[Round 25] avg_client_loss=0.3129, proxy_fid=26.8973, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 26] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.3037 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3005 samples=5147 payload=38557B verified=True
+  client=2 loss=0.3099 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3166 samples=20236 payload=38557B verified=True
+[Round 26] avg_client_loss=0.3077, proxy_fid=26.3696, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 27] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2976 samples=19101 payload=38557B verified=True
+  client=1 loss=0.3002 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2957 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3041 samples=20236 payload=38557B verified=True
+[Round 27] avg_client_loss=0.2994, proxy_fid=25.6526, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 28] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2937 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2898 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2914 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3052 samples=20236 payload=38557B verified=True
+[Round 28] avg_client_loss=0.2950, proxy_fid=25.6122, total_samples=60000, aggregated_clients=4, round_sec=6.3
+
+[Round 29] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2873 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2923 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2758 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3028 samples=20236 payload=38557B verified=True
+[Round 29] avg_client_loss=0.2895, proxy_fid=25.3198, total_samples=60000, aggregated_clients=4, round_sec=6.3
+
+[Round 30] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2863 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2840 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2756 samples=15516 payload=38557B verified=True
+  client=3 loss=0.3001 samples=20236 payload=38557B verified=True
+[Round 30] avg_client_loss=0.2865, proxy_fid=25.9013, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 31] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2790 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2782 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2826 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2957 samples=20236 payload=38557B verified=True
+[Round 31] avg_client_loss=0.2839, proxy_fid=27.2351, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 32] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2792 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2813 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2780 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2967 samples=20236 payload=38557B verified=True
+[Round 32] avg_client_loss=0.2838, proxy_fid=26.4376, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 33] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2771 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2785 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2597 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2879 samples=20236 payload=38557B verified=True
+[Round 33] avg_client_loss=0.2758, proxy_fid=25.9103, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 34] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2712 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2774 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2658 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2836 samples=20236 payload=38557B verified=True
+[Round 34] avg_client_loss=0.2745, proxy_fid=26.1860, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 35] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2685 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2650 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2673 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2862 samples=20236 payload=38557B verified=True
+[Round 35] avg_client_loss=0.2717, proxy_fid=25.0804, total_samples=60000, aggregated_clients=4, round_sec=5.6
+
+[Round 36] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2709 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2696 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2591 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2702 samples=20236 payload=38557B verified=True
+[Round 36] avg_client_loss=0.2675, proxy_fid=26.3977, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 37] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2626 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2627 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2658 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2749 samples=20236 payload=38557B verified=True
+[Round 37] avg_client_loss=0.2665, proxy_fid=26.5449, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 38] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2621 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2627 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2549 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2715 samples=20236 payload=38557B verified=True
+[Round 38] avg_client_loss=0.2628, proxy_fid=24.7970, total_samples=60000, aggregated_clients=4, round_sec=6.8
+
+[Round 39] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2698 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2689 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2531 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2681 samples=20236 payload=38557B verified=True
+[Round 39] avg_client_loss=0.2650, proxy_fid=26.2022, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 40] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2615 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2611 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2558 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2673 samples=20236 payload=38557B verified=True
+[Round 40] avg_client_loss=0.2614, proxy_fid=25.2162, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 41] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2550 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2559 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2475 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2635 samples=20236 payload=38557B verified=True
+[Round 41] avg_client_loss=0.2555, proxy_fid=25.0801, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 42] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2486 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2575 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2458 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2616 samples=20236 payload=38557B verified=True
+[Round 42] avg_client_loss=0.2534, proxy_fid=26.3832, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 43] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2505 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2569 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2472 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2611 samples=20236 payload=38557B verified=True
+[Round 43] avg_client_loss=0.2539, proxy_fid=25.9912, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 44] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2471 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2463 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2533 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2647 samples=20236 payload=38557B verified=True
+[Round 44] avg_client_loss=0.2528, proxy_fid=27.2864, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 45] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2418 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2504 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2425 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2616 samples=20236 payload=38557B verified=True
+[Round 45] avg_client_loss=0.2491, proxy_fid=26.5612, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 46] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2499 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2473 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2431 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2623 samples=20236 payload=38557B verified=True
+[Round 46] avg_client_loss=0.2507, proxy_fid=25.7962, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 47] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2452 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2427 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2363 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2600 samples=20236 payload=38557B verified=True
+[Round 47] avg_client_loss=0.2461, proxy_fid=25.8961, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 48] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2433 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2453 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2374 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2562 samples=20236 payload=38557B verified=True
+[Round 48] avg_client_loss=0.2455, proxy_fid=25.7303, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 49] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2496 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2440 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2445 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2616 samples=20236 payload=38557B verified=True
+[Round 49] avg_client_loss=0.2499, proxy_fid=26.1753, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 50] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2369 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2397 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2387 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2524 samples=20236 payload=38557B verified=True
+[Round 50] avg_client_loss=0.2419, proxy_fid=26.4091, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 51] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2398 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2435 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2360 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2519 samples=20236 payload=38557B verified=True
+[Round 51] avg_client_loss=0.2428, proxy_fid=25.6682, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 52] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2491 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2477 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2359 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2512 samples=20236 payload=38557B verified=True
+[Round 52] avg_client_loss=0.2460, proxy_fid=26.7672, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 53] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2457 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2379 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2388 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2593 samples=20236 payload=38557B verified=True
+[Round 53] avg_client_loss=0.2454, proxy_fid=25.7127, total_samples=60000, aggregated_clients=4, round_sec=6.3
+
+[Round 54] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2425 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2381 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2324 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2494 samples=20236 payload=38557B verified=True
+[Round 54] avg_client_loss=0.2406, proxy_fid=25.7936, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 55] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2398 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2448 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2282 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2503 samples=20236 payload=38557B verified=True
+[Round 55] avg_client_loss=0.2408, proxy_fid=27.5589, total_samples=60000, aggregated_clients=4, round_sec=7.3
+
+[Round 56] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2356 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2366 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2263 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2504 samples=20236 payload=38557B verified=True
+[Round 56] avg_client_loss=0.2372, proxy_fid=25.9140, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 57] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2361 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2383 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2300 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2444 samples=20236 payload=38557B verified=True
+[Round 57] avg_client_loss=0.2372, proxy_fid=25.5617, total_samples=60000, aggregated_clients=4, round_sec=6.4
+
+[Round 58] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2373 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2393 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2262 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2421 samples=20236 payload=38557B verified=True
+[Round 58] avg_client_loss=0.2362, proxy_fid=26.2646, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 59] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2346 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2373 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2268 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2467 samples=20236 payload=38557B verified=True
+[Round 59] avg_client_loss=0.2364, proxy_fid=26.5774, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 60] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2311 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2380 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2291 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2400 samples=20236 payload=38557B verified=True
+[Round 60] avg_client_loss=0.2346, proxy_fid=26.1167, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 61] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2364 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2364 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2271 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2466 samples=20236 payload=38557B verified=True
+[Round 61] avg_client_loss=0.2366, proxy_fid=25.3886, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 62] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2287 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2292 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2262 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2407 samples=20236 payload=38557B verified=True
+[Round 62] avg_client_loss=0.2312, proxy_fid=25.5923, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 63] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2247 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2350 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2244 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2429 samples=20236 payload=38557B verified=True
+[Round 63] avg_client_loss=0.2318, proxy_fid=26.2775, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 64] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2223 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2342 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2281 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2408 samples=20236 payload=38557B verified=True
+[Round 64] avg_client_loss=0.2314, proxy_fid=25.5844, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 65] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2309 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2280 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2209 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2365 samples=20236 payload=38557B verified=True
+[Round 65] avg_client_loss=0.2291, proxy_fid=25.5130, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 66] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2302 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2312 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2236 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2417 samples=20236 payload=38557B verified=True
+[Round 66] avg_client_loss=0.2317, proxy_fid=26.9152, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 67] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2279 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2231 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2184 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2344 samples=20236 payload=38557B verified=True
+[Round 67] avg_client_loss=0.2260, proxy_fid=25.1798, total_samples=60000, aggregated_clients=4, round_sec=6.6
+
+[Round 68] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2283 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2265 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2212 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2398 samples=20236 payload=38557B verified=True
+[Round 68] avg_client_loss=0.2289, proxy_fid=25.1885, total_samples=60000, aggregated_clients=4, round_sec=6.3
+
+[Round 69] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2321 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2271 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2191 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2443 samples=20236 payload=38557B verified=True
+[Round 69] avg_client_loss=0.2307, proxy_fid=26.9021, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 70] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2228 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2254 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2214 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2422 samples=20236 payload=38557B verified=True
+[Round 70] avg_client_loss=0.2280, proxy_fid=25.1933, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 71] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2243 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2231 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2231 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2382 samples=20236 payload=38557B verified=True
+[Round 71] avg_client_loss=0.2272, proxy_fid=25.8137, total_samples=60000, aggregated_clients=4, round_sec=5.5
+
+[Round 72] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2303 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2263 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2206 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2370 samples=20236 payload=38557B verified=True
+[Round 72] avg_client_loss=0.2286, proxy_fid=26.8944, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 73] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2279 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2261 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2260 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2410 samples=20236 payload=38557B verified=True
+[Round 73] avg_client_loss=0.2302, proxy_fid=26.5953, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 74] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2272 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2286 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2160 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2306 samples=20236 payload=38557B verified=True
+[Round 74] avg_client_loss=0.2256, proxy_fid=26.5815, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 75] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2242 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2277 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2111 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2349 samples=20236 payload=38557B verified=True
+[Round 75] avg_client_loss=0.2245, proxy_fid=25.9240, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 76] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2240 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2281 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2158 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2426 samples=20236 payload=38557B verified=True
+[Round 76] avg_client_loss=0.2276, proxy_fid=25.9055, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 77] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2217 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2178 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2099 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2335 samples=20236 payload=38557B verified=True
+[Round 77] avg_client_loss=0.2207, proxy_fid=27.7363, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 78] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2200 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2193 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2206 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2357 samples=20236 payload=38557B verified=True
+[Round 78] avg_client_loss=0.2239, proxy_fid=26.0174, total_samples=60000, aggregated_clients=4, round_sec=5.5
+
+[Round 79] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2141 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2244 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2167 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2252 samples=20236 payload=38557B verified=True
+[Round 79] avg_client_loss=0.2201, proxy_fid=26.1425, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 80] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2166 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2214 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2209 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2247 samples=20236 payload=38557B verified=True
+[Round 80] avg_client_loss=0.2209, proxy_fid=26.0212, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 81] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2222 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2213 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2111 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2303 samples=20236 payload=38557B verified=True
+[Round 81] avg_client_loss=0.2212, proxy_fid=26.4868, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 82] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2156 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2242 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2201 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2321 samples=20236 payload=38557B verified=True
+[Round 82] avg_client_loss=0.2230, proxy_fid=27.0382, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 83] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2231 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2217 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2125 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2282 samples=20236 payload=38557B verified=True
+[Round 83] avg_client_loss=0.2214, proxy_fid=26.7337, total_samples=60000, aggregated_clients=4, round_sec=5.5
+
+[Round 84] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2179 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2231 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2137 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2292 samples=20236 payload=38557B verified=True
+[Round 84] avg_client_loss=0.2210, proxy_fid=26.3618, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 85] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2183 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2185 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2177 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2243 samples=20236 payload=38557B verified=True
+[Round 85] avg_client_loss=0.2197, proxy_fid=27.5121, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 86] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2154 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2175 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2173 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2314 samples=20236 payload=38557B verified=True
+[Round 86] avg_client_loss=0.2204, proxy_fid=26.2912, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 87] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2169 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2188 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2144 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2288 samples=20236 payload=38557B verified=True
+[Round 87] avg_client_loss=0.2198, proxy_fid=27.0765, total_samples=60000, aggregated_clients=4, round_sec=6.2
+
+[Round 88] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2148 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2196 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2086 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2213 samples=20236 payload=38557B verified=True
+[Round 88] avg_client_loss=0.2161, proxy_fid=26.8985, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 89] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2188 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2191 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2120 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2337 samples=20236 payload=38557B verified=True
+[Round 89] avg_client_loss=0.2209, proxy_fid=25.0926, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 90] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2173 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2142 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2160 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2287 samples=20236 payload=38557B verified=True
+[Round 90] avg_client_loss=0.2190, proxy_fid=27.4284, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+[Round 91] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2184 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2178 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2090 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2266 samples=20236 payload=38557B verified=True
+[Round 91] avg_client_loss=0.2179, proxy_fid=25.4733, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 92] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2227 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2204 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2021 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2272 samples=20236 payload=38557B verified=True
+[Round 92] avg_client_loss=0.2181, proxy_fid=25.9480, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 93] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2049 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2131 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2031 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2259 samples=20236 payload=38557B verified=True
+[Round 93] avg_client_loss=0.2118, proxy_fid=26.7316, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 94] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2142 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2127 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2104 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2322 samples=20236 payload=38557B verified=True
+[Round 94] avg_client_loss=0.2174, proxy_fid=24.9673, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 95] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2130 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2128 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2092 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2255 samples=20236 payload=38557B verified=True
+[Round 95] avg_client_loss=0.2151, proxy_fid=26.5897, total_samples=60000, aggregated_clients=4, round_sec=5.7
+
+[Round 96] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2158 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2120 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2076 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2264 samples=20236 payload=38557B verified=True
+[Round 96] avg_client_loss=0.2155, proxy_fid=26.0368, total_samples=60000, aggregated_clients=4, round_sec=6.1
+
+[Round 97] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2161 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2134 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2083 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2309 samples=20236 payload=38557B verified=True
+[Round 97] avg_client_loss=0.2172, proxy_fid=25.8301, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 98] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2163 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2073 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2034 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2256 samples=20236 payload=38557B verified=True
+[Round 98] avg_client_loss=0.2131, proxy_fid=25.6365, total_samples=60000, aggregated_clients=4, round_sec=6.0
+
+[Round 99] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2102 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2110 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2012 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2247 samples=20236 payload=38557B verified=True
+[Round 99] avg_client_loss=0.2118, proxy_fid=26.6271, total_samples=60000, aggregated_clients=4, round_sec=5.9
+
+[Round 100] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.2113 samples=19101 payload=38557B verified=True
+  client=1 loss=0.2133 samples=5147 payload=38557B verified=True
+  client=2 loss=0.2086 samples=15516 payload=38557B verified=True
+  client=3 loss=0.2260 samples=20236 payload=38557B verified=True
+[Round 100] avg_client_loss=0.2148, proxy_fid=25.7129, total_samples=60000, aggregated_clients=4, round_sec=5.8
+
+Done.
+{
+  "records": 400,
+  "verified": 400,
+  "failed": 0
+}
+Artifacts saved to: outputs\fashion_fed_full_long100_portal_run

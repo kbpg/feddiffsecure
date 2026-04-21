@@ -1,0 +1,33 @@
+seed: 42
+dataset:
+  name: fashion_mnist
+  root: ./data
+  image_size: 28
+  channels: 1
+federated:
+  num_clients: 5
+  clients_per_round: 3
+  rounds: 5
+  dirichlet_alpha: 0.3
+  local_epochs: 1
+  max_steps_per_epoch: 20
+model:
+  base_channels: 16
+  lora_rank: 4
+  lora_alpha: 4.0
+diffusion:
+  timesteps: 100
+  sample_steps: 10
+training:
+  batch_size: 64
+  lr: 0.001
+  num_workers: 0
+  weight_decay: 0.0
+system:
+  device: auto
+  output_dir: ./outputs/default_run
+  save_every_round: false
+  save_final_samples: false
+stego:
+  enabled: true
+  key_prefix: FedDiffSecure

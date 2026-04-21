@@ -1,0 +1,1750 @@
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 1,
+  "resumed_from_round": 9,
+  "last_resumed_at": "2026-04-15T16:15:27.979666+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 8782.474
+}
+================================================================================
+[Round 10] avg_loss=0.1067, proxy_fid=28.2809, total_samples=512, round_sec=182.6, classifier_fid=335.32, conf=0.482
+[Round 11] avg_loss=0.1012, proxy_fid=22.1774, total_samples=512, round_sec=181.8
+[Round 12] avg_loss=0.1029, proxy_fid=18.7817, total_samples=512, round_sec=180.3
+[Round 13] avg_loss=0.1042, proxy_fid=19.5779, total_samples=512, round_sec=180.3
+[Round 14] avg_loss=0.0895, proxy_fid=26.1597, total_samples=512, round_sec=181.8
+[Round 15] avg_loss=0.0963, proxy_fid=23.1037, total_samples=512, round_sec=185.0, classifier_fid=154.07, conf=0.371
+[Round 16] avg_loss=0.0783, proxy_fid=18.4995, total_samples=512, round_sec=180.3
+[Round 17] avg_loss=0.0919, proxy_fid=20.3269, total_samples=512, round_sec=180.3
+[Round 18] avg_loss=0.0907, proxy_fid=21.3666, total_samples=512, round_sec=180.2
+[Round 19] avg_loss=0.0838, proxy_fid=27.9500, total_samples=512, round_sec=180.5
+[Round 20] avg_loss=0.0866, proxy_fid=20.5064, total_samples=512, round_sec=180.5, classifier_fid=194.33, conf=0.283
+[Round 21] avg_loss=0.0840, proxy_fid=23.2350, total_samples=512, round_sec=180.3
+[Round 22] avg_loss=0.0848, proxy_fid=20.5490, total_samples=512, round_sec=180.4
+[Round 23] avg_loss=0.0819, proxy_fid=18.3047, total_samples=512, round_sec=180.3
+[Round 24] avg_loss=0.0800, proxy_fid=19.4474, total_samples=512, round_sec=180.5
+[Round 25] avg_loss=0.0768, proxy_fid=24.4211, total_samples=512, round_sec=180.5, classifier_fid=237.56, conf=0.401
+[Round 26] avg_loss=0.0744, proxy_fid=22.8335, total_samples=512, round_sec=180.3
+[Round 27] avg_loss=0.0825, proxy_fid=19.0214, total_samples=512, round_sec=180.2
+[Round 28] avg_loss=0.0804, proxy_fid=30.1174, total_samples=512, round_sec=180.4
+[Round 29] avg_loss=0.0741, proxy_fid=20.1151, total_samples=512, round_sec=180.4
+[Round 30] avg_loss=0.0793, proxy_fid=23.6321, total_samples=512, round_sec=180.4, classifier_fid=141.06, conf=0.310
+[Round 31] avg_loss=0.0779, proxy_fid=20.5385, total_samples=512, round_sec=180.1
+[Round 32] avg_loss=0.0722, proxy_fid=17.9628, total_samples=512, round_sec=180.3
+[Round 33] avg_loss=0.0747, proxy_fid=20.7621, total_samples=512, round_sec=180.1
+[Round 34] avg_loss=0.0793, proxy_fid=18.2620, total_samples=512, round_sec=180.3
+[Round 35] avg_loss=0.0803, proxy_fid=22.2854, total_samples=512, round_sec=180.4, classifier_fid=364.44, conf=0.334
+[Round 36] avg_loss=0.0806, proxy_fid=30.7558, total_samples=512, round_sec=180.2
+[Round 37] avg_loss=0.0746, proxy_fid=20.2518, total_samples=512, round_sec=180.3
+[Round 38] avg_loss=0.0724, proxy_fid=27.5416, total_samples=512, round_sec=180.3
+[Round 39] avg_loss=0.0819, proxy_fid=18.7045, total_samples=512, round_sec=180.1
+[Round 40] avg_loss=0.0780, proxy_fid=22.8365, total_samples=512, round_sec=180.5, classifier_fid=162.54, conf=0.435
+[Round 41] avg_loss=0.0643, proxy_fid=18.9910, total_samples=512, round_sec=180.1
+[Round 42] avg_loss=0.0729, proxy_fid=24.2887, total_samples=512, round_sec=180.2
+[Round 43] avg_loss=0.0718, proxy_fid=23.0673, total_samples=512, round_sec=180.2
+[Round 44] avg_loss=0.0729, proxy_fid=28.3094, total_samples=512, round_sec=180.4
+[Round 45] avg_loss=0.0706, proxy_fid=21.6088, total_samples=512, round_sec=180.4, classifier_fid=159.58, conf=0.469
+[Round 46] avg_loss=0.0694, proxy_fid=17.8086, total_samples=512, round_sec=180.3
+[Round 47] avg_loss=0.0719, proxy_fid=19.2849, total_samples=512, round_sec=180.1
+[Round 48] avg_loss=0.0714, proxy_fid=19.4859, total_samples=512, round_sec=180.4
+[Round 49] avg_loss=0.0681, proxy_fid=26.2798, total_samples=512, round_sec=180.2
+[Round 50] avg_loss=0.0797, proxy_fid=20.2042, total_samples=512, round_sec=180.3, classifier_fid=151.52, conf=0.287
+[Round 51] avg_loss=0.0767, proxy_fid=18.3140, total_samples=512, round_sec=180.1
+[Round 52] avg_loss=0.0674, proxy_fid=20.7603, total_samples=512, round_sec=180.0
+[Round 53] avg_loss=0.0706, proxy_fid=20.9494, total_samples=512, round_sec=180.2
+[Round 54] avg_loss=0.0634, proxy_fid=20.0292, total_samples=512, round_sec=180.4
+[Round 55] avg_loss=0.0792, proxy_fid=21.8990, total_samples=512, round_sec=180.6, classifier_fid=150.73, conf=0.277
+[Round 56] avg_loss=0.0717, proxy_fid=23.2937, total_samples=512, round_sec=180.4
+[Round 57] avg_loss=0.0648, proxy_fid=21.6251, total_samples=512, round_sec=180.2
+[Round 58] avg_loss=0.0648, proxy_fid=22.0225, total_samples=512, round_sec=180.9
+[Round 59] avg_loss=0.0723, proxy_fid=25.2884, total_samples=512, round_sec=180.6
+[Round 60] avg_loss=0.0700, proxy_fid=17.3866, total_samples=512, round_sec=180.5, classifier_fid=207.42, conf=0.297
+[Round 61] avg_loss=0.0693, proxy_fid=21.3232, total_samples=512, round_sec=180.4
+[Round 62] avg_loss=0.0674, proxy_fid=21.9654, total_samples=512, round_sec=180.4
+[Round 63] avg_loss=0.0757, proxy_fid=20.0531, total_samples=512, round_sec=180.4
+[Round 64] avg_loss=0.0655, proxy_fid=20.3566, total_samples=512, round_sec=180.3
+[Round 65] avg_loss=0.0692, proxy_fid=18.3490, total_samples=512, round_sec=180.3, classifier_fid=129.53, conf=0.285
+[Round 66] avg_loss=0.0666, proxy_fid=20.4729, total_samples=512, round_sec=180.2
+[Round 67] avg_loss=0.0780, proxy_fid=19.2486, total_samples=512, round_sec=180.3
+[Round 68] avg_loss=0.0595, proxy_fid=24.1713, total_samples=512, round_sec=180.4
+[Round 69] avg_loss=0.0664, proxy_fid=20.5626, total_samples=512, round_sec=180.4
+[Round 70] avg_loss=0.0738, proxy_fid=20.9861, total_samples=512, round_sec=180.6, classifier_fid=156.74, conf=0.427
+[Round 71] avg_loss=0.0799, proxy_fid=18.7169, total_samples=512, round_sec=180.5
+[Round 72] avg_loss=0.0655, proxy_fid=23.6164, total_samples=512, round_sec=180.2
+[Round 73] avg_loss=0.0587, proxy_fid=19.8464, total_samples=512, round_sec=180.4
+[Round 74] avg_loss=0.0630, proxy_fid=18.8110, total_samples=512, round_sec=180.4
+[Round 75] avg_loss=0.0701, proxy_fid=24.8135, total_samples=512, round_sec=180.6, classifier_fid=208.64, conf=0.257
+[Round 76] avg_loss=0.0627, proxy_fid=20.2177, total_samples=512, round_sec=180.5
+[Round 77] avg_loss=0.0677, proxy_fid=22.7766, total_samples=512, round_sec=180.2
+[Round 78] avg_loss=0.0657, proxy_fid=28.5183, total_samples=512, round_sec=180.5
+[Round 79] avg_loss=0.0631, proxy_fid=21.2469, total_samples=512, round_sec=180.4
+[Round 80] avg_loss=0.0700, proxy_fid=23.4119, total_samples=512, round_sec=180.5, classifier_fid=214.26, conf=0.521
+[Round 81] avg_loss=0.0679, proxy_fid=21.4951, total_samples=512, round_sec=180.1
+[Round 82] avg_loss=0.0665, proxy_fid=23.3267, total_samples=512, round_sec=180.2
+[Round 83] avg_loss=0.0669, proxy_fid=25.5046, total_samples=512, round_sec=180.4
+[Round 84] avg_loss=0.0658, proxy_fid=20.8031, total_samples=512, round_sec=180.9
+[Round 85] avg_loss=0.0692, proxy_fid=18.9828, total_samples=512, round_sec=181.1, classifier_fid=117.63, conf=0.338
+[Round 86] avg_loss=0.0573, proxy_fid=22.3962, total_samples=512, round_sec=180.5
+[Round 87] avg_loss=0.0662, proxy_fid=20.2559, total_samples=512, round_sec=180.9
+[Round 88] avg_loss=0.0686, proxy_fid=23.3696, total_samples=512, round_sec=180.8
+[Round 89] avg_loss=0.0625, proxy_fid=21.3897, total_samples=512, round_sec=180.7
+[Round 90] avg_loss=0.0665, proxy_fid=19.1242, total_samples=512, round_sec=180.8, classifier_fid=161.63, conf=0.280
+[Round 91] avg_loss=0.0594, proxy_fid=22.8585, total_samples=512, round_sec=181.0
+[Round 92] avg_loss=0.0625, proxy_fid=18.1126, total_samples=512, round_sec=180.8
+[Round 93] avg_loss=0.0633, proxy_fid=19.2470, total_samples=512, round_sec=180.9
+[Round 94] avg_loss=0.0613, proxy_fid=22.0705, total_samples=512, round_sec=180.7
+[Round 95] avg_loss=0.0591, proxy_fid=30.8556, total_samples=512, round_sec=181.0, classifier_fid=200.97, conf=0.500
+[Round 96] avg_loss=0.0647, proxy_fid=18.7514, total_samples=512, round_sec=180.7
+[Round 97] avg_loss=0.0685, proxy_fid=21.6192, total_samples=512, round_sec=181.1
+[Round 98] avg_loss=0.0632, proxy_fid=23.6448, total_samples=512, round_sec=180.9
+[Round 99] avg_loss=0.0622, proxy_fid=23.5780, total_samples=512, round_sec=180.6
+[Round 100] avg_loss=0.0670, proxy_fid=20.5857, total_samples=512, round_sec=180.8, classifier_fid=256.55, conf=0.277
+[Round 101] avg_loss=0.0596, proxy_fid=23.3025, total_samples=512, round_sec=180.6
+[Round 102] avg_loss=0.0689, proxy_fid=20.0794, total_samples=512, round_sec=180.4
+[Round 103] avg_loss=0.0617, proxy_fid=17.9800, total_samples=512, round_sec=180.4
+[Round 104] avg_loss=0.0665, proxy_fid=26.1224, total_samples=512, round_sec=180.2
+[Round 105] avg_loss=0.0595, proxy_fid=20.9805, total_samples=512, round_sec=180.5, classifier_fid=131.82, conf=0.323
+[Round 106] avg_loss=0.0571, proxy_fid=25.0592, total_samples=512, round_sec=180.4
+[Round 107] avg_loss=0.0628, proxy_fid=22.3905, total_samples=512, round_sec=180.3
+[Round 108] avg_loss=0.0628, proxy_fid=29.2736, total_samples=512, round_sec=180.9
+[Round 109] avg_loss=0.0618, proxy_fid=23.4720, total_samples=512, round_sec=181.3
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:21:01.007614+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:21:47.879564+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:22:35.569645+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:23:23.520846+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:24:12.448727+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:24:59.582770+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:25:47.611014+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:26:35.589288+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:27:23.468949+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:27:51.565416+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:28:19.713534+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:29:07.651492+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:29:35.662483+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:30:23.570377+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:30:51.853038+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:31:39.744378+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:32:07.892715+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:32:55.748305+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:33:23.822283+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:33:51.819237+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:34:39.743923+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:35:07.885379+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:35:55.823751+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:36:23.951486+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:37:11.943832+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:37:39.847151+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:38:07.970324+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:38:55.821723+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:39:24.051195+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:40:12.061399+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:40:40.038274+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:41:08.072218+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:41:55.973074+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:42:24.138818+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:42:52.178518+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:43:20.111964+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:43:48.158033+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:44:36.135803+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:45:04.213460+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:45:32.228489+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:46:20.324308+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:47:08.214432+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:47:36.285033+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:48:04.355706+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:48:32.490765+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:49:20.366966+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b32_centralized_fulltrain.yaml",
+  "started_at": "2026-04-15T13:48:20.204450+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 14383099,
+  "model_params_trainable": 14383099,
+  "num_clients": 1,
+  "rounds": 120,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 2,
+  "resumed_from_round": 109,
+  "last_resumed_at": "2026-04-15T21:51:22.368121+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 35619.279
+}
+================================================================================
+[Round 110] avg_loss=0.0656, proxy_fid=24.0464, total_samples=512, round_sec=182.1, classifier_fid=218.66, conf=0.409
+[Round 111] avg_loss=0.0645, proxy_fid=21.5758, total_samples=512, round_sec=185.3
+[Round 112] avg_loss=0.0667, proxy_fid=20.9563, total_samples=512, round_sec=180.9
+[Round 113] avg_loss=0.0712, proxy_fid=22.6542, total_samples=512, round_sec=181.1
+[Round 114] avg_loss=0.0594, proxy_fid=26.6716, total_samples=512, round_sec=181.3
+[Round 115] avg_loss=0.0667, proxy_fid=19.3197, total_samples=512, round_sec=182.5, classifier_fid=121.01, conf=0.404
+[Round 116] avg_loss=0.0534, proxy_fid=20.4194, total_samples=512, round_sec=181.6
+[Round 117] avg_loss=0.0644, proxy_fid=20.5701, total_samples=512, round_sec=182.0
+[Round 118] avg_loss=0.0638, proxy_fid=20.7373, total_samples=512, round_sec=181.8
+[Round 119] avg_loss=0.0599, proxy_fid=22.0880, total_samples=512, round_sec=182.6
+[Round 120] avg_loss=0.0636, proxy_fid=24.8510, total_samples=512, round_sec=181.5, classifier_fid=167.15, conf=0.270
+
+Done.
+{
+  "last_round": {
+    "round": 120,
+    "avg_client_loss": 0.063647,
+    "proxy_fid": 24.850956,
+    "total_samples": 512,
+    "aggregated_clients": 1,
+    "round_duration_sec": 181.453,
+    "classifier_fid": 167.148681640625,
+    "top1_confidence_mean": 0.27009832859039307,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.7918944358825684,
+    "predicted_unique_classes": 8,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_proxy_fid_round": {
+    "round": 60,
+    "avg_client_loss": 0.070016,
+    "proxy_fid": 17.386599,
+    "total_samples": 512,
+    "aggregated_clients": 1,
+    "round_duration_sec": 180.5,
+    "classifier_fid": 207.42376708984375,
+    "top1_confidence_mean": 0.2973959445953369,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.0389423370361328,
+    "predicted_unique_classes": 6,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 37636.979,
+  "avg_round_seconds": 240.33,
+  "max_round_seconds": 7303.733,
+  "best_classifier_fid_round": {
+    "round": 85,
+    "avg_client_loss": 0.069155,
+    "proxy_fid": 18.982845,
+    "total_samples": 512,
+    "aggregated_clients": 1,
+    "round_duration_sec": 181.077,
+    "classifier_fid": 117.62997436523438,
+    "top1_confidence_mean": 0.3379893898963928,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.4449677467346191,
+    "predicted_unique_classes": 8,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_semantic_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_best_semantic.pt",
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_ema.pt"
+}
+Artifacts saved to: outputs\stl10_b32_centralized_fulltrain_run

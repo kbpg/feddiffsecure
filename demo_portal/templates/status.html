@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="login-hero">
+  <div class="login-panel status-shell">
+    <article class="panel status-card">
+      <div class="eyebrow">状态提示</div>
+      <h2>{{ title }}</h2>
+      <p>{{ message }}</p>
+      <div class="hero-actions">
+        <a class="inline-link" href="{{ url_for('dashboard') if is_authenticated else url_for('login') }}">
+          {{ "返回系统首页" if is_authenticated else "返回登录页" }}
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,2160 @@
+[
+  {
+    "round": 1,
+    "avg_client_loss": 1.462248,
+    "proxy_fid": 29.000208,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.628
+  },
+  {
+    "round": 2,
+    "avg_client_loss": 0.460092,
+    "proxy_fid": 39.26005,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.024
+  },
+  {
+    "round": 3,
+    "avg_client_loss": 0.271691,
+    "proxy_fid": 25.772069,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.001
+  },
+  {
+    "round": 4,
+    "avg_client_loss": 0.28698,
+    "proxy_fid": 97.485309,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.157
+  },
+  {
+    "round": 5,
+    "avg_client_loss": 0.188566,
+    "proxy_fid": 48.120416,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.989
+  },
+  {
+    "round": 6,
+    "avg_client_loss": 0.175067,
+    "proxy_fid": 65.993575,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.132
+  },
+  {
+    "round": 7,
+    "avg_client_loss": 0.145555,
+    "proxy_fid": 19.540133,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.243
+  },
+  {
+    "round": 8,
+    "avg_client_loss": 0.140006,
+    "proxy_fid": 82.439174,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.07
+  },
+  {
+    "round": 9,
+    "avg_client_loss": 0.131955,
+    "proxy_fid": 138.735567,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.181
+  },
+  {
+    "round": 10,
+    "avg_client_loss": 0.145342,
+    "proxy_fid": 79.375635,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.125
+  },
+  {
+    "round": 11,
+    "avg_client_loss": 0.113291,
+    "proxy_fid": 67.323954,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.052
+  },
+  {
+    "round": 12,
+    "avg_client_loss": 0.119862,
+    "proxy_fid": 71.004379,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.146
+  },
+  {
+    "round": 13,
+    "avg_client_loss": 0.090643,
+    "proxy_fid": 27.527124,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.955
+  },
+  {
+    "round": 14,
+    "avg_client_loss": 0.096839,
+    "proxy_fid": 27.355438,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.016
+  },
+  {
+    "round": 15,
+    "avg_client_loss": 0.099234,
+    "proxy_fid": 21.802239,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.103
+  },
+  {
+    "round": 16,
+    "avg_client_loss": 0.096036,
+    "proxy_fid": 82.385978,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.118
+  },
+  {
+    "round": 17,
+    "avg_client_loss": 0.103895,
+    "proxy_fid": 20.044207,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.996
+  },
+  {
+    "round": 18,
+    "avg_client_loss": 0.097116,
+    "proxy_fid": 77.383267,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.992
+  },
+  {
+    "round": 19,
+    "avg_client_loss": 0.077094,
+    "proxy_fid": 86.979247,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.005
+  },
+  {
+    "round": 20,
+    "avg_client_loss": 0.0954,
+    "proxy_fid": 52.172909,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.124,
+    "classifier_fid": 320.21006446437167,
+    "top1_confidence_mean": 0.5935203433036804,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": -0.0,
+    "predicted_unique_classes": 1,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 21,
+    "avg_client_loss": 0.065409,
+    "proxy_fid": 32.786786,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.061
+  },
+  {
+    "round": 22,
+    "avg_client_loss": 0.113465,
+    "proxy_fid": 24.485218,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.102
+  },
+  {
+    "round": 23,
+    "avg_client_loss": 0.096402,
+    "proxy_fid": 28.538494,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.02
+  },
+  {
+    "round": 24,
+    "avg_client_loss": 0.078661,
+    "proxy_fid": 45.259524,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.075
+  },
+  {
+    "round": 25,
+    "avg_client_loss": 0.071814,
+    "proxy_fid": 40.595847,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.012
+  },
+  {
+    "round": 26,
+    "avg_client_loss": 0.086641,
+    "proxy_fid": 79.774104,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.094
+  },
+  {
+    "round": 27,
+    "avg_client_loss": 0.081947,
+    "proxy_fid": 76.323019,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.088
+  },
+  {
+    "round": 28,
+    "avg_client_loss": 0.087245,
+    "proxy_fid": 21.536111,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.138
+  },
+  {
+    "round": 29,
+    "avg_client_loss": 0.07224,
+    "proxy_fid": 50.136353,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.111
+  },
+  {
+    "round": 30,
+    "avg_client_loss": 0.086149,
+    "proxy_fid": 47.955001,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.083
+  },
+  {
+    "round": 31,
+    "avg_client_loss": 0.076684,
+    "proxy_fid": 17.567824,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.069
+  },
+  {
+    "round": 32,
+    "avg_client_loss": 0.067266,
+    "proxy_fid": 23.20322,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.198
+  },
+  {
+    "round": 33,
+    "avg_client_loss": 0.086638,
+    "proxy_fid": 54.769426,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.152
+  },
+  {
+    "round": 34,
+    "avg_client_loss": 0.070091,
+    "proxy_fid": 16.850624,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.146
+  },
+  {
+    "round": 35,
+    "avg_client_loss": 0.081359,
+    "proxy_fid": 24.41806,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.113
+  },
+  {
+    "round": 36,
+    "avg_client_loss": 0.070175,
+    "proxy_fid": 41.581823,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.053
+  },
+  {
+    "round": 37,
+    "avg_client_loss": 0.071793,
+    "proxy_fid": 15.660117,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.136
+  },
+  {
+    "round": 38,
+    "avg_client_loss": 0.075236,
+    "proxy_fid": 14.069119,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.076
+  },
+  {
+    "round": 39,
+    "avg_client_loss": 0.068698,
+    "proxy_fid": 54.298853,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.122
+  },
+  {
+    "round": 40,
+    "avg_client_loss": 0.062607,
+    "proxy_fid": 73.76806,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.086,
+    "classifier_fid": 180.415443928449,
+    "top1_confidence_mean": 0.44932737946510315,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.1577794551849365,
+    "predicted_unique_classes": 4,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 41,
+    "avg_client_loss": 0.075667,
+    "proxy_fid": 21.715259,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.039
+  },
+  {
+    "round": 42,
+    "avg_client_loss": 0.079915,
+    "proxy_fid": 32.18661,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.226
+  },
+  {
+    "round": 43,
+    "avg_client_loss": 0.067915,
+    "proxy_fid": 82.971543,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.976
+  },
+  {
+    "round": 44,
+    "avg_client_loss": 0.069299,
+    "proxy_fid": 21.491739,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.021
+  },
+  {
+    "round": 45,
+    "avg_client_loss": 0.071399,
+    "proxy_fid": 18.183993,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.01
+  },
+  {
+    "round": 46,
+    "avg_client_loss": 0.062354,
+    "proxy_fid": 47.283314,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.007
+  },
+  {
+    "round": 47,
+    "avg_client_loss": 0.071852,
+    "proxy_fid": 52.217299,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.01
+  },
+  {
+    "round": 48,
+    "avg_client_loss": 0.080389,
+    "proxy_fid": 25.003186,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.141
+  },
+  {
+    "round": 49,
+    "avg_client_loss": 0.069393,
+    "proxy_fid": 56.223611,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.997
+  },
+  {
+    "round": 50,
+    "avg_client_loss": 0.069715,
+    "proxy_fid": 70.37247,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.989
+  },
+  {
+    "round": 51,
+    "avg_client_loss": 0.075859,
+    "proxy_fid": 21.177626,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.997
+  },
+  {
+    "round": 52,
+    "avg_client_loss": 0.053552,
+    "proxy_fid": 48.78421,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.017
+  },
+  {
+    "round": 53,
+    "avg_client_loss": 0.065576,
+    "proxy_fid": 19.991568,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.094
+  },
+  {
+    "round": 54,
+    "avg_client_loss": 0.062995,
+    "proxy_fid": 20.825379,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.022
+  },
+  {
+    "round": 55,
+    "avg_client_loss": 0.061635,
+    "proxy_fid": 59.385244,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.081
+  },
+  {
+    "round": 56,
+    "avg_client_loss": 0.063789,
+    "proxy_fid": 79.147935,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.987
+  },
+  {
+    "round": 57,
+    "avg_client_loss": 0.073341,
+    "proxy_fid": 51.601597,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.138
+  },
+  {
+    "round": 58,
+    "avg_client_loss": 0.066292,
+    "proxy_fid": 90.26559,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.106
+  },
+  {
+    "round": 59,
+    "avg_client_loss": 0.060975,
+    "proxy_fid": 40.825732,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.078
+  },
+  {
+    "round": 60,
+    "avg_client_loss": 0.069774,
+    "proxy_fid": 15.807954,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.188,
+    "classifier_fid": 53.918910894249066,
+    "top1_confidence_mean": 0.41683873534202576,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.7106363773345947,
+    "predicted_unique_classes": 6,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 61,
+    "avg_client_loss": 0.065146,
+    "proxy_fid": 34.015971,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.952
+  },
+  {
+    "round": 62,
+    "avg_client_loss": 0.059173,
+    "proxy_fid": 24.795925,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.113
+  },
+  {
+    "round": 63,
+    "avg_client_loss": 0.05776,
+    "proxy_fid": 23.609968,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.996
+  },
+  {
+    "round": 64,
+    "avg_client_loss": 0.075789,
+    "proxy_fid": 32.96542,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.192
+  },
+  {
+    "round": 65,
+    "avg_client_loss": 0.068438,
+    "proxy_fid": 33.91418,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.116
+  },
+  {
+    "round": 66,
+    "avg_client_loss": 0.064232,
+    "proxy_fid": 36.960666,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.032
+  },
+  {
+    "round": 67,
+    "avg_client_loss": 0.052089,
+    "proxy_fid": 17.452971,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.094
+  },
+  {
+    "round": 68,
+    "avg_client_loss": 0.071419,
+    "proxy_fid": 67.444643,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.2
+  },
+  {
+    "round": 69,
+    "avg_client_loss": 0.065017,
+    "proxy_fid": 45.157073,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.12
+  },
+  {
+    "round": 70,
+    "avg_client_loss": 0.057582,
+    "proxy_fid": 58.455567,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.155
+  },
+  {
+    "round": 71,
+    "avg_client_loss": 0.056747,
+    "proxy_fid": 48.814269,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.176
+  },
+  {
+    "round": 72,
+    "avg_client_loss": 0.057637,
+    "proxy_fid": 43.717243,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.24
+  },
+  {
+    "round": 73,
+    "avg_client_loss": 0.074868,
+    "proxy_fid": 64.6207,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.2
+  },
+  {
+    "round": 74,
+    "avg_client_loss": 0.053703,
+    "proxy_fid": 18.960546,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.997
+  },
+  {
+    "round": 75,
+    "avg_client_loss": 0.062797,
+    "proxy_fid": 22.346945,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.022
+  },
+  {
+    "round": 76,
+    "avg_client_loss": 0.073937,
+    "proxy_fid": 74.325166,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.133
+  },
+  {
+    "round": 77,
+    "avg_client_loss": 0.060855,
+    "proxy_fid": 24.719098,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.126
+  },
+  {
+    "round": 78,
+    "avg_client_loss": 0.0602,
+    "proxy_fid": 72.054555,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.022
+  },
+  {
+    "round": 79,
+    "avg_client_loss": 0.05513,
+    "proxy_fid": 37.936329,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.005
+  },
+  {
+    "round": 80,
+    "avg_client_loss": 0.058132,
+    "proxy_fid": 186.350557,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.162,
+    "classifier_fid": 2792.605071050246,
+    "top1_confidence_mean": 0.4949992895126343,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 0.6690268516540527,
+    "predicted_unique_classes": 2,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 81,
+    "avg_client_loss": 0.061076,
+    "proxy_fid": 30.144434,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.129
+  },
+  {
+    "round": 82,
+    "avg_client_loss": 0.056275,
+    "proxy_fid": 24.932781,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.081
+  },
+  {
+    "round": 83,
+    "avg_client_loss": 0.058562,
+    "proxy_fid": 27.65589,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.013
+  },
+  {
+    "round": 84,
+    "avg_client_loss": 0.058276,
+    "proxy_fid": 64.536003,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.034
+  },
+  {
+    "round": 85,
+    "avg_client_loss": 0.055426,
+    "proxy_fid": 46.68926,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.201
+  },
+  {
+    "round": 86,
+    "avg_client_loss": 0.059013,
+    "proxy_fid": 17.702378,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.16
+  },
+  {
+    "round": 87,
+    "avg_client_loss": 0.059002,
+    "proxy_fid": 59.139316,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.105
+  },
+  {
+    "round": 88,
+    "avg_client_loss": 0.055795,
+    "proxy_fid": 67.623882,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.075
+  },
+  {
+    "round": 89,
+    "avg_client_loss": 0.063026,
+    "proxy_fid": 29.678867,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.07
+  },
+  {
+    "round": 90,
+    "avg_client_loss": 0.05363,
+    "proxy_fid": 23.655304,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.2
+  },
+  {
+    "round": 91,
+    "avg_client_loss": 0.055023,
+    "proxy_fid": 67.1504,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.122
+  },
+  {
+    "round": 92,
+    "avg_client_loss": 0.053258,
+    "proxy_fid": 29.932704,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.993
+  },
+  {
+    "round": 93,
+    "avg_client_loss": 0.062012,
+    "proxy_fid": 25.814006,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.147
+  },
+  {
+    "round": 94,
+    "avg_client_loss": 0.071791,
+    "proxy_fid": 49.719729,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.046
+  },
+  {
+    "round": 95,
+    "avg_client_loss": 0.070916,
+    "proxy_fid": 140.822799,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.187
+  },
+  {
+    "round": 96,
+    "avg_client_loss": 0.052736,
+    "proxy_fid": 25.425986,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.129
+  },
+  {
+    "round": 97,
+    "avg_client_loss": 0.054847,
+    "proxy_fid": 21.994355,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.11
+  },
+  {
+    "round": 98,
+    "avg_client_loss": 0.05385,
+    "proxy_fid": 61.761953,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.13
+  },
+  {
+    "round": 99,
+    "avg_client_loss": 0.050862,
+    "proxy_fid": 21.502364,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.186
+  },
+  {
+    "round": 100,
+    "avg_client_loss": 0.062947,
+    "proxy_fid": 56.275438,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.174,
+    "classifier_fid": 165.86276931368675,
+    "top1_confidence_mean": 0.4176570475101471,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 0.5418812036514282,
+    "predicted_unique_classes": 5,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 101,
+    "avg_client_loss": 0.058715,
+    "proxy_fid": 55.274378,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.249
+  },
+  {
+    "round": 102,
+    "avg_client_loss": 0.056038,
+    "proxy_fid": 38.494625,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.088
+  },
+  {
+    "round": 103,
+    "avg_client_loss": 0.060912,
+    "proxy_fid": 22.051678,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.304
+  },
+  {
+    "round": 104,
+    "avg_client_loss": 0.075308,
+    "proxy_fid": 52.93855,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.24
+  },
+  {
+    "round": 105,
+    "avg_client_loss": 0.051269,
+    "proxy_fid": 37.24002,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.073
+  },
+  {
+    "round": 106,
+    "avg_client_loss": 0.054705,
+    "proxy_fid": 24.867236,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.999
+  },
+  {
+    "round": 107,
+    "avg_client_loss": 0.048213,
+    "proxy_fid": 22.946598,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.038
+  },
+  {
+    "round": 108,
+    "avg_client_loss": 0.056631,
+    "proxy_fid": 137.968258,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.143
+  },
+  {
+    "round": 109,
+    "avg_client_loss": 0.05383,
+    "proxy_fid": 29.690129,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.036
+  },
+  {
+    "round": 110,
+    "avg_client_loss": 0.060604,
+    "proxy_fid": 27.818409,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.137
+  },
+  {
+    "round": 111,
+    "avg_client_loss": 0.063077,
+    "proxy_fid": 38.196867,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.173
+  },
+  {
+    "round": 112,
+    "avg_client_loss": 0.0481,
+    "proxy_fid": 36.289315,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.227
+  },
+  {
+    "round": 113,
+    "avg_client_loss": 0.061548,
+    "proxy_fid": 28.795252,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.164
+  },
+  {
+    "round": 114,
+    "avg_client_loss": 0.049159,
+    "proxy_fid": 36.195381,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.168
+  },
+  {
+    "round": 115,
+    "avg_client_loss": 0.06177,
+    "proxy_fid": 22.876792,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.193
+  },
+  {
+    "round": 116,
+    "avg_client_loss": 0.046856,
+    "proxy_fid": 17.873497,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.114
+  },
+  {
+    "round": 117,
+    "avg_client_loss": 0.044582,
+    "proxy_fid": 43.035504,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.222
+  },
+  {
+    "round": 118,
+    "avg_client_loss": 0.065394,
+    "proxy_fid": 38.119055,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.144
+  },
+  {
+    "round": 119,
+    "avg_client_loss": 0.062552,
+    "proxy_fid": 22.089493,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.135
+  },
+  {
+    "round": 120,
+    "avg_client_loss": 0.050141,
+    "proxy_fid": 20.740774,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.226,
+    "classifier_fid": 94.5440143247742,
+    "top1_confidence_mean": 0.3920205235481262,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.6978282928466797,
+    "predicted_unique_classes": 7,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 121,
+    "avg_client_loss": 0.05301,
+    "proxy_fid": 29.737264,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.163
+  },
+  {
+    "round": 122,
+    "avg_client_loss": 0.043697,
+    "proxy_fid": 71.452959,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.244
+  },
+  {
+    "round": 123,
+    "avg_client_loss": 0.057298,
+    "proxy_fid": 20.857274,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.067
+  },
+  {
+    "round": 124,
+    "avg_client_loss": 0.059944,
+    "proxy_fid": 22.58254,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.13
+  },
+  {
+    "round": 125,
+    "avg_client_loss": 0.050224,
+    "proxy_fid": 45.908435,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.168
+  },
+  {
+    "round": 126,
+    "avg_client_loss": 0.050308,
+    "proxy_fid": 27.151474,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.81
+  },
+  {
+    "round": 127,
+    "avg_client_loss": 0.047374,
+    "proxy_fid": 17.016225,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.886
+  },
+  {
+    "round": 128,
+    "avg_client_loss": 0.052193,
+    "proxy_fid": 61.200718,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.893
+  },
+  {
+    "round": 129,
+    "avg_client_loss": 0.048901,
+    "proxy_fid": 22.103227,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.782
+  },
+  {
+    "round": 130,
+    "avg_client_loss": 0.073704,
+    "proxy_fid": 87.992219,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.214
+  },
+  {
+    "round": 131,
+    "avg_client_loss": 0.050852,
+    "proxy_fid": 27.656086,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.795
+  },
+  {
+    "round": 132,
+    "avg_client_loss": 0.039538,
+    "proxy_fid": 29.248877,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.703
+  },
+  {
+    "round": 133,
+    "avg_client_loss": 0.042415,
+    "proxy_fid": 37.432033,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.678
+  },
+  {
+    "round": 134,
+    "avg_client_loss": 0.054241,
+    "proxy_fid": 15.551817,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.709
+  },
+  {
+    "round": 135,
+    "avg_client_loss": 0.050874,
+    "proxy_fid": 87.292138,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.788
+  },
+  {
+    "round": 136,
+    "avg_client_loss": 0.052284,
+    "proxy_fid": 24.650784,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.702
+  },
+  {
+    "round": 137,
+    "avg_client_loss": 0.048771,
+    "proxy_fid": 42.677866,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.715
+  },
+  {
+    "round": 138,
+    "avg_client_loss": 0.054444,
+    "proxy_fid": 72.846429,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.709
+  },
+  {
+    "round": 139,
+    "avg_client_loss": 0.052629,
+    "proxy_fid": 44.726222,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.784
+  },
+  {
+    "round": 140,
+    "avg_client_loss": 0.054365,
+    "proxy_fid": 44.056986,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.741,
+    "classifier_fid": 170.4587051804272,
+    "top1_confidence_mean": 0.3887360692024231,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.019594669342041,
+    "predicted_unique_classes": 7,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 141,
+    "avg_client_loss": 0.058005,
+    "proxy_fid": 28.464409,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.768
+  },
+  {
+    "round": 142,
+    "avg_client_loss": 0.050177,
+    "proxy_fid": 23.966944,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.709
+  },
+  {
+    "round": 143,
+    "avg_client_loss": 0.048588,
+    "proxy_fid": 14.139139,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.66
+  },
+  {
+    "round": 144,
+    "avg_client_loss": 0.053576,
+    "proxy_fid": 15.974734,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.84
+  },
+  {
+    "round": 145,
+    "avg_client_loss": 0.045923,
+    "proxy_fid": 36.873534,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.696
+  },
+  {
+    "round": 146,
+    "avg_client_loss": 0.048885,
+    "proxy_fid": 76.278645,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.775
+  },
+  {
+    "round": 147,
+    "avg_client_loss": 0.046182,
+    "proxy_fid": 19.003755,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.925
+  },
+  {
+    "round": 148,
+    "avg_client_loss": 0.044573,
+    "proxy_fid": 68.451807,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.853
+  },
+  {
+    "round": 149,
+    "avg_client_loss": 0.060538,
+    "proxy_fid": 26.342645,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.967
+  },
+  {
+    "round": 150,
+    "avg_client_loss": 0.050219,
+    "proxy_fid": 24.671302,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.923
+  },
+  {
+    "round": 151,
+    "avg_client_loss": 0.049107,
+    "proxy_fid": 26.606239,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 96.155
+  },
+  {
+    "round": 152,
+    "avg_client_loss": 0.053424,
+    "proxy_fid": 83.043526,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.811
+  },
+  {
+    "round": 153,
+    "avg_client_loss": 0.049362,
+    "proxy_fid": 63.069488,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.856
+  },
+  {
+    "round": 154,
+    "avg_client_loss": 0.046996,
+    "proxy_fid": 16.252474,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.812
+  },
+  {
+    "round": 155,
+    "avg_client_loss": 0.054053,
+    "proxy_fid": 35.598297,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.246
+  },
+  {
+    "round": 156,
+    "avg_client_loss": 0.041977,
+    "proxy_fid": 60.056996,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.637
+  },
+  {
+    "round": 157,
+    "avg_client_loss": 0.047916,
+    "proxy_fid": 22.882884,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 96.232
+  },
+  {
+    "round": 158,
+    "avg_client_loss": 0.0551,
+    "proxy_fid": 30.02152,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.967
+  },
+  {
+    "round": 159,
+    "avg_client_loss": 0.041224,
+    "proxy_fid": 26.378978,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.761
+  },
+  {
+    "round": 160,
+    "avg_client_loss": 0.052532,
+    "proxy_fid": 32.620868,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.716,
+    "classifier_fid": 271.5647556321304,
+    "top1_confidence_mean": 0.5006259083747864,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.1938508749008179,
+    "predicted_unique_classes": 6,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 161,
+    "avg_client_loss": 0.058258,
+    "proxy_fid": 18.50764,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.879
+  },
+  {
+    "round": 162,
+    "avg_client_loss": 0.041359,
+    "proxy_fid": 24.380681,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.989
+  },
+  {
+    "round": 163,
+    "avg_client_loss": 0.055822,
+    "proxy_fid": 28.971779,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.735
+  },
+  {
+    "round": 164,
+    "avg_client_loss": 0.061865,
+    "proxy_fid": 22.664173,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.735
+  },
+  {
+    "round": 165,
+    "avg_client_loss": 0.041764,
+    "proxy_fid": 23.162499,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.762
+  },
+  {
+    "round": 166,
+    "avg_client_loss": 0.046376,
+    "proxy_fid": 38.358901,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.415
+  },
+  {
+    "round": 167,
+    "avg_client_loss": 0.053315,
+    "proxy_fid": 110.065386,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.975
+  },
+  {
+    "round": 168,
+    "avg_client_loss": 0.060572,
+    "proxy_fid": 22.717856,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.053
+  },
+  {
+    "round": 169,
+    "avg_client_loss": 0.043634,
+    "proxy_fid": 20.394154,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.755
+  },
+  {
+    "round": 170,
+    "avg_client_loss": 0.055114,
+    "proxy_fid": 17.616125,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.866
+  },
+  {
+    "round": 171,
+    "avg_client_loss": 0.049092,
+    "proxy_fid": 29.932789,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.924
+  },
+  {
+    "round": 172,
+    "avg_client_loss": 0.050794,
+    "proxy_fid": 53.602754,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.951
+  },
+  {
+    "round": 173,
+    "avg_client_loss": 0.043095,
+    "proxy_fid": 80.545768,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.92
+  },
+  {
+    "round": 174,
+    "avg_client_loss": 0.043098,
+    "proxy_fid": 29.378403,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.701
+  },
+  {
+    "round": 175,
+    "avg_client_loss": 0.048668,
+    "proxy_fid": 26.579376,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.846
+  },
+  {
+    "round": 176,
+    "avg_client_loss": 0.055796,
+    "proxy_fid": 128.727518,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.475
+  },
+  {
+    "round": 177,
+    "avg_client_loss": 0.057467,
+    "proxy_fid": 111.717073,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.713
+  },
+  {
+    "round": 178,
+    "avg_client_loss": 0.052189,
+    "proxy_fid": 23.598098,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.806
+  },
+  {
+    "round": 179,
+    "avg_client_loss": 0.053566,
+    "proxy_fid": 78.051847,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.787
+  },
+  {
+    "round": 180,
+    "avg_client_loss": 0.04806,
+    "proxy_fid": 45.63215,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.845,
+    "classifier_fid": 236.95811059654397,
+    "top1_confidence_mean": 0.46113601326942444,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.5171983242034912,
+    "predicted_unique_classes": 7,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 181,
+    "avg_client_loss": 0.05441,
+    "proxy_fid": 35.174328,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.811
+  },
+  {
+    "round": 182,
+    "avg_client_loss": 0.059354,
+    "proxy_fid": 50.614604,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.881
+  },
+  {
+    "round": 183,
+    "avg_client_loss": 0.04108,
+    "proxy_fid": 43.429744,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.826
+  },
+  {
+    "round": 184,
+    "avg_client_loss": 0.047754,
+    "proxy_fid": 117.975597,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.778
+  },
+  {
+    "round": 185,
+    "avg_client_loss": 0.052833,
+    "proxy_fid": 27.376578,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.796
+  },
+  {
+    "round": 186,
+    "avg_client_loss": 0.045814,
+    "proxy_fid": 54.350851,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.676
+  },
+  {
+    "round": 187,
+    "avg_client_loss": 0.043961,
+    "proxy_fid": 29.5247,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.726
+  },
+  {
+    "round": 188,
+    "avg_client_loss": 0.048308,
+    "proxy_fid": 19.495655,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.807
+  },
+  {
+    "round": 189,
+    "avg_client_loss": 0.0464,
+    "proxy_fid": 77.747749,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.763
+  },
+  {
+    "round": 190,
+    "avg_client_loss": 0.038481,
+    "proxy_fid": 39.854468,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.74
+  },
+  {
+    "round": 191,
+    "avg_client_loss": 0.052503,
+    "proxy_fid": 32.071841,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.726
+  },
+  {
+    "round": 192,
+    "avg_client_loss": 0.050406,
+    "proxy_fid": 55.318023,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.714
+  },
+  {
+    "round": 193,
+    "avg_client_loss": 0.040851,
+    "proxy_fid": 53.621833,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.798
+  },
+  {
+    "round": 194,
+    "avg_client_loss": 0.043666,
+    "proxy_fid": 36.540141,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.768
+  },
+  {
+    "round": 195,
+    "avg_client_loss": 0.048997,
+    "proxy_fid": 93.066433,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.634
+  },
+  {
+    "round": 196,
+    "avg_client_loss": 0.058467,
+    "proxy_fid": 32.799302,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.285
+  },
+  {
+    "round": 197,
+    "avg_client_loss": 0.043944,
+    "proxy_fid": 62.879125,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.3
+  },
+  {
+    "round": 198,
+    "avg_client_loss": 0.042681,
+    "proxy_fid": 83.9911,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.702
+  },
+  {
+    "round": 199,
+    "avg_client_loss": 0.046516,
+    "proxy_fid": 27.940756,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.563
+  },
+  {
+    "round": 200,
+    "avg_client_loss": 0.048177,
+    "proxy_fid": 23.43111,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.92,
+    "classifier_fid": 138.49164480132436,
+    "top1_confidence_mean": 0.49387866258621216,
+    "top1_confident_ratio": 0.015625,
+    "predicted_class_entropy": 1.3687431812286377,
+    "predicted_unique_classes": 8,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 201,
+    "avg_client_loss": 0.048578,
+    "proxy_fid": 31.909849,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.998
+  },
+  {
+    "round": 202,
+    "avg_client_loss": 0.035968,
+    "proxy_fid": 26.534649,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.961
+  },
+  {
+    "round": 203,
+    "avg_client_loss": 0.045737,
+    "proxy_fid": 34.63403,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.859
+  },
+  {
+    "round": 204,
+    "avg_client_loss": 0.041377,
+    "proxy_fid": 25.108127,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.126
+  },
+  {
+    "round": 205,
+    "avg_client_loss": 0.056017,
+    "proxy_fid": 36.905816,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.973
+  },
+  {
+    "round": 206,
+    "avg_client_loss": 0.062747,
+    "proxy_fid": 29.073272,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.987
+  },
+  {
+    "round": 207,
+    "avg_client_loss": 0.056291,
+    "proxy_fid": 24.615804,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.832
+  },
+  {
+    "round": 208,
+    "avg_client_loss": 0.049006,
+    "proxy_fid": 22.903822,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.868
+  },
+  {
+    "round": 209,
+    "avg_client_loss": 0.048717,
+    "proxy_fid": 20.892185,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.953
+  },
+  {
+    "round": 210,
+    "avg_client_loss": 0.047208,
+    "proxy_fid": 138.414017,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.875
+  },
+  {
+    "round": 211,
+    "avg_client_loss": 0.048761,
+    "proxy_fid": 18.222329,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.092
+  },
+  {
+    "round": 212,
+    "avg_client_loss": 0.044308,
+    "proxy_fid": 91.372999,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.937
+  },
+  {
+    "round": 213,
+    "avg_client_loss": 0.047554,
+    "proxy_fid": 28.198814,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.831
+  },
+  {
+    "round": 214,
+    "avg_client_loss": 0.047993,
+    "proxy_fid": 85.133438,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.912
+  },
+  {
+    "round": 215,
+    "avg_client_loss": 0.039804,
+    "proxy_fid": 18.783567,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.823
+  },
+  {
+    "round": 216,
+    "avg_client_loss": 0.048702,
+    "proxy_fid": 143.267648,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.977
+  },
+  {
+    "round": 217,
+    "avg_client_loss": 0.050771,
+    "proxy_fid": 51.823208,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.856
+  },
+  {
+    "round": 218,
+    "avg_client_loss": 0.055816,
+    "proxy_fid": 85.762244,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.836
+  },
+  {
+    "round": 219,
+    "avg_client_loss": 0.054687,
+    "proxy_fid": 64.570038,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.807
+  },
+  {
+    "round": 220,
+    "avg_client_loss": 0.0449,
+    "proxy_fid": 16.39328,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.0,
+    "classifier_fid": 62.36745065369344,
+    "top1_confidence_mean": 0.4830653667449951,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.6921217441558838,
+    "predicted_unique_classes": 7,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 221,
+    "avg_client_loss": 0.048339,
+    "proxy_fid": 54.88446,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.82
+  },
+  {
+    "round": 222,
+    "avg_client_loss": 0.049989,
+    "proxy_fid": 18.048455,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.855
+  },
+  {
+    "round": 223,
+    "avg_client_loss": 0.041542,
+    "proxy_fid": 99.84499,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.908
+  },
+  {
+    "round": 224,
+    "avg_client_loss": 0.053545,
+    "proxy_fid": 23.847184,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.926
+  },
+  {
+    "round": 225,
+    "avg_client_loss": 0.044395,
+    "proxy_fid": 24.499635,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.046
+  },
+  {
+    "round": 226,
+    "avg_client_loss": 0.054347,
+    "proxy_fid": 46.628784,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.89
+  },
+  {
+    "round": 227,
+    "avg_client_loss": 0.042505,
+    "proxy_fid": 44.366799,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.944
+  },
+  {
+    "round": 228,
+    "avg_client_loss": 0.061073,
+    "proxy_fid": 50.242805,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.017
+  },
+  {
+    "round": 229,
+    "avg_client_loss": 0.04689,
+    "proxy_fid": 45.260025,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.95
+  },
+  {
+    "round": 230,
+    "avg_client_loss": 0.058892,
+    "proxy_fid": 24.532731,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.994
+  },
+  {
+    "round": 231,
+    "avg_client_loss": 0.043218,
+    "proxy_fid": 26.093328,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.964
+  },
+  {
+    "round": 232,
+    "avg_client_loss": 0.050314,
+    "proxy_fid": 28.201085,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.262
+  },
+  {
+    "round": 233,
+    "avg_client_loss": 0.053581,
+    "proxy_fid": 30.482769,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.274
+  },
+  {
+    "round": 234,
+    "avg_client_loss": 0.051423,
+    "proxy_fid": 83.169723,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.208
+  },
+  {
+    "round": 235,
+    "avg_client_loss": 0.054653,
+    "proxy_fid": 85.625768,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.917
+  },
+  {
+    "round": 236,
+    "avg_client_loss": 0.045542,
+    "proxy_fid": 19.387513,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 94.074
+  },
+  {
+    "round": 237,
+    "avg_client_loss": 0.043405,
+    "proxy_fid": 96.612092,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.698
+  },
+  {
+    "round": 238,
+    "avg_client_loss": 0.051096,
+    "proxy_fid": 81.34167,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.254
+  },
+  {
+    "round": 239,
+    "avg_client_loss": 0.04685,
+    "proxy_fid": 62.553789,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.215
+  },
+  {
+    "round": 240,
+    "avg_client_loss": 0.045455,
+    "proxy_fid": 22.401075,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.141,
+    "classifier_fid": 201.20328714762016,
+    "top1_confidence_mean": 0.5093597173690796,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.3792096376419067,
+    "predicted_unique_classes": 7,
+    "evaluator_test_accuracy": 0.4375
+  },
+  {
+    "round": 241,
+    "avg_client_loss": 0.063365,
+    "proxy_fid": 32.147179,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.106
+  },
+  {
+    "round": 242,
+    "avg_client_loss": 0.04875,
+    "proxy_fid": 37.201978,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.037
+  },
+  {
+    "round": 243,
+    "avg_client_loss": 0.047517,
+    "proxy_fid": 49.407621,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.096
+  },
+  {
+    "round": 244,
+    "avg_client_loss": 0.049918,
+    "proxy_fid": 43.409834,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.028
+  },
+  {
+    "round": 245,
+    "avg_client_loss": 0.049244,
+    "proxy_fid": 23.369418,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.026
+  },
+  {
+    "round": 246,
+    "avg_client_loss": 0.04004,
+    "proxy_fid": 39.142659,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.987
+  },
+  {
+    "round": 247,
+    "avg_client_loss": 0.044685,
+    "proxy_fid": 39.326724,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.108
+  },
+  {
+    "round": 248,
+    "avg_client_loss": 0.045468,
+    "proxy_fid": 19.517684,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.066
+  },
+  {
+    "round": 249,
+    "avg_client_loss": 0.047215,
+    "proxy_fid": 32.366839,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.031
+  },
+  {
+    "round": 250,
+    "avg_client_loss": 0.051102,
+    "proxy_fid": 86.999383,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.988
+  },
+  {
+    "round": 251,
+    "avg_client_loss": 0.044338,
+    "proxy_fid": 37.055002,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.036
+  },
+  {
+    "round": 252,
+    "avg_client_loss": 0.044173,
+    "proxy_fid": 28.896195,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 96.233
+  },
+  {
+    "round": 253,
+    "avg_client_loss": 0.049816,
+    "proxy_fid": 33.248164,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.137
+  },
+  {
+    "round": 254,
+    "avg_client_loss": 0.050525,
+    "proxy_fid": 29.387079,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.042
+  },
+  {
+    "round": 255,
+    "avg_client_loss": 0.035967,
+    "proxy_fid": 34.720843,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.099
+  },
+  {
+    "round": 256,
+    "avg_client_loss": 0.044111,
+    "proxy_fid": 35.962126,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.156
+  },
+  {
+    "round": 257,
+    "avg_client_loss": 0.047256,
+    "proxy_fid": 21.818034,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.211
+  },
+  {
+    "round": 258,
+    "avg_client_loss": 0.038036,
+    "proxy_fid": 50.527555,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.022
+  },
+  {
+    "round": 259,
+    "avg_client_loss": 0.063918,
+    "proxy_fid": 148.362768,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.063
+  },
+  {
+    "round": 260,
+    "avg_client_loss": 0.052248,
+    "proxy_fid": 17.143774,
+    "total_samples": 192,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.022,
+    "classifier_fid": 81.40774426483101,
+    "top1_confidence_mean": 0.42437422275543213,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.7459046840667725,
+    "predicted_unique_classes": 9,
+    "evaluator_test_accuracy": 0.4375
+  }
+]

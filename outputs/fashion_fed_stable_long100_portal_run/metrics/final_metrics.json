@@ -1,0 +1,25 @@
+{
+  "last_round": {
+    "round": 100,
+    "avg_client_loss": 0.216887,
+    "proxy_fid": 27.268437,
+    "total_samples": 28614,
+    "aggregated_clients": 2,
+    "round_duration_sec": 3.989
+  },
+  "best_proxy_fid_round": {
+    "round": 80,
+    "avg_client_loss": 0.218481,
+    "proxy_fid": 24.300594,
+    "total_samples": 33519,
+    "aggregated_clients": 2,
+    "round_duration_sec": 3.661
+  },
+  "best_checkpoint_metric": "proxy_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\fashion_fed_stable_long100_portal_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\fashion_fed_stable_long100_portal_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 396.232,
+  "avg_round_seconds": 3.939,
+  "max_round_seconds": 10.294,
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\fashion_fed_stable_long100_portal_run\\global_model_ema.pt"
+}

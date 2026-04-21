@@ -1,0 +1,25 @@
+{
+  "last_round": {
+    "round": 20,
+    "avg_client_loss": 0.197483,
+    "selected_clients": [
+      2,
+      1
+    ],
+    "total_samples": 3063,
+    "round_duration_sec": 7.864
+  },
+  "best_loss_round": {
+    "round": 6,
+    "avg_client_loss": 0.157174,
+    "selected_clients": [
+      3,
+      0
+    ],
+    "total_samples": 1937,
+    "round_duration_sec": 7.761
+  },
+  "best_loss": 0.157174,
+  "global_lora_final_path": "/home/scd/feddiffsecure_minimal/outputs/tiny_sd_stl10_lora_federated_local_v2_run/global_lora_final.pt",
+  "global_lora_best_loss_path": "/home/scd/feddiffsecure_minimal/outputs/tiny_sd_stl10_lora_federated_local_v2_run/global_lora_best_loss.pt"
+}

@@ -1,0 +1,40 @@
+comparison_groups:
+  - id: lora_stl10_long100_mainline
+    title: STL10 100 轮长线主对照
+    dataset: STL10
+    description: 围绕论文主线，比较中心化上界、联邦安全更新主线、全客户端聚合和 LoRA rank=4 轻量化消融。
+    run_ids:
+      - tiny_sd_stl10_lora_central_long100
+      - tiny_sd_stl10_lora_fed_audit_long100
+      - tiny_sd_stl10_lora_fullclients_long100
+      - tiny_sd_stl10_lora_rank4_long100
+    page_note:
+      title: 页面说明
+      text: 这页服务论文主实验。即便某些长线实验尚未启动，也会先在这里保留位置，等队列推进后自动补全结果。
+    visible: true
+
+  - id: lora_cross_dataset_long100
+    title: LoRA 联邦长线跨数据集泛化
+    dataset: 多数据集
+    description: 统一观察 STL10、Fashion-MNIST、MNIST 与 CIFAR-10 上的联邦 LoRA 安全更新训练效果、通信负载与审计表现。
+    run_ids:
+      - tiny_sd_stl10_lora_fed_audit_long100
+      - tiny_sd_fashion_lora_fed_long100
+      - tiny_sd_mnist_lora_fed_long100
+      - tiny_sd_cifar10_lora_fed_long100
+    page_note:
+      title: 页面说明
+      text: 这页更适合写在论文的泛化与扩展实验部分。当前队列按顺序推进，因此跨数据集结果会随着运行进度逐步补全。
+    visible: true
+
+  - id: fashion_long100_suite
+    title: Fashion-MNIST 100 轮联邦对照
+    dataset: Fashion-MNIST
+    description: 专门对照 Fashion-MNIST 上的中心化 LoRA 长线和联邦 LoRA 长线，用来辅助说明轻量化联邦更新在简单数据域上的训练表现。
+    run_ids:
+      - tiny_sd_fashion_lora_central_long100
+      - tiny_sd_fashion_lora_fed_long100
+    page_note:
+      title: 页面说明
+      text: 这个专题页保留了旧入口，但内部内容已经切换到新的 LoRA 联邦安全更新长线实验。
+    visible: true

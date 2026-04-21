@@ -1,0 +1,33 @@
+# Python cache and local envs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+ENV/
+.env
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local app/runtime files
+demo_portal/demo_users.sqlite3
+*.sqlite3-journal
+*.log
+!outputs/**/*.log
+
+# Large project artifacts
+data/
+models/
+stl10_b40x5_centralized_fulltrain_v3_run/
+tiny-sd.tar.gz
+毕业论文/
+
+# Checkpoints and model weights
+*.pt
+*.ckpt
+*.safetensors
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

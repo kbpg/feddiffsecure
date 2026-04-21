@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}{{ run.title }} | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">{{ run.dataset }} / {{ run.mode }}</div>
+  <h2>{{ run.title }}</h2>
+  <p class="muted">{{ run.role }}</p>
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <div class="panel-kicker">运行摘要</div>
+    <h3>这组实验当前处于什么状态</h3>
+    <dl class="fact-grid">
+      <div><dt>状态</dt><dd>{{ run.status_label }}</dd></div>
+      <div><dt>进度</dt><dd>{{ run.progress_text }}</dd></div>
+      <div><dt>当前最好指标</dt><dd>{{ run.best_metric_display }}</dd></div>
+      <div><dt>当前指标</dt><dd>{{ run.current_metric_display }}</dd></div>
+      <div><dt>审计状态</dt><dd>{{ run.audit_status_text }}</dd></div>
+      <div><dt>平均上传负载</dt><dd>{{ run.payload_display }}</dd></div>
+      <div><dt>LoRA 参数规模</dt><dd>{{ run.lora_numel_display }}</dd></div>
+      <div><dt>可训练参数占比</dt><dd>{{ run.trainable_ratio_display }}</dd></div>
+      <div><dt>平均单轮耗时</dt><dd>{{ run.round_duration_display }}</dd></div>
+      <div><dt>运行目录</dt><dd>{{ run.run_dir_rel or run.run_dir }}</dd></div>
+    </dl>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">论文解释口径</div>
+    <h3>这一页最适合怎么讲</h3>
+    <ul class="metric-list">
+      <li><strong>训练组织：</strong>{{ run.training_pattern }}</li>
+      <li><strong>LoRA 设置：</strong>{{ run.lora_setting }}</li>
+      <li><strong>训练预算：</strong>{{ run.budget_setting }}</li>
+      <li><strong>当前观察：</strong>{{ run.metric_story }}</li>
+      <li><strong>模型总参数：</strong>{{ run.summary.model_params_total or "n/a" }}</li>
+      <li><strong>可训练参数：</strong>{{ run.summary.model_params_trainable or "n/a" }}</li>
+    </ul>
+  </article>
+</section>
+
+{% if run.image_paths %}
+<section class="panel" data-sample-panel>
+  <div class="panel-kicker">样图图册</div>
+  <h3>当前输出目录里已经生成的样图</h3>
+  <div class="primary-preview image-viewer" data-image-viewer>
+    <div class="image-viewer-toolbar">
+      <div class="image-viewer-meta">
+        <div class="panel-kicker">当前预览</div>
+        <strong data-image-caption-output>{{ run.image_paths[0].split('/')[-1] }}</strong>
+      </div>
+      <div class="image-viewer-actions">
+        <span class="image-scale-indicator" data-image-scale-label>100%</span>
+        <button type="button" class="image-action-button" data-image-action="zoom-out">缩小</button>
+        <button type="button" class="image-action-button" data-image-action="reset">重置</button>
+        <button type="button" class="image-action-button" data-image-action="zoom-in">放大</button>
+        <a class="inline-link image-original-link" href="{{ url_for('artifact', relpath=run.image_paths[0]) }}" target="_blank" rel="noopener" data-image-original-link>原图</a>
+      </div>
+    </div>
+    <div class="image-stage">
+      <img src="{{ url_for('artifact', relpath=run.image_paths[0]) }}" alt="{{ run.image_paths[0].split('/')[-1] }}" data-primary-image data-zoom-image>
+    </div>
+    <p class="muted">默认按窗口适配显示；管理员可以在这里逐张检查 best / final / ema / round 样图，而不必再去翻输出目录。</p>
+  </div>
+  <div class="image-grid">
+    {% for image_path in run.image_paths %}
+    <figure class="sample-card{% if loop.first %} is-active{% endif %}" data-sample-figure data-image-name="{{ image_path.split('/')[-1]|lower }}" tabindex="0" role="button">
+      <img src="{{ url_for('artifact', relpath=image_path) }}" alt="{{ image_path.split('/')[-1] }}" data-sample-image>
+      <figcaption>{{ image_path.split('/')[-1] }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if run.recent_rounds %}
+<section class="panel">
+  <div class="panel-kicker">最近轮次</div>
+  <h3>最近 12 轮训练记录</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>轮次</th>
+          <th>平均损失</th>
+          <th>当前指标</th>
+          <th>跳过步数</th>
+          <th>审计状态</th>
+          <th>单轮耗时</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in run.recent_rounds %}
+        <tr>
+          <td>{{ row.round }}</td>
+          <td>{{ row.avg_client_loss if row.avg_client_loss is defined else "n/a" }}</td>
+          <td>
+            {% if row.best_loss is defined %}
+            {{ row.best_loss }}
+            {% elif row.proxy_fid is defined %}
+            {{ row.proxy_fid }}
+            {% else %}
+            -
+            {% endif %}
+          </td>
+          <td>{{ row.skipped_steps if row.skipped_steps is defined else "-" }}</td>
+          <td>
+            {% if row.audit_verified is defined and row.audit_records is defined %}
+            {{ row.audit_verified }}/{{ row.audit_records }}
+            {% else %}
+            -
+            {% endif %}
+          </td>
+          <td>{{ row.round_duration_sec if row.round_duration_sec is defined else "n/a" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_smoke.yaml",
+  "started_at": "2026-04-14T21:44:18.770039+08:00",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 825729,
+  "num_clients": 4,
+  "rounds": 6,
+  "clients_per_round": 4,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 20,
+  "dirichlet_alpha": 0.5,
+  "lr": 0.00015,
+  "batch_size": 128,
+  "ema_decay": 0.0,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 3,
+  "trainable_param_tensors": 248,
+  "unfreeze_param_prefixes": [
+    "upsamples.3",
+    "decoder_blocks.3",
+    "final_conv.base"
+  ],
+  "enabled_extra_params": 38,
+  "save_carriers": false,
+  "completed_at": "2026-04-14T21:50:59.362258+08:00",
+  "wall_clock_seconds": 400.592,
+  "avg_round_seconds": 65.63,
+  "max_round_seconds": 66.516
+}

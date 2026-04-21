@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\run_centralized.py", line 419, in <module>
+    main()
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\run_centralized.py", line 282, in main
+    semantic_metrics = compute_semantic_metrics(
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\feddiffsecure\semantic_metrics.py", line 281, in compute_semantic_metrics
+    classifier_fid = frechet_distance(real_features, fake_features)
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\feddiffsecure\metrics.py", line 76, in frechet_distance
+    middle_sqrt = _matrix_sqrt_psd(middle)
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\feddiffsecure\metrics.py", line 58, in _matrix_sqrt_psd
+    eigvals, eigvecs = torch.linalg.eigh(sym)
+torch._C._LinAlgError: linalg.eigh: The algorithm failed to converge because the input matrix is ill-conditioned or has too many repeated eigenvalues (error code: 16123).

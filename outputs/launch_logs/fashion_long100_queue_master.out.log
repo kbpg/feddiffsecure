@@ -1,0 +1,9 @@
+[queue] start 1/4: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_central_long100_portal.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_central_long100_portal.yaml
+[queue] start 2/4: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_fed_balanced_long100_portal.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_fed_balanced_long100_portal.yaml
+[queue] start 3/4: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_fed_full_long100_portal.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_fed_full_long100_portal.yaml
+[queue] start 4/4: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_fed_stable_long100_portal.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\fashion_fed_stable_long100_portal.yaml
+[queue] summary saved to C:\Users\shenc\Desktop\feddiffsecure_minimal\outputs\launch_logs\fashion_long100_queue_summary.json

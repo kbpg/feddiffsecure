@@ -1,0 +1,104 @@
+{
+  "preserve_for_paper": [
+    {
+      "run_name": "mnist_b40x5_decoder_x0_semantic100_run",
+      "role": "federated_secure_baseline",
+      "dataset": "mnist",
+      "description": "Representative federated MNIST diffusion run with audit verification and secure payload transport.",
+      "key_artifacts": [
+        "outputs/mnist_b40x5_decoder_x0_semantic100_run/metrics/final_metrics.json",
+        "outputs/mnist_b40x5_decoder_x0_semantic100_run/run_summary.json",
+        "outputs/mnist_b40x5_decoder_x0_semantic100_run/audit_summary.json",
+        "outputs/mnist_b40x5_decoder_x0_semantic100_run/audit_log.jsonl",
+        "outputs/mnist_b40x5_decoder_x0_semantic100_run/samples/best.png",
+        "outputs/mnist_b40x5_decoder_x0_semantic100_run/samples/final.png"
+      ]
+    },
+    {
+      "run_name": "mnist_b40x5_decoder_x0_centralized_fulltrain150_v2_run",
+      "role": "centralized_upper_bound",
+      "dataset": "mnist",
+      "description": "Representative centralized MNIST diffusion upper bound on the same architecture.",
+      "key_artifacts": [
+        "outputs/mnist_b40x5_decoder_x0_centralized_fulltrain150_v2_run/metrics/final_metrics.json",
+        "outputs/mnist_b40x5_decoder_x0_centralized_fulltrain150_v2_run/run_summary.json",
+        "outputs/mnist_b40x5_decoder_x0_centralized_fulltrain150_v2_run/samples/best.png",
+        "outputs/mnist_b40x5_decoder_x0_centralized_fulltrain150_v2_run/samples/final.png"
+      ]
+    },
+    {
+      "run_name": "mnist_b40x5_fed_vs_central_fulltrain_best",
+      "role": "paper_comparison_bundle",
+      "dataset": "mnist",
+      "description": "Paper-ready comparison bundle for federated best vs centralized best.",
+      "key_artifacts": [
+        "outputs/mnist_b40x5_fed_vs_central_fulltrain_best/comparison_samples.png",
+        "outputs/mnist_b40x5_fed_vs_central_fulltrain_best/summary.csv",
+        "outputs/mnist_b40x5_fed_vs_central_fulltrain_best/paper_report.md"
+      ]
+    },
+    {
+      "run_name": "stl10_b32_centralized_fulltrain_run",
+      "role": "high_resolution_exploratory_baseline",
+      "dataset": "stl10",
+      "description": "High-resolution exploratory centralized baseline used to discuss current limits on natural-image diffusion quality.",
+      "key_artifacts": [
+        "outputs/stl10_b32_centralized_fulltrain_run/metrics/final_metrics.json",
+        "outputs/stl10_b32_centralized_fulltrain_run/run_summary.json",
+        "outputs/stl10_b32_centralized_fulltrain_run/samples/best.png",
+        "outputs/stl10_b32_centralized_fulltrain_run/samples/final.png"
+      ]
+    },
+    {
+      "run_name": "mnist_b40x5_decoder_x0_centralized_t500_long_run",
+      "role": "high_step_centralized_upper_bound",
+      "dataset": "mnist",
+      "description": "Current strongest MNIST centralized result using a 500-step diffusion chain.",
+      "key_artifacts": [
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_long_run/metrics/final_metrics.json",
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_long_run/run_summary.json",
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_long_run/samples/best.png",
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_long_run/samples/final.png"
+      ]
+    },
+    {
+      "run_name": "mnist_paper_final_comparison",
+      "role": "paper_three_way_comparison_bundle",
+      "dataset": "mnist",
+      "description": "Paper-ready three-way comparison across federated MNIST, centralized t300, and centralized t500.",
+      "key_artifacts": [
+        "outputs/mnist_paper_final_comparison/comparison_samples.png",
+        "outputs/mnist_paper_final_comparison/summary.csv",
+        "outputs/mnist_paper_final_comparison/report.md"
+      ]
+    }
+  ],
+  "in_progress_experiments": [
+    {
+      "run_name": "mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run",
+      "role": "mnist_high_step_clean_reproduction",
+      "dataset": "mnist",
+      "description": "Clean single-run reproduction of the t500 MNIST result for paper use.",
+      "config_path": "configs/mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2.yaml",
+      "planned_artifacts": [
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run/metrics/final_metrics.json",
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run/run_summary.json",
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run/samples/best.png",
+        "outputs/mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run/samples/final.png"
+      ]
+    },
+    {
+      "run_name": "stl10_b40x5_centralized_fulltrain_v3_run",
+      "role": "stl10_generalization_followup",
+      "dataset": "stl10",
+      "description": "Larger STL10 centralized rerun used to study cross-dataset generalization.",
+      "config_path": "configs/stl10_b40x5_centralized_fulltrain_v3.yaml",
+      "planned_artifacts": [
+        "outputs/stl10_b40x5_centralized_fulltrain_v3_run/metrics/final_metrics.json",
+        "outputs/stl10_b40x5_centralized_fulltrain_v3_run/run_summary.json",
+        "outputs/stl10_b40x5_centralized_fulltrain_v3_run/samples/best.png",
+        "outputs/stl10_b40x5_centralized_fulltrain_v3_run/samples/final.png"
+      ]
+    }
+  ]
+}

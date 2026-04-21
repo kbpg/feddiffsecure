@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}架构与数据流 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Architecture & Dataflow</div>
+  <h2>从 LoRA 联邦长线实验到前端展示页面，数据是怎样流动的</h2>
+  <p class="muted">这一页专门说明当前这套“注册表驱动 + 输出目录驱动”的论文原型系统架构。</p>
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <h3>系统分层</h3>
+    <div class="arch-diagram">
+      <div class="arch-node">训练脚本层<br><span>run_centralized / run_sd15_lora_federated / run_config_queue</span></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">实验输出层<br><span>run_summary / metrics / samples / audit records</span></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">注册表层<br><span>portal_runs.yaml / comparison_groups.yaml / research_library.yaml</span></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">门户聚合层<br><span>repository.py 统一整理状态、指标、样图与论文说明</span></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">展示层<br><span>Flask 路由、模板页面、缩放预览和对照页</span></div>
+    </div>
+  </article>
+  <article class="panel">
+    <h3>当前最重要的 5 个数据流步骤</h3>
+    <div class="flow-grid">
+      <div class="flow-step"><strong>1. 训练落盘</strong><p>每组 100 轮长线实验把摘要、轮次指标、样图和审计结果写入对应输出目录。</p></div>
+      <div class="flow-step"><strong>2. 注册表登记</strong><p>实验和对照页不再硬编码在 Python 字典里，而是通过 YAML 注册表统一声明。</p></div>
+      <div class="flow-step"><strong>3. 仓储层整理</strong><p><code>repository.py</code> 负责读取配置和输出目录，生成页面真正需要的高层字段。</p></div>
+      <div class="flow-step"><strong>4. 路由注入</strong><p><code>app.py</code> 把结果中心、专题页、研究页和详情页需要的数据注入模板。</p></div>
+      <div class="flow-step"><strong>5. 页面自动更新</strong><p>即使某组实验还没跑完，门户也会先显示占位卡片；一旦指标或样图落盘，页面会自动补全。</p></div>
+    </div>
+  </article>
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <div class="panel-kicker">扩展方式</div>
+    <h3>后续加实验时要改哪些地方</h3>
+    <ul class="metric-list">
+      <li>新增一组长线实验时，先补配置文件，再在 <code>portal_runs.yaml</code> 中登记标题、角色、输出目录和配置路径。</li>
+      <li>新增一组论文主对照时，在 <code>comparison_groups.yaml</code> 里写入 comparison id 和对应 run_ids。</li>
+      <li>新增参考文献、公式和中文解释时，只需要扩展 <code>research_library.yaml</code>。</li>
+      <li>门户本身尽量只负责展示，不再把实验结论写死在模板里。</li>
+    </ul>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">当前总览</div>
+    <h3>整条长线实验队列的系统视角</h3>
+    <dl class="fact-grid">
+      {% for stat in overview.summary_stats %}
+      <div>
+        <dt>{{ stat.label }}</dt>
+        <dd>{{ stat.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+    <p class="muted">{{ overview.live_monitor.message }}</p>
+  </article>
+</section>
+
+<section class="panel">
+  <div class="panel-kicker">已注册实验</div>
+  <h3>当前门户已经接入的长线实验</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>实验名称</th>
+          <th>数据集</th>
+          <th>训练范式</th>
+          <th>状态</th>
+          <th>当前最好指标</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for run in runs %}
+        <tr>
+          <td>{{ run.title }}</td>
+          <td>{{ run.dataset }}</td>
+          <td>{{ run.mode }}</td>
+          <td>{{ run.status_label }}</td>
+          <td>{{ run.best_metric_display }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

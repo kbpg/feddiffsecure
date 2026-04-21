@@ -1,0 +1,24 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_xdeeper_unet_rank4_t300_decoder_x0.yaml",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 4284945,
+  "model_params_trainable": 225105,
+  "num_clients": 4,
+  "rounds": 45,
+  "clients_per_round": 4,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 20,
+  "dirichlet_alpha": 0.5,
+  "lr": 0.0002,
+  "batch_size": 128,
+  "ema_decay": 0.0,
+  "x0_loss_weight": 0.1,
+  "trainable_param_tensors": 202,
+  "unfreeze_param_prefixes": [
+    "upsamples.2",
+    "decoder_blocks.2",
+    "final_conv.base"
+  ],
+  "enabled_extra_params": 38
+}

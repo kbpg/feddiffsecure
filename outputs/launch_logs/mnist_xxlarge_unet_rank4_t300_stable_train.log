@@ -1,0 +1,65 @@
+================================================================================
+FedDiffSecure minimal prototype
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_xxlarge_unet_rank4_t300_stable.yaml",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 7599209,
+  "model_params_trainable": 316552,
+  "num_clients": 4,
+  "rounds": 30,
+  "clients_per_round": 4,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 20,
+  "dirichlet_alpha": 0.5,
+  "lr": 0.0002,
+  "batch_size": 128
+}
+================================================================================
+
+[Round 1] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.9573 samples=10135 payload=187553B verified=True
+  client=1 loss=0.9599 samples=15954 payload=187553B verified=True
+  client=2 loss=0.9589 samples=13102 payload=187553B verified=True
+  client=3 loss=0.9573 samples=20809 payload=187553B verified=True
+[Round 1] avg_client_loss=0.9584, proxy_fid=48.8671, total_samples=60000, aggregated_clients=4
+
+[Round 2] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.9040 samples=10135 payload=187553B verified=True
+  client=1 loss=0.9017 samples=15954 payload=187553B verified=True
+  client=2 loss=0.9063 samples=13102 payload=187553B verified=True
+  client=3 loss=0.9083 samples=20809 payload=187553B verified=True
+[Round 2] avg_client_loss=0.9051, proxy_fid=48.5704, total_samples=60000, aggregated_clients=4
+
+[Round 3] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.8472 samples=10135 payload=187553B verified=True
+  client=1 loss=0.8459 samples=15954 payload=187553B verified=True
+  client=2 loss=0.8431 samples=13102 payload=187553B verified=True
+  client=3 loss=0.8476 samples=20809 payload=187553B verified=True
+[Round 3] avg_client_loss=0.8459, proxy_fid=48.4401, total_samples=60000, aggregated_clients=4
+
+[Round 4] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.7813 samples=10135 payload=187553B verified=True
+  client=1 loss=0.7866 samples=15954 payload=187553B verified=True
+  client=2 loss=0.7862 samples=13102 payload=187553B verified=True
+  client=3 loss=0.7863 samples=20809 payload=187553B verified=True
+[Round 4] avg_client_loss=0.7851, proxy_fid=49.1570, total_samples=60000, aggregated_clients=4
+
+[Round 5] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.7218 samples=10135 payload=187553B verified=True
+  client=1 loss=0.7241 samples=15954 payload=187553B verified=True
+  client=2 loss=0.7236 samples=13102 payload=187553B verified=True
+  client=3 loss=0.7179 samples=20809 payload=187553B verified=True
+[Round 5] avg_client_loss=0.7219, proxy_fid=50.6713, total_samples=60000, aggregated_clients=4
+
+[Round 6] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.6614 samples=10135 payload=187553B verified=True
+  client=1 loss=0.6602 samples=15954 payload=187553B verified=True
+  client=2 loss=0.6651 samples=13102 payload=187553B verified=True
+  client=3 loss=0.6588 samples=20809 payload=187553B verified=True
+[Round 6] avg_client_loss=0.6614, proxy_fid=52.3259, total_samples=60000, aggregated_clients=4
+
+[Round 7] selected clients: [0, 1, 2, 3]
+  client=0 loss=0.6011 samples=10135 payload=187553B verified=True
+  client=1 loss=0.6014 samples=15954 payload=187553B verified=True
+  client=2 loss=0.5976 samples=13102 payload=187553B verified=True

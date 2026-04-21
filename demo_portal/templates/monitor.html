@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}训练监控 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Live Monitor</div>
+  <h2>当前活动实验、长线队列进度与最近轮次记录</h2>
+  <p class="muted">这页现在服务的是 100 轮长线 LoRA 联邦安全更新队列，而不是旧的单组高分辨率演示实验。</p>
+</section>
+
+<section class="grid two-up" data-live-monitor>
+  <article class="panel monitor-card">
+    <div class="panel-kicker">当前活动实验</div>
+    <h3>{{ live_monitor.title }}</h3>
+    <p class="monitor-line">状态：<strong>{{ live_monitor.status_label }}</strong></p>
+    <p class="monitor-line">进度：<strong data-monitor-latest-round>{{ live_monitor.latest_round }}</strong> / {{ live_monitor.rounds_total }}</p>
+    <p class="monitor-line">当前最好指标：<strong>{{ live_monitor.best_metric_display }}</strong></p>
+    <p class="monitor-line">当前指标：<strong>{{ live_monitor.current_metric_display }}</strong></p>
+    <p class="monitor-line">平均单轮耗时：<strong>{{ live_monitor.round_duration_display }}</strong></p>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: {{ (live_monitor.progress_ratio or 0) * 100 }}%"></div>
+    </div>
+    <p class="muted">{{ live_monitor.message }}</p>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">队列摘要</div>
+    <h3>剩余时间与系统负载</h3>
+    <dl class="fact-grid">
+      <div>
+        <dt>队列进度</dt>
+        <dd>{{ live_monitor.queue_completed_jobs }}/{{ live_monitor.queue_total_jobs }}</dd>
+      </div>
+      <div>
+        <dt>预计剩余时间</dt>
+        <dd data-monitor-eta>{{ live_monitor.queue_remaining_text }}</dd>
+      </div>
+      <div>
+        <dt>平均上传负载</dt>
+        <dd>{{ live_monitor.payload_display }}</dd>
+      </div>
+      <div>
+        <dt>当前审计状态</dt>
+        <dd>{{ live_monitor.audit_status_text }}</dd>
+      </div>
+    </dl>
+    <ul class="metric-list">
+      <li>如果当前活动实验是联邦版本，这里的审计状态会跟随审计记录实时更新。</li>
+      <li>如果还没生成样图或首轮指标，门户会先保留占位信息，等输出目录落盘后自动补齐。</li>
+      <li>队列剩余时间来自当前活动实验实测轮耗时和未启动配置的保守估计。</li>
+    </ul>
+  </article>
+</section>
+
+{% if live_monitor.preview_image_path %}
+<section class="panel">
+  <div class="panel-kicker">当前样图快照</div>
+  <div class="image-viewer" data-image-viewer>
+    <div class="image-viewer-toolbar">
+      <div class="image-viewer-meta">
+        <div class="panel-kicker">{{ live_monitor.dataset }} / {{ live_monitor.mode }}</div>
+        <strong data-image-caption-output>{{ live_monitor.title }}</strong>
+      </div>
+      <div class="image-viewer-actions">
+        <span class="image-scale-indicator" data-image-scale-label>100%</span>
+        <button type="button" class="image-action-button" data-image-action="zoom-out">缩小</button>
+        <button type="button" class="image-action-button" data-image-action="reset">重置</button>
+        <button type="button" class="image-action-button" data-image-action="zoom-in">放大</button>
+        <a class="inline-link image-original-link" href="{{ url_for('preview_artifact', relpath=live_monitor.preview_image_path) }}" target="_blank" rel="noopener" data-image-original-link>原图</a>
+      </div>
+    </div>
+    <div class="image-stage">
+      <img src="{{ url_for('preview_artifact', relpath=live_monitor.preview_image_path) }}" alt="{{ live_monitor.title }}" data-zoom-image>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if live_monitor.recent_rounds %}
+<section class="panel">
+  <div class="panel-kicker">最近轮次</div>
+  <h3>最近 12 轮记录</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>轮次</th>
+          <th>平均损失</th>
+          <th>跳过步数</th>
+          <th>审计状态</th>
+          <th>单轮耗时</th>
+        </tr>
+      </thead>
+      <tbody id="live-round-table">
+        {% for row in live_monitor.recent_rounds %}
+        <tr>
+          <td>{{ row.round }}</td>
+          <td>{{ row.avg_client_loss if row.avg_client_loss is defined else "n/a" }}</td>
+          <td>{{ row.skipped_steps if row.skipped_steps is defined else "-" }}</td>
+          <td>
+            {% if row.audit_verified is defined and row.audit_records is defined %}
+            {{ row.audit_verified }}/{{ row.audit_records }}
+            {% else %}
+            -
+            {% endif %}
+          </td>
+          <td>{{ row.round_duration_sec if row.round_duration_sec is defined else "n/a" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

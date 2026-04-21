@@ -1,0 +1,9 @@
+{
+  "dataset_name": "mnist",
+  "checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\evaluators\\mnist_label_classifier_v1.pt",
+  "num_classes": 10,
+  "feature_dim": 128,
+  "test_accuracy": 0.9904,
+  "epochs": 5,
+  "batch_size": 128
+}

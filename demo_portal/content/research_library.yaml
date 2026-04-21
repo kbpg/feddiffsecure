@@ -1,0 +1,129 @@
+site:
+  title: 核心思想与实验设计
+  subtitle: 围绕“联邦场景下的 LoRA 轻量化训练与安全更新”重写论文主线，并明确参考论文、系统实现与实验设计之间的边界。
+  citation_note: 以下页面中的公式、机制说明和问题定义，均采用“参考文献中的经典写法 + 结合本课题实验设置改写”的口径。页面内容服务于论文写作和答辩展示，不应直接表述为本课题原创理论。
+  model_image: demo_portal/static/reference_assets/project_model.png
+  model_caption: 课题原型的系统示意图。更适合作为工程实现和数据流说明，而不是原创理论结构图。
+  overview:
+    - 论文主线聚焦“冻结底座，只训练并聚合 UNet-LoRA 更新”的联邦轻量化训练与安全更新。
+    - 参考论文提供的是问题定义、方法来源和可引用表达；本课题真正落地的是一条可运行、可审计、可展示的系统链路。
+    - 实验设计围绕三件事展开：联邦引入后训练效果如何变化、LoRA 轻量化是否真正降低通信成本、安全更新链路是否能稳定完成完整性审计。
+
+reference_files:
+  opening_ppt:
+    label: 开题答辩 PPT
+    path: C:/Users/shenc/Desktop/毕业论文/32201179-沈铖栋-开题答辩.pptx
+    kind: pptx
+  cross_pdf:
+    label: CRoSS 论文 PDF
+    path: C:/Users/shenc/Desktop/毕业论文/CRoSS Diffusion Model Makes.pdf
+    kind: pdf
+  cross_ppt:
+    label: CRoSS 论文汇报 PPT
+    path: C:/Users/shenc/Desktop/毕业论文/CRoSS Diffusion Model Makes论文汇报.pptx
+    kind: pptx
+  feddifrc_pdf:
+    label: FedDifRC 论文 PDF
+    path: C:/Users/shenc/Desktop/毕业论文/FedDifRC Unlocking the Potential of Text-to-Image Diffusion Models in.pdf
+    kind: pdf
+  feddifrc_ppt:
+    label: FedDifRC 论文汇报 PPT
+    path: C:/Users/shenc/Desktop/毕业论文/FedDifRC 论文汇报.pptx
+    kind: pptx
+  joint_pdf:
+    label: Joint Lossless 论文 PDF
+    path: C:/Users/shenc/Desktop/毕业论文/Joint Lossless Compression and Steganography for Medical Images via Large.pdf
+    kind: pdf
+  joint_ppt:
+    label: Joint Lossless 论文汇报 PPT
+    path: C:/Users/shenc/Desktop/毕业论文/Joint Lossless 论文汇报.pptx
+    kind: pptx
+
+sections:
+  - id: thesis_shift
+    title: 论文主线为何聚焦 LoRA 联邦安全更新
+    source_label: 课题定位重写
+    doc_ids:
+      - opening_ppt
+      - feddifrc_pdf
+    summary: 这一节的重点不是继续强调“从零开始全量同步扩散模型”，而是解释为什么扩散模型在联邦环境下更适合作为轻量化训练与安全更新问题来处理。模型太大不仅体现在参数量，更体现在梯度、优化器状态和激活存储，因此直接做全量联邦同步会把通信代价和工程复杂度推得过高。
+    citation_phrases:
+      - 可表述为“参考联邦扩散相关文献，本文把问题重心放在分布式约束下的可训练性、可聚合性与可验证更新，而非简单追求中心化样图上界。”
+      - 可表述为“本文在预训练潜空间扩散框架上引入 LoRA 轻量化适配器，使联邦训练对象从整网参数收缩到可控的低秩更新。”
+      - 可表述为“论文的系统价值在于把联邦优化、更新封装、恢复验证和前端展示组织成同一条可运行链路。”
+    adaptation_notes:
+      - 论文里应明确写成“冻结大模型主体，只联邦训练 UNet-LoRA”，把训练对象稳定收缩到可落地的轻量化更新。
+      - 贡献点更适合落在“轻量化训练对象选择 + 安全更新验证链路 + 原型系统实现”三者的组合上。
+    formulas:
+      - title: LoRA 参数化
+        expression: 'W = W_0 + \Delta W,\ \Delta W = \frac{\alpha}{r}BA'
+        explanation: 原始预训练权重保持冻结，只训练低秩矩阵 A、B，从而显著缩小联邦上传对象。
+      - title: 联邦加权聚合
+        expression: '\bar{A} = \sum_k \frac{n_k}{N} A^{(k)},\ \bar{B} = \sum_k \frac{n_k}{N} B^{(k)}'
+        explanation: 服务器聚合的对象是 LoRA 低秩矩阵，而不是整个 UNet 主干。
+
+  - id: system_design
+    title: 为什么冻结 VAE 与文本编码器，只把训练对象集中在 UNet-LoRA
+    source_label: 结构裁剪与工程落地
+    doc_ids:
+      - feddifrc_pdf
+      - cross_pdf
+    summary: 课题原型采用 latent diffusion 的条件 U-Net 作为核心架构。VAE 和文本编码器保持冻结，既保留预训练扩散模型的生成能力，也避免把联邦训练问题重新变成“同步大模型全部状态”的难题。真正发生本地训练和联邦聚合的，是 UNet attention 层中插入的 LoRA 适配器。
+    citation_phrases:
+      - 可表述为“本文在预训练 latent diffusion 框架上开展联邦训练，但训练对象被收缩为 UNet attention 层中的 LoRA 参数。”
+      - 可表述为“冻结 VAE 与文本编码器的目的，是把联邦问题聚焦为可控的参数高效更新，而不是完整大模型重训。”
+      - 可表述为“这种设计既保留了扩散模型能力，又让联邦通信与安全更新处于可落地范围内。”
+    adaptation_notes:
+      - 论文图和系统图中应把“冻结模块”和“联邦训练模块”分开标清楚。
+      - 如果要写系统创新点，更适合强调“训练对象选择”与“系统可运行性”的组合，而不是宣称提出了新的扩散理论。
+    formulas:
+      - title: 潜空间扩散训练目标
+        expression: 'L = \mathbb{E}\|\epsilon_\theta(z_t, t, c) - \epsilon\|_2^2'
+        explanation: 训练目标仍然沿用扩散模型的噪声预测范式，但联邦更新只发生在 U-Net 的 LoRA 部分。
+      - title: 条件采样
+        expression: 'z_{t-1} \sim p_\theta(z_{t-1}\mid z_t, c)'
+        explanation: 这条式子强调生成能力仍来自预训练扩散底座，LoRA 更多承担“局部适配与更新”角色。
+
+  - id: secure_update
+    title: 联邦聚合、安全更新与审计口径应该如何写进论文
+    source_label: 安全更新与可验证传输
+    doc_ids:
+      - cross_pdf
+      - joint_pdf
+    summary: 当前原型验证的是“客户端上传的 LoRA 更新在封装、恢复后保持端到端完整”，并不主张已经给出强对手模型下的完整形式化安全证明。更准确的写法应该是：系统实现了联邦更新的可逆封装、恢复与完整性审计链路，并记录了负载大小、压缩后大小和哈希验证结果。
+    citation_phrases:
+      - 可表述为“本文原型验证了联邦更新在安全封装与恢复链路中的端到端完整性。”
+      - 可表述为“系统当前展示的是 transport verification，而不是更强意义上的机密性或抗攻击性形式化证明。”
+      - 可表述为“负载大小、压缩后大小和审计通过率应被视为系统指标，而不是附属信息。”
+    adaptation_notes:
+      - 论文里应避免把“哈希一致”写成“强安全证明”。
+      - 安全部分的结论应落在“可验证更新传输”上，而不是超出原型能力范围的安全主张。
+    formulas:
+      - title: 完整性校验
+        expression: '\mathrm{SHA256}(u_{\mathrm{pack}}) = \mathrm{SHA256}(u_{\mathrm{recover}})'
+        explanation: 表示封装前后的 LoRA 更新在恢复后保持一致，是当前审计模块最核心的判据。
+      - title: 安全聚合口径
+        expression: 'u_{\mathrm{agg}} = \sum_k \frac{n_k}{N} u_k'
+        explanation: 当前系统在服务器端聚合的是客户端上传的 LoRA 更新，并在聚合前后保留审计记录。
+
+  - id: experiment_design
+    title: 100 轮长线实验与消融设计应该怎样组织
+    source_label: 论文实验设计
+    doc_ids:
+      - feddifrc_pdf
+      - joint_ppt
+    summary: 实验矩阵围绕三条主线组织。第一条是 STL10 上的中心化上界与联邦主线对照，用来回答联邦引入后的训练效果变化。第二条是全客户端覆盖和 LoRA rank 消融，用来回答覆盖度与轻量化之间的工程折中。第三条是 Fashion-MNIST、MNIST 与 CIFAR-10 的跨数据集泛化实验，用来说明这套联邦 LoRA 安全更新链路不是只对单一数据域成立。
+    citation_phrases:
+      - 可表述为“本文主实验采用统一的 100 轮训练预算，围绕中心化对照、联邦审计版、覆盖度消融与 LoRA 容量消融展开。”
+      - 可表述为“跨数据集实验用于验证方法在简单图像域与其他公开视觉数据集上的可迁移性。”
+      - 可表述为“实验报告同时记录训练指标、通信负载与审计通过率，以支持系统层面的综合分析。”
+    adaptation_notes:
+      - 主图和主表建议优先使用 STL10 长线实验。
+      - Fashion-MNIST、MNIST 和 CIFAR-10 更适合作为泛化章节和补充实验，而不应替代主线对照。
+    formulas:
+      - title: 长线实验主对照
+        expression: 'E_{\mathrm{main}} = \{\mathrm{central},\ \mathrm{fed},\ \mathrm{full},\ \mathrm{rank4}\}'
+        explanation: 表示论文主实验的四条对照线：中心化、联邦主线、全客户端覆盖和 rank=4 轻量化消融。
+      - title: 审计通过率
+        expression: 'R_{\mathrm{audit}} = \frac{N_{\mathrm{verified}}}{N_{\mathrm{records}}}'
+        explanation: 这项指标适合直接出现在论文表格里，用来量化安全更新链路的稳定性。

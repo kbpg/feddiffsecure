@@ -1,0 +1,58 @@
+[queue]
+start
+mnist_t500_repro_clean
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_centralized_t500_repro_clean.yaml",
+  "started_at": "2026-04-16T18:51:44.913638+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 22444929,
+  "num_clients": 1,
+  "rounds": 180,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 80,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 128,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 60000,
+  "resume_count": 0
+}
+================================================================================
+[Round 1] avg_loss=0.5286, proxy_fid=9.7240, total_samples=10240, round_sec=92.0
+[Round 2] avg_loss=0.1437, proxy_fid=3.5827, total_samples=10240, round_sec=86.2
+[Round 3] avg_loss=0.1125, proxy_fid=2.0329, total_samples=10240, round_sec=89.9
+[Round 4] avg_loss=0.0996, proxy_fid=1.3450, total_samples=10240, round_sec=91.2
+[Round 5] avg_loss=0.0893, proxy_fid=1.7250, total_samples=10240, round_sec=90.1, classifier_fid=963.40, conf=0.705
+[Round 6] avg_loss=0.0830, proxy_fid=1.3658, total_samples=10240, round_sec=89.8
+[Round 7] avg_loss=0.0767, proxy_fid=1.2571, total_samples=10240, round_sec=89.8
+[Round 8] avg_loss=0.0738, proxy_fid=0.9907, total_samples=10240, round_sec=90.3
+[Round 9] avg_loss=0.0685, proxy_fid=1.0747, total_samples=10240, round_sec=90.5
+[Round 10] avg_loss=0.0653, proxy_fid=0.8409, total_samples=10240, round_sec=90.6, classifier_fid=368.93, conf=0.830
+[Round 11] avg_loss=0.0640, proxy_fid=0.9064, total_samples=10240, round_sec=92.1
+[Round 12] avg_loss=0.0630, proxy_fid=2.7144, total_samples=10240, round_sec=81.5
+[Round 13] avg_loss=0.0601, proxy_fid=1.0513, total_samples=10240, round_sec=80.5
+[Round 14] avg_loss=0.0591, proxy_fid=1.0556, total_samples=10240, round_sec=80.6
+[Round 15] avg_loss=0.0583, proxy_fid=1.3836, total_samples=10240, round_sec=81.5, classifier_fid=190.30, conf=0.881
+[Round 16] avg_loss=0.0576, proxy_fid=0.7142, total_samples=10240, round_sec=81.9
+[Round 17] avg_loss=0.0562, proxy_fid=1.7764, total_samples=10240, round_sec=87.5
+[Round 18] avg_loss=0.0548, proxy_fid=1.0449, total_samples=10240, round_sec=84.0
+[Round 19] avg_loss=0.0545, proxy_fid=1.4493, total_samples=10240, round_sec=84.7
+[queue]
+mnist_t500_repro_clean
+exit=1
+[queue]
+start
+stl10_b40x5_v2

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}论文资料页 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Paper Assets</div>
+  <h2>对比页、写作提纲与参考资料统一归档</h2>
+</section>
+
+{% for page in paper_bundle.pages %}
+<section class="panel paper-block">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">专题对比页</div>
+      <h3>{{ page.title }}</h3>
+      <p class="muted">{{ page.description }}</p>
+    </div>
+  </div>
+
+  {% if page.hero_image_rel %}
+  <div class="image-viewer paper-figure" data-image-viewer>
+    <div class="image-viewer-toolbar">
+      <div class="image-viewer-meta">
+        <div class="panel-kicker">结果预览</div>
+        <strong data-image-caption-output>{{ page.title }}</strong>
+      </div>
+      <div class="image-viewer-actions">
+        <span class="image-scale-indicator" data-image-scale-label>100%</span>
+        <button type="button" class="image-action-button" data-image-action="zoom-out">缩小</button>
+        <button type="button" class="image-action-button" data-image-action="reset">重置</button>
+        <button type="button" class="image-action-button" data-image-action="zoom-in">放大</button>
+        <a
+          class="inline-link image-original-link"
+          href="{{ url_for('preview_artifact', relpath=page.hero_image_rel) }}"
+          target="_blank"
+          rel="noopener"
+          data-image-original-link
+        >原图</a>
+      </div>
+    </div>
+    <div class="image-stage">
+      <img class="paper-hero" src="{{ url_for('preview_artifact', relpath=page.hero_image_rel) }}" alt="{{ page.title }}" data-zoom-image>
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endfor %}
+
+<section class="grid three-up">
+  {% for item in paper_bundle.deliverables %}
+  <article class="panel">
+    <div class="panel-kicker">写作交付物</div>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.text }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="summary-callout">
+  <strong>正式表格入口：</strong>
+  论文正文和附录需要的自动汇总表格已经单独整理成一页，
+  可直接进入 <a class="inline-link" href="{{ url_for('paper_tables') }}">正式论文表格页</a> 查看和复制。
+</section>
+
+<section class="grid two-up">
+  <article class="panel prose">
+    <h3>实验登记说明</h3>
+    {{ paper_bundle.registry_html|safe }}
+  </article>
+  <article class="panel prose">
+    <h3>论文主线写作提纲</h3>
+    {{ paper_bundle.storyline_html|safe }}
+  </article>
+</section>
+
+<section class="panel">
+  <div class="panel-kicker">主表候选</div>
+  <h3>当前最适合进入论文主表的 4 组实验</h3>
+  <div class="card-grid">
+    {% for run in paper_bundle.recommended_runs %}
+    <article class="experiment-card">
+      <div class="card-topline">{{ run.kicker }}</div>
+      <h3>{{ run.title }}</h3>
+      <p>{{ run.role }}</p>
+      <dl class="fact-grid">
+        <div>
+          <dt>当前最好指标</dt>
+          <dd>{{ run.best_metric }}</dd>
+        </div>
+        <div>
+          <dt>平均上传负载</dt>
+          <dd>{{ run.payload }}</dd>
+        </div>
+        <div>
+          <dt>审计状态</dt>
+          <dd>{{ run.audit }}</dd>
+        </div>
+      </dl>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-kicker">参考文件</div>
+  <h3>已登记的论文与汇报材料</h3>
+  <div class="paper-links paper-links--wrap">
+    {% for entry in paper_bundle.reference_entries %}
+    <a class="inline-link" href="{{ url_for('reference_file', doc_id=entry.id) }}">{{ entry.label }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

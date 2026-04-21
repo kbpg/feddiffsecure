@@ -1,0 +1,93 @@
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_centralized_t500_long.yaml",
+  "started_at": "2026-04-15T23:29:34.297854+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 22444929,
+  "num_clients": 1,
+  "rounds": 180,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 80,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 128,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 60000,
+  "resume_count": 6,
+  "resumed_from_round": 169,
+  "last_resumed_at": "2026-04-16T15:11:07.265987+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 66119.492
+}
+================================================================================
+[Round 170] avg_loss=0.0381, proxy_fid=1.8839, total_samples=10240, round_sec=93.6, classifier_fid=250.63, conf=0.985
+[Round 171] avg_loss=0.0407, proxy_fid=0.7246, total_samples=10240, round_sec=97.1
+[Round 172] avg_loss=0.0405, proxy_fid=0.7263, total_samples=10240, round_sec=95.5
+[Round 173] avg_loss=0.0399, proxy_fid=1.1538, total_samples=10240, round_sec=94.9
+[Round 174] avg_loss=0.0395, proxy_fid=0.7191, total_samples=10240, round_sec=95.9
+[Round 175] avg_loss=0.0395, proxy_fid=0.5284, total_samples=10240, round_sec=95.3, classifier_fid=86.57, conf=0.963
+[Round 176] avg_loss=0.0410, proxy_fid=0.5551, total_samples=10240, round_sec=96.6
+[Round 177] avg_loss=0.0410, proxy_fid=0.8809, total_samples=10240, round_sec=95.0
+[Round 178] avg_loss=0.0408, proxy_fid=0.5407, total_samples=10240, round_sec=95.8
+[Round 179] avg_loss=0.0402, proxy_fid=1.2064, total_samples=10240, round_sec=96.0
+[Round 180] avg_loss=0.0405, proxy_fid=0.6018, total_samples=10240, round_sec=93.9, classifier_fid=103.79, conf=0.952
+
+Done.
+{
+  "last_round": {
+    "round": 180,
+    "avg_client_loss": 0.040529,
+    "proxy_fid": 0.601778,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 93.922,
+    "classifier_fid": 103.78723907470703,
+    "top1_confidence_mean": 0.9522860050201416,
+    "top1_confident_ratio": 0.859375,
+    "predicted_class_entropy": 2.278452157974243,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  "best_proxy_fid_round": {
+    "round": 67,
+    "avg_client_loss": 0.044122,
+    "proxy_fid": 0.430539,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 103.585
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_long_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_long_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 67201.763,
+  "avg_round_seconds": 117.611,
+  "max_round_seconds": 858.937,
+  "best_classifier_fid_round": {
+    "round": 175,
+    "avg_client_loss": 0.039474,
+    "proxy_fid": 0.528418,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 95.321,
+    "classifier_fid": 86.57313537597656,
+    "top1_confidence_mean": 0.9634690284729004,
+    "top1_confident_ratio": 0.8854166865348816,
+    "predicted_class_entropy": 2.2865753173828125,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  "best_semantic_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_long_run\\global_model_best_semantic.pt",
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_long_run\\global_model_ema.pt"
+}
+Artifacts saved to: outputs\mnist_b40x5_decoder_x0_centralized_t500_long_run

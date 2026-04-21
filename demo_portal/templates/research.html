@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}核心思想与实验设计 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Core Idea</div>
+  <h2>{{ research_bundle.title }}</h2>
+  <p class="muted">{{ research_bundle.subtitle }}</p>
+</section>
+
+{% if research_bundle.citation_note %}
+<section class="summary-callout">
+  <strong>引用说明：</strong>
+  {{ research_bundle.citation_note }}
+</section>
+{% endif %}
+
+<section class="hero-card research-hero">
+  <div>
+    <div class="panel-kicker">写作口径</div>
+    <h3>当前最适合写进论文正文的表述方式</h3>
+    <ul class="metric-list">
+      {% for item in research_bundle.overview %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <div class="paper-links paper-links--wrap">
+      {% for entry in research_bundle.reference_entries %}
+      <a class="inline-link" href="{{ url_for('reference_file', doc_id=entry.id) }}">{{ entry.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="panel research-image-panel">
+    <div class="panel-kicker">系统示意图</div>
+    {% if research_bundle.model_image_rel %}
+    <img class="research-hero-image" src="{{ url_for('static', filename='reference_assets/project_model.png') }}" alt="{{ research_bundle.model_caption }}">
+    {% endif %}
+    <p class="muted">{{ research_bundle.model_caption }}</p>
+  </div>
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <div class="panel-kicker">实验设计矩阵</div>
+    <h3>论文最关键的四条实验线</h3>
+    <div class="timeline">
+      {% for track in research_bundle.experiment_tracks %}
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div>
+          <strong>{{ track.title }}</strong>
+          <p>{{ track.text }}</p>
+          <ul class="metric-list">
+          {% for item in track["items"] %}
+          <li>{{ item }}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">指标体系</div>
+    <h3>写论文和做表格时最该保留的指标</h3>
+    <div class="grid two-up">
+      {% for card in research_bundle.metric_cards %}
+      <article class="formula-card">
+        <strong>{{ card.title }}</strong>
+        <ul class="metric-list">
+          {% for item in card["items"] %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <p class="muted">{{ card.note }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </article>
+</section>
+
+<section class="research-grid">
+  {% for section in research_bundle.sections %}
+  <article class="panel research-card">
+    <div class="paper-header">
+      <div>
+        <div class="panel-kicker">{{ section.source_label }}</div>
+        <h3>{{ section.title }}</h3>
+      </div>
+      <div class="paper-links paper-links--wrap">
+        {% for link in section.source_links %}
+        <a class="inline-link" href="{{ url_for('reference_file', doc_id=link.doc_id) }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <p>{{ section.summary }}</p>
+    <div class="fact-split">
+      <div>
+        <div class="panel-kicker">可引用表述</div>
+        <ul class="metric-list">
+          {% for item in section.citation_phrases %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        {% if section.adaptation_notes %}
+        <div class="panel-kicker">结合到本课题的改写</div>
+        <ul class="metric-list">
+          {% for item in section.adaptation_notes %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      <div>
+        <div class="panel-kicker">关键公式</div>
+        <div class="formula-grid">
+          {% for formula in section.formulas %}
+          <article class="formula-card">
+            <strong>{{ formula.title }}</strong>
+            <div class="formula-expression">\[{{ formula.expression }}\]</div>
+            <p class="muted">{{ formula.explanation }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

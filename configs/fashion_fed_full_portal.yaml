@@ -1,0 +1,50 @@
+seed: 42
+
+dataset:
+  name: fashion_mnist
+  root: ./data
+  image_size: 28
+  channels: 1
+
+federated:
+  num_clients: 4
+  clients_per_round: 4
+  rounds: 8
+  dirichlet_alpha: 0.5
+  local_epochs: 1
+  max_steps_per_epoch: 20
+
+model:
+  architecture: tiny_unet
+  base_channels: 8
+  lora_rank: 4
+  lora_alpha: 4.0
+
+diffusion:
+  timesteps: 100
+  sample_steps: 25
+  sampler: ddpm
+  ddim_eta: 0.0
+  clip_denoised: true
+
+training:
+  batch_size: 128
+  lr: 0.0005
+  num_workers: 0
+  weight_decay: 0.0
+
+evaluation:
+  num_real_samples: 64
+  num_fake_samples: 64
+  eval_batch_size: 64
+  proxy_feature_size: 8
+
+system:
+  device: cuda
+  output_dir: ./outputs/fashion_fed_full_portal_run
+  save_every_round: false
+  save_final_samples: true
+
+stego:
+  enabled: true
+  key_prefix: FedDiffSecure

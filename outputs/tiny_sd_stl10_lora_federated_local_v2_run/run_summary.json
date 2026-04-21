@@ -1,0 +1,25 @@
+{
+  "config_path": "/home/scd/feddiffsecure_minimal/configs/tiny_sd_stl10_lora_federated_local_v2.yaml",
+  "started_at": "2026-04-20T13:56:09.729022+08:00",
+  "pretrained_model_name_or_path": "./models/tiny-sd",
+  "dataset": "stl10",
+  "resolution": 256,
+  "training_mode": "federated_lora_sd15",
+  "device": "cuda",
+  "dtype": "torch.float32",
+  "rounds": 20,
+  "num_clients": 4,
+  "clients_per_round": 2,
+  "client_epochs": 1,
+  "max_steps_per_client": 40,
+  "lora_rank": 16,
+  "lora_alpha": 16,
+  "target_modules": [
+    "to_q",
+    "to_k",
+    "to_v",
+    "to_out.0"
+  ],
+  "sample_seed": 123,
+  "train_examples": 5000
+}

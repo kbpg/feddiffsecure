@@ -1,0 +1,27 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b80x6_centralized_t600_qualitypush.yaml",
+  "started_at": "2026-04-18T23:05:25.190159+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 175015787,
+  "model_params_trainable": 175015787,
+  "num_clients": 1,
+  "rounds": 260,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 96,
+  "dirichlet_alpha": 0.0,
+  "lr": 8e-05,
+  "batch_size": 4,
+  "ema_decay": 0.9995,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 20,
+  "trainable_param_tensors": 564,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 564,
+  "train_examples": 5000,
+  "resume_count": 0
+}

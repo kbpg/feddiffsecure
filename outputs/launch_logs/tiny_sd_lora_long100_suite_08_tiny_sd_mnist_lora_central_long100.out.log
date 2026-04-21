@@ -1,0 +1,151 @@
+[Round 1] avg_loss=0.2214, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 2] avg_loss=0.1249, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 3] avg_loss=0.1315, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 4] avg_loss=0.1083, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 5] avg_loss=0.1131, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 6] avg_loss=0.1141, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 7] avg_loss=0.0845, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 8] avg_loss=0.1699, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 9] avg_loss=0.1014, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 10] avg_loss=0.0727, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 11] avg_loss=0.0761, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 12] avg_loss=0.0567, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 13] avg_loss=0.0975, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 14] avg_loss=0.0748, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 15] avg_loss=0.0987, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 16] avg_loss=0.0740, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 17] avg_loss=0.0566, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 18] avg_loss=0.0675, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 19] avg_loss=0.0835, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 20] avg_loss=0.0485, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 21] avg_loss=0.0933, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 22] avg_loss=0.0754, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 23] avg_loss=0.0851, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 24] avg_loss=0.0779, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 25] avg_loss=0.0288, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 26] avg_loss=0.0489, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 27] avg_loss=0.0401, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 28] avg_loss=0.1265, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 29] avg_loss=0.0789, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 30] avg_loss=0.0283, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 31] avg_loss=0.0837, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 32] avg_loss=0.0836, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 33] avg_loss=0.0509, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 34] avg_loss=0.0565, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 35] avg_loss=0.0715, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 36] avg_loss=0.0771, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 37] avg_loss=0.0585, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 38] avg_loss=0.0777, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 39] avg_loss=0.0425, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 40] avg_loss=0.0407, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 41] avg_loss=0.0660, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 42] avg_loss=0.1135, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 43] avg_loss=0.0572, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 44] avg_loss=0.0219, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 45] avg_loss=0.0529, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 46] avg_loss=0.0705, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 47] avg_loss=0.0742, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 48] avg_loss=0.0526, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 49] avg_loss=0.0375, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 50] avg_loss=0.0501, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 51] avg_loss=0.0525, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 52] avg_loss=0.0781, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 53] avg_loss=0.0602, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 54] avg_loss=0.0604, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 55] avg_loss=0.0476, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 56] avg_loss=0.0582, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 57] avg_loss=0.0708, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 58] avg_loss=0.0765, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 59] avg_loss=0.0589, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 60] avg_loss=0.0631, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 61] avg_loss=0.0965, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 62] avg_loss=0.0506, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 63] avg_loss=0.1104, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 64] avg_loss=0.0514, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 65] avg_loss=0.0660, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 66] avg_loss=0.0862, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 67] avg_loss=0.0672, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 68] avg_loss=0.0326, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 69] avg_loss=0.0588, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 70] avg_loss=0.0487, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 71] avg_loss=0.0735, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 72] avg_loss=0.0496, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 73] avg_loss=0.0682, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 74] avg_loss=0.0547, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 75] avg_loss=0.0680, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 76] avg_loss=0.0441, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 77] avg_loss=0.0515, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 78] avg_loss=0.0727, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 79] avg_loss=0.0547, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 80] avg_loss=0.0702, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 81] avg_loss=0.0816, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 82] avg_loss=0.0382, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 83] avg_loss=0.0625, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 84] avg_loss=0.0630, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 85] avg_loss=0.0847, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 86] avg_loss=0.0816, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 87] avg_loss=0.0627, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 88] avg_loss=0.0607, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 89] avg_loss=0.0547, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 90] avg_loss=0.0551, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 91] avg_loss=0.0668, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 92] avg_loss=0.0643, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 93] avg_loss=0.0721, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 94] avg_loss=0.0555, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 95] avg_loss=0.0866, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 96] avg_loss=0.0473, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 97] avg_loss=0.0572, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 98] avg_loss=0.0836, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 99] avg_loss=0.0535, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+[Round 100] avg_loss=0.0835, selected_clients=[0], total_samples=60000, skipped_steps=0, audit=0/0
+{
+  "last_round": {
+    "round": 100,
+    "avg_client_loss": 0.083549,
+    "selected_clients": [
+      0
+    ],
+    "total_samples": 60000,
+    "skipped_steps": 0,
+    "mean_client_update_l2": 0.139857,
+    "max_client_update_l2": 0.139857,
+    "aggregation_delta_l2": 0.139857,
+    "global_lora_l2": 20.234245,
+    "payload_bytes_raw_sum": 0,
+    "payload_bytes_compressed_sum": 0,
+    "payload_bytes_raw_mean": 0.0,
+    "payload_bytes_compressed_mean": 0.0,
+    "audit_verified": 0,
+    "audit_records": 0,
+    "round_duration_sec": 5.941
+  },
+  "best_loss_round": {
+    "round": 44,
+    "avg_client_loss": 0.021868,
+    "selected_clients": [
+      0
+    ],
+    "total_samples": 60000,
+    "skipped_steps": 0,
+    "mean_client_update_l2": 0.150219,
+    "max_client_update_l2": 0.150219,
+    "aggregation_delta_l2": 0.150219,
+    "global_lora_l2": 20.014919,
+    "payload_bytes_raw_sum": 0,
+    "payload_bytes_compressed_sum": 0,
+    "payload_bytes_raw_mean": 0.0,
+    "payload_bytes_compressed_mean": 0.0,
+    "audit_verified": 0,
+    "audit_records": 0,
+    "round_duration_sec": 5.995
+  },
+  "best_loss": 0.021868,
+  "global_lora_final_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\tiny_sd_mnist_lora_central_long100_run\\global_lora_final.pt",
+  "global_lora_best_loss_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\tiny_sd_mnist_lora_central_long100_run\\global_lora_best_loss.pt"
+}
+{
+  "records": 0,
+  "verified": 0,
+  "failed": 0
+}
+Artifacts saved to: outputs\tiny_sd_mnist_lora_central_long100_run

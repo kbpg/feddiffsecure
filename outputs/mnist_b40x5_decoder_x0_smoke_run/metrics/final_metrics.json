@@ -1,0 +1,45 @@
+{
+  "last_round": {
+    "round": 6,
+    "avg_client_loss": 0.145921,
+    "proxy_fid": 14.614702,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 66.516,
+    "classifier_fid": 1775.3408203125,
+    "top1_confidence_mean": 0.5905112028121948,
+    "top1_confident_ratio": 0.07421875,
+    "predicted_class_entropy": 1.8629608154296875,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9904
+  },
+  "best_proxy_fid_round": {
+    "round": 5,
+    "avg_client_loss": 0.15784,
+    "proxy_fid": 4.823812,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 66.014
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_smoke_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_smoke_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 400.588,
+  "avg_round_seconds": 65.63,
+  "max_round_seconds": 66.516,
+  "best_classifier_fid_round": {
+    "round": 6,
+    "avg_client_loss": 0.145921,
+    "proxy_fid": 14.614702,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 66.516,
+    "classifier_fid": 1775.3408203125,
+    "top1_confidence_mean": 0.5905112028121948,
+    "top1_confident_ratio": 0.07421875,
+    "predicted_class_entropy": 1.8629608154296875,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9904
+  },
+  "best_semantic_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_smoke_run\\global_model_best_semantic.pt"
+}

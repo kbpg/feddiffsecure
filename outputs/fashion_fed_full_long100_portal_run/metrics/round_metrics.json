@@ -1,0 +1,802 @@
+[
+  {
+    "round": 1,
+    "avg_client_loss": 1.111874,
+    "proxy_fid": 26.047272,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.19
+  },
+  {
+    "round": 2,
+    "avg_client_loss": 1.019478,
+    "proxy_fid": 26.578244,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 1.953
+  },
+  {
+    "round": 3,
+    "avg_client_loss": 0.938022,
+    "proxy_fid": 26.900561,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 1.998
+  },
+  {
+    "round": 4,
+    "avg_client_loss": 0.860141,
+    "proxy_fid": 27.768056,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 2.705
+  },
+  {
+    "round": 5,
+    "avg_client_loss": 0.793256,
+    "proxy_fid": 29.278025,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 2.469
+  },
+  {
+    "round": 6,
+    "avg_client_loss": 0.726444,
+    "proxy_fid": 30.418724,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 2.079
+  },
+  {
+    "round": 7,
+    "avg_client_loss": 0.669019,
+    "proxy_fid": 31.294628,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 4.315
+  },
+  {
+    "round": 8,
+    "avg_client_loss": 0.616925,
+    "proxy_fid": 31.842266,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.551
+  },
+  {
+    "round": 9,
+    "avg_client_loss": 0.574465,
+    "proxy_fid": 32.260105,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.208
+  },
+  {
+    "round": 10,
+    "avg_client_loss": 0.534055,
+    "proxy_fid": 30.798674,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.712
+  },
+  {
+    "round": 11,
+    "avg_client_loss": 0.497525,
+    "proxy_fid": 31.313526,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.196
+  },
+  {
+    "round": 12,
+    "avg_client_loss": 0.465787,
+    "proxy_fid": 29.015614,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 7.01
+  },
+  {
+    "round": 13,
+    "avg_client_loss": 0.439308,
+    "proxy_fid": 28.755783,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.638
+  },
+  {
+    "round": 14,
+    "avg_client_loss": 0.420046,
+    "proxy_fid": 26.885359,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.968
+  },
+  {
+    "round": 15,
+    "avg_client_loss": 0.406615,
+    "proxy_fid": 27.486791,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.959
+  },
+  {
+    "round": 16,
+    "avg_client_loss": 0.387918,
+    "proxy_fid": 26.96802,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.377
+  },
+  {
+    "round": 17,
+    "avg_client_loss": 0.374189,
+    "proxy_fid": 26.633734,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.82
+  },
+  {
+    "round": 18,
+    "avg_client_loss": 0.370139,
+    "proxy_fid": 25.231479,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 7.163
+  },
+  {
+    "round": 19,
+    "avg_client_loss": 0.358185,
+    "proxy_fid": 26.155136,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.35
+  },
+  {
+    "round": 20,
+    "avg_client_loss": 0.34491,
+    "proxy_fid": 27.606926,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.708
+  },
+  {
+    "round": 21,
+    "avg_client_loss": 0.336241,
+    "proxy_fid": 27.061191,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.684
+  },
+  {
+    "round": 22,
+    "avg_client_loss": 0.330626,
+    "proxy_fid": 25.106214,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.301
+  },
+  {
+    "round": 23,
+    "avg_client_loss": 0.319556,
+    "proxy_fid": 26.989107,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.67
+  },
+  {
+    "round": 24,
+    "avg_client_loss": 0.317249,
+    "proxy_fid": 26.31791,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.356
+  },
+  {
+    "round": 25,
+    "avg_client_loss": 0.312896,
+    "proxy_fid": 26.897342,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.198
+  },
+  {
+    "round": 26,
+    "avg_client_loss": 0.307654,
+    "proxy_fid": 26.369553,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.417
+  },
+  {
+    "round": 27,
+    "avg_client_loss": 0.299421,
+    "proxy_fid": 25.65264,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.448
+  },
+  {
+    "round": 28,
+    "avg_client_loss": 0.295009,
+    "proxy_fid": 25.612245,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.332
+  },
+  {
+    "round": 29,
+    "avg_client_loss": 0.289518,
+    "proxy_fid": 25.319813,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.326
+  },
+  {
+    "round": 30,
+    "avg_client_loss": 0.286506,
+    "proxy_fid": 25.901257,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.858
+  },
+  {
+    "round": 31,
+    "avg_client_loss": 0.283862,
+    "proxy_fid": 27.235129,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.852
+  },
+  {
+    "round": 32,
+    "avg_client_loss": 0.283791,
+    "proxy_fid": 26.437633,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.757
+  },
+  {
+    "round": 33,
+    "avg_client_loss": 0.275794,
+    "proxy_fid": 25.910263,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.939
+  },
+  {
+    "round": 34,
+    "avg_client_loss": 0.274533,
+    "proxy_fid": 26.185996,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.853
+  },
+  {
+    "round": 35,
+    "avg_client_loss": 0.271729,
+    "proxy_fid": 25.080428,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.591
+  },
+  {
+    "round": 36,
+    "avg_client_loss": 0.267455,
+    "proxy_fid": 26.39767,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.091
+  },
+  {
+    "round": 37,
+    "avg_client_loss": 0.266504,
+    "proxy_fid": 26.544854,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.702
+  },
+  {
+    "round": 38,
+    "avg_client_loss": 0.262811,
+    "proxy_fid": 24.796959,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.849
+  },
+  {
+    "round": 39,
+    "avg_client_loss": 0.264976,
+    "proxy_fid": 26.202204,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.127
+  },
+  {
+    "round": 40,
+    "avg_client_loss": 0.261398,
+    "proxy_fid": 25.216202,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.948
+  },
+  {
+    "round": 41,
+    "avg_client_loss": 0.255475,
+    "proxy_fid": 25.080065,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.223
+  },
+  {
+    "round": 42,
+    "avg_client_loss": 0.253374,
+    "proxy_fid": 26.383194,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.072
+  },
+  {
+    "round": 43,
+    "avg_client_loss": 0.253918,
+    "proxy_fid": 25.991239,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.012
+  },
+  {
+    "round": 44,
+    "avg_client_loss": 0.252841,
+    "proxy_fid": 27.286416,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.098
+  },
+  {
+    "round": 45,
+    "avg_client_loss": 0.249068,
+    "proxy_fid": 26.561165,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.815
+  },
+  {
+    "round": 46,
+    "avg_client_loss": 0.250661,
+    "proxy_fid": 25.796217,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.369
+  },
+  {
+    "round": 47,
+    "avg_client_loss": 0.246079,
+    "proxy_fid": 25.89608,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.42
+  },
+  {
+    "round": 48,
+    "avg_client_loss": 0.245539,
+    "proxy_fid": 25.730335,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.743
+  },
+  {
+    "round": 49,
+    "avg_client_loss": 0.249922,
+    "proxy_fid": 26.175273,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.127
+  },
+  {
+    "round": 50,
+    "avg_client_loss": 0.241926,
+    "proxy_fid": 26.409098,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.774
+  },
+  {
+    "round": 51,
+    "avg_client_loss": 0.242803,
+    "proxy_fid": 25.668227,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.031
+  },
+  {
+    "round": 52,
+    "avg_client_loss": 0.245975,
+    "proxy_fid": 26.767239,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.186
+  },
+  {
+    "round": 53,
+    "avg_client_loss": 0.245429,
+    "proxy_fid": 25.712708,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.344
+  },
+  {
+    "round": 54,
+    "avg_client_loss": 0.240618,
+    "proxy_fid": 25.793554,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.969
+  },
+  {
+    "round": 55,
+    "avg_client_loss": 0.240758,
+    "proxy_fid": 27.558863,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 7.264
+  },
+  {
+    "round": 56,
+    "avg_client_loss": 0.237215,
+    "proxy_fid": 25.914012,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.834
+  },
+  {
+    "round": 57,
+    "avg_client_loss": 0.237209,
+    "proxy_fid": 25.561726,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.365
+  },
+  {
+    "round": 58,
+    "avg_client_loss": 0.23624,
+    "proxy_fid": 26.264591,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.68
+  },
+  {
+    "round": 59,
+    "avg_client_loss": 0.236354,
+    "proxy_fid": 26.577395,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.016
+  },
+  {
+    "round": 60,
+    "avg_client_loss": 0.234568,
+    "proxy_fid": 26.116717,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.121
+  },
+  {
+    "round": 61,
+    "avg_client_loss": 0.236622,
+    "proxy_fid": 25.38862,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.769
+  },
+  {
+    "round": 62,
+    "avg_client_loss": 0.231216,
+    "proxy_fid": 25.592278,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.033
+  },
+  {
+    "round": 63,
+    "avg_client_loss": 0.231778,
+    "proxy_fid": 26.277451,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.051
+  },
+  {
+    "round": 64,
+    "avg_client_loss": 0.231361,
+    "proxy_fid": 25.584449,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.036
+  },
+  {
+    "round": 65,
+    "avg_client_loss": 0.22909,
+    "proxy_fid": 25.513045,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.198
+  },
+  {
+    "round": 66,
+    "avg_client_loss": 0.231667,
+    "proxy_fid": 26.915239,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.033
+  },
+  {
+    "round": 67,
+    "avg_client_loss": 0.225967,
+    "proxy_fid": 25.179799,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.564
+  },
+  {
+    "round": 68,
+    "avg_client_loss": 0.228939,
+    "proxy_fid": 25.188508,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.272
+  },
+  {
+    "round": 69,
+    "avg_client_loss": 0.230653,
+    "proxy_fid": 26.902102,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.069
+  },
+  {
+    "round": 70,
+    "avg_client_loss": 0.227971,
+    "proxy_fid": 25.193339,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.006
+  },
+  {
+    "round": 71,
+    "avg_client_loss": 0.227157,
+    "proxy_fid": 25.813737,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.463
+  },
+  {
+    "round": 72,
+    "avg_client_loss": 0.228552,
+    "proxy_fid": 26.894389,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.881
+  },
+  {
+    "round": 73,
+    "avg_client_loss": 0.230241,
+    "proxy_fid": 26.595345,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.815
+  },
+  {
+    "round": 74,
+    "avg_client_loss": 0.225604,
+    "proxy_fid": 26.581513,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.897
+  },
+  {
+    "round": 75,
+    "avg_client_loss": 0.224466,
+    "proxy_fid": 25.924022,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.677
+  },
+  {
+    "round": 76,
+    "avg_client_loss": 0.227606,
+    "proxy_fid": 25.905467,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.664
+  },
+  {
+    "round": 77,
+    "avg_client_loss": 0.220703,
+    "proxy_fid": 27.7363,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.177
+  },
+  {
+    "round": 78,
+    "avg_client_loss": 0.223887,
+    "proxy_fid": 26.017431,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.546
+  },
+  {
+    "round": 79,
+    "avg_client_loss": 0.220133,
+    "proxy_fid": 26.142482,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.915
+  },
+  {
+    "round": 80,
+    "avg_client_loss": 0.220905,
+    "proxy_fid": 26.021224,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.929
+  },
+  {
+    "round": 81,
+    "avg_client_loss": 0.221214,
+    "proxy_fid": 26.486779,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.756
+  },
+  {
+    "round": 82,
+    "avg_client_loss": 0.223019,
+    "proxy_fid": 27.038173,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.888
+  },
+  {
+    "round": 83,
+    "avg_client_loss": 0.221392,
+    "proxy_fid": 26.733747,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.523
+  },
+  {
+    "round": 84,
+    "avg_client_loss": 0.220966,
+    "proxy_fid": 26.36175,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.101
+  },
+  {
+    "round": 85,
+    "avg_client_loss": 0.219682,
+    "proxy_fid": 27.512073,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.663
+  },
+  {
+    "round": 86,
+    "avg_client_loss": 0.22039,
+    "proxy_fid": 26.291202,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.938
+  },
+  {
+    "round": 87,
+    "avg_client_loss": 0.21976,
+    "proxy_fid": 27.076459,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.191
+  },
+  {
+    "round": 88,
+    "avg_client_loss": 0.216057,
+    "proxy_fid": 26.898455,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.77
+  },
+  {
+    "round": 89,
+    "avg_client_loss": 0.220922,
+    "proxy_fid": 25.092597,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.07
+  },
+  {
+    "round": 90,
+    "avg_client_loss": 0.219025,
+    "proxy_fid": 27.428377,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.769
+  },
+  {
+    "round": 91,
+    "avg_client_loss": 0.217923,
+    "proxy_fid": 25.473254,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.104
+  },
+  {
+    "round": 92,
+    "avg_client_loss": 0.218102,
+    "proxy_fid": 25.948028,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.047
+  },
+  {
+    "round": 93,
+    "avg_client_loss": 0.211754,
+    "proxy_fid": 26.731602,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.878
+  },
+  {
+    "round": 94,
+    "avg_client_loss": 0.217369,
+    "proxy_fid": 24.967342,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.107
+  },
+  {
+    "round": 95,
+    "avg_client_loss": 0.215107,
+    "proxy_fid": 26.589656,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.665
+  },
+  {
+    "round": 96,
+    "avg_client_loss": 0.21546,
+    "proxy_fid": 26.036831,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 6.128
+  },
+  {
+    "round": 97,
+    "avg_client_loss": 0.21718,
+    "proxy_fid": 25.830148,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.953
+  },
+  {
+    "round": 98,
+    "avg_client_loss": 0.213133,
+    "proxy_fid": 25.636518,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.972
+  },
+  {
+    "round": 99,
+    "avg_client_loss": 0.211776,
+    "proxy_fid": 26.627133,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.879
+  },
+  {
+    "round": 100,
+    "avg_client_loss": 0.214783,
+    "proxy_fid": 25.712935,
+    "total_samples": 60000,
+    "aggregated_clients": 4,
+    "round_duration_sec": 5.756
+  }
+]

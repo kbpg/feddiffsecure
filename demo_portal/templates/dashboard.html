@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}项目总览 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="hero-card">
+  <div>
+    <div class="eyebrow">系统总览</div>
+    <h2>论文主线已经切换为 LoRA 联邦轻量化训练与安全更新</h2>
+    <p>
+      这里聚焦的是预训练扩散底座、UNet-LoRA 联邦聚合、安全更新审计和前端展示如何被组织成一条可落地的系统链路。
+    </p>
+    <div class="hero-actions">
+      <a class="inline-link" href="{{ url_for('results') }}">进入结果展示中心</a>
+      <a class="inline-link" href="{{ url_for('research') }}">进入核心思想与实验设计</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    {% for stat in overview.summary_stats %}
+    <div class="stat">
+      <span>{{ stat.label }}</span>
+      <strong>{{ stat.value }}</strong>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <div class="panel-kicker">主线要点</div>
+    <h3>论文现在最应该强调的三件事</h3>
+    <ul class="metric-list">
+      {% for item in overview.mainline_points %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </article>
+  <article class="panel monitor-card" data-live-monitor>
+    <div class="panel-kicker">当前监控</div>
+    <h3>{{ live_monitor.title }}</h3>
+    <p class="monitor-line">
+      当前轮次：
+      <strong data-monitor-latest-round>{{ live_monitor.latest_round or 0 }}</strong>
+      /
+      <strong>{{ live_monitor.rounds_total or 0 }}</strong>
+    </p>
+    <p class="monitor-line">
+      当前状态：
+      <strong data-monitor-eta>{{ live_monitor.status_label }}</strong>
+    </p>
+    <p class="muted">{{ live_monitor.message }}</p>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: {{ (live_monitor.progress_ratio or 0) * 100 }}%"></div>
+    </div>
+  </article>
+</section>
+
+<section class="grid three-up">
+  {% for card in overview.guide_cards %}
+  <article class="panel">
+    <div class="panel-kicker">写作建议</div>
+    <h3>{{ card.title }}</h3>
+    <p>{{ card.text }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}100轮长线实验专题 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Long-Run Spotlight</div>
+  <h2>{{ fashion_bundle.hero_title }}</h2>
+  <p class="muted">{{ fashion_bundle.focus_question }}</p>
+</section>
+
+<section class="summary-callout">
+  <strong>一句话概括：</strong>
+  {{ fashion_bundle.one_liner }}
+</section>
+
+<section class="grid three-up">
+  {% for stat in fashion_bundle.summary_stats %}
+  <article class="panel">
+    <div class="panel-kicker">{{ stat.label }}</div>
+    <h3>{{ stat.value }}</h3>
+    <p class="muted">{{ stat.detail }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+{% if fashion_bundle.focus_run %}
+<section class="panel">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">当前关注实验</div>
+      <h3>{{ fashion_bundle.focus_run.title }}</h3>
+      <p class="muted">这条实验最适合承担当前阶段的主展示任务，因为它最贴近论文标题里的“联邦扩散、轻量化训练与安全更新”三层含义。</p>
+    </div>
+    {% if current_role == "admin" and fashion_bundle.focus_run.id %}
+    <a class="inline-link" href="{{ url_for('experiment_detail', run_id=fashion_bundle.focus_run.id) }}">查看实验详情</a>
+    {% endif %}
+  </div>
+  <div class="fact-split">
+    <div>
+      <div class="panel-kicker">当前状态</div>
+      <ul class="metric-list">
+        <li>状态：{{ fashion_bundle.focus_run.status_label }}</li>
+        <li>进度：{{ fashion_bundle.focus_run.progress_text }}</li>
+        <li>当前最好指标：{{ fashion_bundle.focus_run.best_metric_display }}</li>
+        <li>平均上传负载：{{ fashion_bundle.focus_run.payload_display }}</li>
+        <li>审计状态：{{ fashion_bundle.focus_run.audit_status_text }}</li>
+      </ul>
+    </div>
+    <div>
+      <div class="panel-kicker">为什么先看它</div>
+      <ul class="metric-list">
+        <li>同时覆盖联邦训练、LoRA 聚合与安全更新审计。</li>
+        <li>比简单数据域更适合承担主图与主表。</li>
+        <li>最接近论文真正想回答的工程落地问题。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="panel">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">讲解顺序</div>
+      <h3>推荐的论文叙事展开方式</h3>
+    </div>
+  </div>
+  <ol class="narrative-list">
+    {% for item in fashion_bundle.narrative_steps %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="story-grid story-grid--wide">
+  {% for card in fashion_bundle.cards %}
+  <article class="story-card accent-{{ card.run.accent }}">
+    <div class="card-topline">{{ card.kicker }}</div>
+    <h3>{{ card.run.title }}</h3>
+    <p>{{ card.positioning }}</p>
+    {% if card.run.preview_image_path %}
+    <div class="spotlight-preview">
+      <img src="{{ url_for('preview_artifact', relpath=card.run.preview_image_path) }}" alt="{{ card.run.title }} 预览图">
+    </div>
+    {% endif %}
+    <ul class="metric-list">
+      <li>训练组织：{{ card.training_pattern }}</li>
+      <li>当前观察：{{ card.observation }}</li>
+      <li>审计说明：{{ card.audit_note }}</li>
+      <li>答辩讲法：{{ card.presentation_tip }}</li>
+    </ul>
+    <div class="fact-split">
+      <div>
+        <div class="panel-kicker">优点</div>
+        <ul class="metric-list">
+          {% for item in card.strengths %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <div class="panel-kicker">代价与风险</div>
+        <ul class="metric-list">
+          {% for item in card.tradeoffs %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% if current_role == "admin" and card.run.id %}
+    <a class="inline-link" href="{{ url_for('experiment_detail', run_id=card.run.id) }}">查看实验详情</a>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+{% if fashion_bundle.comparison.id %}
+<section class="panel">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">主实验对照</div>
+      <h3>STL10 100 轮主线四组实验</h3>
+    </div>
+    <a class="inline-link" href="{{ url_for('comparison_detail', comparison_id=fashion_bundle.comparison.id) }}">进入完整对比页</a>
+  </div>
+  <div class="comparison-axis-grid">
+    {% for row in fashion_bundle.comparison_rows %}
+    <article class="comparison-axis-card">
+      <div class="panel-kicker">{{ row.dimension }}</div>
+      <div class="comparison-axis-values">
+        {% for cell in row.cells %}
+        <section class="comparison-axis-item">
+          <strong>{{ cell.label }}</strong>
+          <p>{{ cell.value }}</p>
+        </section>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="grid three-up">
+  {% for item in fashion_bundle.takeaways %}
+  <article class="panel">
+    <div class="panel-kicker">结论</div>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.text }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

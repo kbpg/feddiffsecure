@@ -1,0 +1,31 @@
+{
+  "config_path": "/home/scd/feddiffsecure_minimal/configs/stl10_b40x5_centralized_t500_semantic10.yaml",
+  "started_at": "2026-04-18T16:29:39.008645+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 22445747,
+  "model_params_trainable": 22445747,
+  "num_clients": 1,
+  "rounds": 180,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 64,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 6,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 10,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 5000,
+  "resume_count": 0,
+  "completed_at": "2026-04-18T22:02:12.434055+08:00",
+  "wall_clock_seconds": 19953.425,
+  "avg_round_seconds": 109.449,
+  "max_round_seconds": 109.651
+}

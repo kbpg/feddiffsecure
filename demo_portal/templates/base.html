@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}LoRA 联邦安全更新展示门户{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['\\[', '\\]']],
+        },
+        svg: {
+          fontCache: 'global',
+        },
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+  </head>
+  <body>
+    <div class="site-shell{% if not is_authenticated %} site-shell--public{% endif %}">
+      {% if is_authenticated %}
+      <aside class="site-nav">
+        <div class="brand">
+          <div class="brand-kicker">毕业论文展示门户</div>
+          <h1>FedDiffSecure</h1>
+          <p>围绕“LoRA 联邦轻量化训练与安全更新”组织实验结果、审计记录、论文叙事和系统展示。</p>
+        </div>
+        <div class="account-chip">
+          <span>当前用户</span>
+          <strong>{{ session.display_name or current_user }}</strong>
+          <em>{{ "管理员" if current_role == "admin" else "普通用户" }}</em>
+        </div>
+        <nav>
+          <a href="{{ url_for('dashboard') }}">项目总览</a>
+          <a href="{{ url_for('results') }}">结果展示中心</a>
+          <a href="{{ url_for('fashion_spotlight') }}">长线实验专题</a>
+          <a href="{{ url_for('sampling_lab') }}">采样实验室</a>
+          <a href="{{ url_for('experiments') }}">实验资产库</a>
+          <a href="{{ url_for('architecture') }}">架构与数据流</a>
+          <a href="{{ url_for('federation') }}">联邦机制解析</a>
+          <a href="{{ url_for('research') }}">核心思想与实验设计</a>
+          {% if current_role == "admin" %}
+          <a href="{{ url_for('monitor') }}">训练监控台</a>
+          <a href="{{ url_for('audit') }}">安全审计页</a>
+          <a href="{{ url_for('paper') }}">论文资料页</a>
+          <a href="{{ url_for('paper_tables') }}">论文表格页</a>
+          {% endif %}
+        </nav>
+        <form method="post" action="{{ url_for('logout') }}">
+          <button class="ghost-button" type="submit">退出登录</button>
+        </form>
+      </aside>
+      {% endif %}
+      <main class="content{% if not is_authenticated %} content--public{% endif %}">
+        {% if is_authenticated %}
+        <header class="top-strip">
+          <div>
+            <p class="top-strip-label">Diffusion Graduation Project</p>
+            <h2>LoRA 联邦安全更新、系统实现与论文叙事的统一入口</h2>
+          </div>
+          <div class="top-strip-badge">Portal v4</div>
+        </header>
+        {% endif %}
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </body>
+</html>

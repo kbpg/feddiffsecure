@@ -1,0 +1,19 @@
+[queue] start 1/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_fed_audit_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_fed_audit_long100.yaml
+[queue] start 2/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_central_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_central_long100.yaml
+[queue] start 3/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_fullclients_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_fullclients_long100.yaml
+[queue] start 4/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_rank4_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_stl10_lora_rank4_long100.yaml
+[queue] start 5/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_fashion_lora_fed_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_fashion_lora_fed_long100.yaml
+[queue] start 6/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_fashion_lora_central_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_fashion_lora_central_long100.yaml
+[queue] start 7/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_mnist_lora_fed_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_mnist_lora_fed_long100.yaml
+[queue] start 8/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_mnist_lora_central_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_mnist_lora_central_long100.yaml
+[queue] start 9/9: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_cifar10_lora_fed_long100.yaml
+[queue] completed: C:\Users\shenc\Desktop\feddiffsecure_minimal\configs\tiny_sd_cifar10_lora_fed_long100.yaml
+[queue] summary saved to C:\Users\shenc\Desktop\feddiffsecure_minimal\outputs\launch_logs\tiny_sd_lora_long100_suite_summary.json

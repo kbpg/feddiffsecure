@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}联邦机制解析 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Method Positioning</div>
+  <h2>{{ federation_bundle.title }}</h2>
+  <p class="muted">{{ federation_bundle.subtitle }}</p>
+</section>
+
+<section class="summary-callout">
+  <strong>一句话概括：</strong>
+  {{ federation_bundle.one_liner }}
+</section>
+
+<section class="story-grid story-grid--wide">
+  {% for card in federation_bundle.focus_cards %}
+  <article class="story-card accent-{{ card.run.accent }}">
+    <div class="card-topline">{{ card.kicker }}</div>
+    <h3>{{ card.run.title }}</h3>
+    <p>{{ card.positioning }}</p>
+    <ul class="metric-list">
+      {% for item in card.points %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% if current_role == "admin" and card.run.id %}
+    <a class="inline-link" href="{{ url_for('experiment_detail', run_id=card.run.id) }}">查看实验详情</a>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <div class="panel-kicker">机制拆解</div>
+    <h3>LoRA 联邦安全更新链路</h3>
+    <ul class="metric-list">
+      {% for item in federation_bundle.pipeline_points %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">流程图</div>
+    <h3>训练、传输、恢复与聚合如何串起来</h3>
+    <div class="diagram-frame">
+      <img src="{{ url_for('static', filename='diagrams/federated_learning_pipeline.svg') }}" alt="联邦训练与安全更新流程图">
+    </div>
+    <p class="muted">这里强调的是工程链路：客户端本地 LoRA 训练、更新上传、安全封装、服务端恢复验证与聚合更新。</p>
+  </article>
+</section>
+
+<section class="panel">
+  <div class="panel-kicker">关键公式</div>
+  <h3>最适合放进论文里的四条公式</h3>
+  <div class="formula-grid">
+    {% for formula in federation_bundle.formula_cards %}
+    <article class="formula-card">
+      <strong>{{ formula.title }}</strong>
+      <div class="formula-expression">\[{{ formula.expression }}\]</div>
+      <p class="muted">{{ formula.explanation }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="panel">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">主实验四线对照</div>
+      <h3>STL10 100 轮主线实验应该怎样解读</h3>
+    </div>
+  </div>
+  <div class="comparison-axis-grid">
+    {% for row in federation_bundle.comparison_rows %}
+    <article class="comparison-axis-card">
+      <div class="panel-kicker">{{ row.dimension }}</div>
+      <div class="comparison-axis-values">
+        {% for cell in row.cells %}
+        <section class="comparison-axis-item">
+          <strong>{{ cell.label }}</strong>
+          <p>{{ cell.value }}</p>
+        </section>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="grid three-up">
+  {% for item in federation_bundle.takeaways %}
+  <article class="panel">
+    <div class="panel-kicker">写作建议</div>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.text }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

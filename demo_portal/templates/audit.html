@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}安全审计 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Secure Update Audit</div>
+  <h2>联邦 LoRA 更新的封装、恢复与完整性验证</h2>
+</section>
+
+<section class="summary-callout">
+  <strong>当前最稳妥的表述：</strong>
+  系统当前验证的是“客户端上传的 LoRA 更新在封装与恢复之后保持端到端完整”，而不是更强意义上的机密性或抗攻击性形式化证明。
+</section>
+
+<section class="grid three-up">
+  <article class="panel">
+    <div class="panel-kicker">审计记录</div>
+    <h3>{{ audit_bundle.audit_summary.records or "n/a" }}</h3>
+    <p class="muted">当前主线联邦实验中已经记录的更新条目总数。</p>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">验证通过</div>
+    <h3>{{ audit_bundle.audit_summary.verified or "n/a" }}</h3>
+    <p class="muted">恢复后的更新与封装前哈希一致的条目数。</p>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">验证失败</div>
+    <h3>{{ audit_bundle.audit_summary.failed or "n/a" }}</h3>
+    <p class="muted">用于观察更新传输链路是否发生损坏或异常。</p>
+  </article>
+</section>
+
+<section class="grid two-up">
+  <article class="panel">
+    <div class="panel-kicker">审计流程图</div>
+    <h3>从本地更新到完整性校验的链路</h3>
+    <div class="diagram-frame">
+      <img src="{{ url_for('static', filename='diagrams/audit_integrity_workflow.svg') }}" alt="安全审计流程图">
+    </div>
+    <p class="muted">客户端先产生 LoRA 更新，再进行封装与上传；服务端恢复后对更新做哈希一致性验证，并记录负载与审计状态。</p>
+  </article>
+  <article class="panel prose">
+    {{ audit_bundle.notes_html|safe }}
+  </article>
+</section>
+{% endblock %}

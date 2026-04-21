@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}实验资产库 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Experiment Registry</div>
+  <h2>以注册表方式管理 100 轮长线实验</h2>
+  <p class="muted">这里展示的都是 LoRA 联邦安全更新主线相关实验。即使实验尚未启动，也会先在这里登记位置。</p>
+</section>
+
+<section class="panel filter-panel">
+  <div class="filter-row">
+    <label>
+      <span>按数据集筛选</span>
+      <select data-run-filter="dataset">
+        <option value="all">全部数据集</option>
+        {% for run in runs|map(attribute='dataset')|unique|list %}
+        <option value="{{ run }}">{{ run }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      <span>按训练范式筛选</span>
+      <select data-run-filter="mode">
+        <option value="all">全部模式</option>
+        {% for run in runs|map(attribute='mode')|unique|list %}
+        <option value="{{ run }}">{{ run }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </div>
+</section>
+
+<section class="card-grid">
+  {% for run in runs %}
+  <article
+    class="experiment-card accent-{{ run.accent }}"
+    data-run-card
+    data-dataset="{{ run.dataset }}"
+    data-mode="{{ run.mode }}"
+  >
+    <div class="card-topline">{{ run.dataset }} / {{ run.mode }}</div>
+    <h3>{{ run.title }}</h3>
+    <p>{{ run.role }}</p>
+    <div class="metric-chip-row">
+      <span class="metric-chip">{{ run.status_label }}</span>
+      <span class="metric-chip">{{ run.progress_text }}</span>
+      {% if run.lora_numel_display != "n/a" %}
+      <span class="metric-chip">LoRA {{ run.lora_numel_display }}</span>
+      {% endif %}
+    </div>
+    <dl class="fact-grid">
+      <div>
+        <dt>当前最好指标</dt>
+        <dd>{{ run.best_metric_display }}</dd>
+      </div>
+      <div>
+        <dt>训练预算</dt>
+        <dd>{{ run.budget_setting }}</dd>
+      </div>
+      <div>
+        <dt>审计状态</dt>
+        <dd>{{ run.audit_status_text }}</dd>
+      </div>
+      <div>
+        <dt>平均上传负载</dt>
+        <dd>{{ run.payload_display }}</dd>
+      </div>
+    </dl>
+    <p class="muted">{{ run.metric_story }}</p>
+    {% if current_role == "admin" %}
+    <a class="inline-link" href="{{ url_for('experiment_detail', run_id=run.id) }}">查看实验详情</a>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

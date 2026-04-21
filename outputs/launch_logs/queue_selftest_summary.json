@@ -1,0 +1,30 @@
+{
+  "queue_name": "queue_selftest",
+  "started_at": "2026-04-17T22:06:01.202469+08:00",
+  "host_python": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\.venv\\Scripts\\python.exe",
+  "restart": false,
+  "skip_completed": true,
+  "continue_on_error": false,
+  "jobs": [
+    {
+      "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\stl10_b40x5_centralized_fulltrain_v3.yaml",
+      "output_dir": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b40x5_centralized_fulltrain_v3_run",
+      "final_metrics_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b40x5_centralized_fulltrain_v3_run\\metrics\\final_metrics.json",
+      "round_metrics_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b40x5_centralized_fulltrain_v3_run\\metrics\\round_metrics.json",
+      "stdout_log": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\launch_logs\\queue_selftest_01_stl10_b40x5_centralized_fulltrain_v3.out.log",
+      "stderr_log": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\launch_logs\\queue_selftest_01_stl10_b40x5_centralized_fulltrain_v3.err.log",
+      "started_at": "2026-04-17T22:06:01.207470+08:00",
+      "status": "skipped_completed",
+      "completed_at": "2026-04-17T22:06:01.208469+08:00",
+      "best_classifier_fid": 115.6293934077484,
+      "best_classifier_round": 135,
+      "best_proxy_fid": 17.167566,
+      "best_proxy_round": 45
+    }
+  ],
+  "completed_at": "2026-04-17T22:06:01.208469+08:00",
+  "completed_jobs": 0,
+  "failed_jobs": 0,
+  "skipped_jobs": 1,
+  "total_jobs": 1
+}

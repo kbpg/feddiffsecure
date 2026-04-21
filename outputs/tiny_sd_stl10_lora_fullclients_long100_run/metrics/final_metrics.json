@@ -1,0 +1,51 @@
+{
+  "last_round": {
+    "round": 100,
+    "avg_client_loss": 0.177429,
+    "selected_clients": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "total_samples": 5000,
+    "skipped_steps": 0,
+    "mean_client_update_l2": 0.143544,
+    "max_client_update_l2": 0.149384,
+    "aggregation_delta_l2": 0.076276,
+    "global_lora_l2": 19.986784,
+    "payload_bytes_raw_sum": 27824252,
+    "payload_bytes_compressed_sum": 27832776,
+    "payload_bytes_raw_mean": 6956063.0,
+    "payload_bytes_compressed_mean": 6958194.0,
+    "audit_verified": 4,
+    "audit_records": 4,
+    "round_duration_sec": 65.111
+  },
+  "best_loss_round": {
+    "round": 77,
+    "avg_client_loss": 0.124816,
+    "selected_clients": [
+      1,
+      3,
+      2,
+      0
+    ],
+    "total_samples": 5000,
+    "skipped_steps": 0,
+    "mean_client_update_l2": 0.135861,
+    "max_client_update_l2": 0.146083,
+    "aggregation_delta_l2": 0.076382,
+    "global_lora_l2": 19.943466,
+    "payload_bytes_raw_sum": 27824252,
+    "payload_bytes_compressed_sum": 27832776,
+    "payload_bytes_raw_mean": 6956063.0,
+    "payload_bytes_compressed_mean": 6958194.0,
+    "audit_verified": 4,
+    "audit_records": 4,
+    "round_duration_sec": 66.806
+  },
+  "best_loss": 0.124816,
+  "global_lora_final_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\tiny_sd_stl10_lora_fullclients_long100_run\\global_lora_final.pt",
+  "global_lora_best_loss_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\tiny_sd_stl10_lora_fullclients_long100_run\\global_lora_best_loss.pt"
+}

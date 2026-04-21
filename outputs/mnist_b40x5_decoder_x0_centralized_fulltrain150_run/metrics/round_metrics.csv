@@ -1,0 +1,2 @@
+round,avg_client_loss,proxy_fid,total_samples,aggregated_clients,round_duration_sec
+1,0.349751,9.514428,10240,1,55.608

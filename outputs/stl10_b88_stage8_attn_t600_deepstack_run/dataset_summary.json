@@ -1,0 +1,4 @@
+{
+  "train_examples": 5000,
+  "eval_examples": 8000
+}

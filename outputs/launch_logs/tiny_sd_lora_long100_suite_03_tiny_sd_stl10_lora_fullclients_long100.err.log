@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:   1%|          | 2/196 [00:00<00:27,  6.95it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 196/196 [00:00<00:00, 652.68it/s]
+An error occurred while trying to fetch ./models/tiny-sd: Error no file named diffusion_pytorch_model.safetensors found in directory ./models/tiny-sd.
+Defaulting to unsafe serialization. Pass `allow_pickle=False` to raise an error instead.
+An error occurred while trying to fetch ./models/tiny-sd: Error no file named diffusion_pytorch_model.safetensors found in directory ./models/tiny-sd.
+Defaulting to unsafe serialization. Pass `allow_pickle=False` to raise an error instead.
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 161.87it/s]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 2503.76it/s]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 1667.58it/s]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 1000.07it/s]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 1980.69it/s]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 1250.39it/s]
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [00:00<00:00, 1382.80it/s]

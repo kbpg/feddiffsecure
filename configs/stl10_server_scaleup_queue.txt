@@ -1,0 +1,6 @@
+# Recommended higher-resolution server queue
+# 1) Keep model size fixed and increase diffusion chain to 500.
+configs/stl10_b40x5_centralized_t500_semantic10.yaml
+
+# 2) Increase model width and moderately increase diffusion chain.
+configs/stl10_b48x5_centralized_t400_semantic10.yaml

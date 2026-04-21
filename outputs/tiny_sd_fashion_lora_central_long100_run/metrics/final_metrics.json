@@ -1,0 +1,45 @@
+{
+  "last_round": {
+    "round": 100,
+    "avg_client_loss": 0.174457,
+    "selected_clients": [
+      0
+    ],
+    "total_samples": 60000,
+    "skipped_steps": 0,
+    "mean_client_update_l2": 0.147863,
+    "max_client_update_l2": 0.147863,
+    "aggregation_delta_l2": 0.147863,
+    "global_lora_l2": 20.206007,
+    "payload_bytes_raw_sum": 0,
+    "payload_bytes_compressed_sum": 0,
+    "payload_bytes_raw_mean": 0.0,
+    "payload_bytes_compressed_mean": 0.0,
+    "audit_verified": 0,
+    "audit_records": 0,
+    "round_duration_sec": 5.782
+  },
+  "best_loss_round": {
+    "round": 44,
+    "avg_client_loss": 0.024973,
+    "selected_clients": [
+      0
+    ],
+    "total_samples": 60000,
+    "skipped_steps": 0,
+    "mean_client_update_l2": 0.120359,
+    "max_client_update_l2": 0.120359,
+    "aggregation_delta_l2": 0.120359,
+    "global_lora_l2": 19.982967,
+    "payload_bytes_raw_sum": 0,
+    "payload_bytes_compressed_sum": 0,
+    "payload_bytes_raw_mean": 0.0,
+    "payload_bytes_compressed_mean": 0.0,
+    "audit_verified": 0,
+    "audit_records": 0,
+    "round_duration_sec": 6.288
+  },
+  "best_loss": 0.024973,
+  "global_lora_final_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\tiny_sd_fashion_lora_central_long100_run\\global_lora_final.pt",
+  "global_lora_best_loss_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\tiny_sd_fashion_lora_central_long100_run\\global_lora_best_loss.pt"
+}

@@ -1,0 +1,134 @@
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_centralized_t500_long.yaml",
+  "started_at": "2026-04-15T23:29:34.297854+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 22444929,
+  "num_clients": 1,
+  "rounds": 180,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 80,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 128,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 60000,
+  "resume_count": 0
+}
+================================================================================
+[Round 1] avg_loss=0.5286, proxy_fid=9.7238, total_samples=10240, round_sec=88.0
+[Round 2] avg_loss=0.1437, proxy_fid=3.6646, total_samples=10240, round_sec=84.7
+[Round 3] avg_loss=0.1126, proxy_fid=2.2506, total_samples=10240, round_sec=85.0
+[Round 4] avg_loss=0.0997, proxy_fid=1.3452, total_samples=10240, round_sec=85.8
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_centralized_t500_long.yaml",
+  "started_at": "2026-04-15T23:29:34.297854+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 22444929,
+  "num_clients": 1,
+  "rounds": 180,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 80,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 128,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 60000,
+  "resume_count": 2,
+  "resumed_from_round": 27,
+  "last_resumed_at": "2026-04-16T09:50:54.003738+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 4403.363
+}
+================================================================================
+[Round 28] avg_loss=0.0488, proxy_fid=1.0306, total_samples=10240, round_sec=93.8
+[Round 29] avg_loss=0.0486, proxy_fid=0.6238, total_samples=10240, round_sec=105.7
+[Round 30] avg_loss=0.0482, proxy_fid=0.6310, total_samples=10240, round_sec=106.1, classifier_fid=121.17, conf=0.937
+[Round 31] avg_loss=0.0493, proxy_fid=1.7290, total_samples=10240, round_sec=103.2
+[Round 32] avg_loss=0.0482, proxy_fid=0.9122, total_samples=10240, round_sec=99.9
+[Round 33] avg_loss=0.0480, proxy_fid=0.6172, total_samples=10240, round_sec=101.2
+[Round 34] avg_loss=0.0488, proxy_fid=0.5767, total_samples=10240, round_sec=103.3
+[Round 35] avg_loss=0.0496, proxy_fid=1.9639, total_samples=10240, round_sec=102.5, classifier_fid=275.67, conf=0.942
+[Round 36] avg_loss=0.0483, proxy_fid=0.4685, total_samples=10240, round_sec=110.0
+[Round 37] avg_loss=0.0472, proxy_fid=1.0569, total_samples=10240, round_sec=104.5
+[Round 38] avg_loss=0.0479, proxy_fid=0.9227, total_samples=10240, round_sec=103.2
+[Round 39] avg_loss=0.0480, proxy_fid=2.8887, total_samples=10240, round_sec=100.7
+[Round 40] avg_loss=0.0468, proxy_fid=1.0221, total_samples=10240, round_sec=104.6, classifier_fid=181.42, conf=0.946
+[Round 41] avg_loss=0.0472, proxy_fid=0.4679, total_samples=10240, round_sec=104.9
+[Round 42] avg_loss=0.0467, proxy_fid=1.0136, total_samples=10240, round_sec=106.8
+[Round 43] avg_loss=0.0468, proxy_fid=0.5362, total_samples=10240, round_sec=102.8
+[Round 44] avg_loss=0.0468, proxy_fid=1.8364, total_samples=10240, round_sec=102.4
+[Round 45] avg_loss=0.0460, proxy_fid=0.6163, total_samples=10240, round_sec=103.5, classifier_fid=164.32, conf=0.929
+[Round 46] avg_loss=0.0468, proxy_fid=2.3464, total_samples=10240, round_sec=126.4
+[Round 47] avg_loss=0.0456, proxy_fid=0.8916, total_samples=10240, round_sec=97.0
+[Round 48] avg_loss=0.0464, proxy_fid=0.6706, total_samples=10240, round_sec=101.8
+[Round 49] avg_loss=0.0456, proxy_fid=0.6721, total_samples=10240, round_sec=101.9
+[Round 50] avg_loss=0.0461, proxy_fid=1.0434, total_samples=10240, round_sec=102.0, classifier_fid=155.19, conf=0.959
+[Round 51] avg_loss=0.0464, proxy_fid=1.9580, total_samples=10240, round_sec=106.5
+[Round 52] avg_loss=0.0456, proxy_fid=1.8075, total_samples=10240, round_sec=106.4
+[Round 53] avg_loss=0.0456, proxy_fid=0.9826, total_samples=10240, round_sec=107.6
+[Round 54] avg_loss=0.0447, proxy_fid=0.5156, total_samples=10240, round_sec=103.5
+[Round 55] avg_loss=0.0452, proxy_fid=1.2869, total_samples=10240, round_sec=102.6, classifier_fid=157.32, conf=0.958
+[Round 56] avg_loss=0.0454, proxy_fid=1.0938, total_samples=10240, round_sec=101.5
+[Round 57] avg_loss=0.0451, proxy_fid=0.6737, total_samples=10240, round_sec=103.7
+[Round 58] avg_loss=0.0454, proxy_fid=0.5464, total_samples=10240, round_sec=105.2
+[Round 59] avg_loss=0.0448, proxy_fid=0.5823, total_samples=10240, round_sec=105.5
+[Round 60] avg_loss=0.0445, proxy_fid=1.0053, total_samples=10240, round_sec=103.2, classifier_fid=135.79, conf=0.951
+[Round 61] avg_loss=0.0449, proxy_fid=1.5111, total_samples=10240, round_sec=101.9
+[Round 62] avg_loss=0.0453, proxy_fid=1.1405, total_samples=10240, round_sec=100.2
+[Round 63] avg_loss=0.0447, proxy_fid=0.7552, total_samples=10240, round_sec=100.0
+[Round 64] avg_loss=0.0443, proxy_fid=0.9158, total_samples=10240, round_sec=101.6
+[Round 65] avg_loss=0.0442, proxy_fid=0.7920, total_samples=10240, round_sec=103.5, classifier_fid=158.77, conf=0.943
+[Round 66] avg_loss=0.0437, proxy_fid=0.7180, total_samples=10240, round_sec=100.9
+[Round 67] avg_loss=0.0441, proxy_fid=0.4305, total_samples=10240, round_sec=103.6
+[Round 68] avg_loss=0.0444, proxy_fid=0.5969, total_samples=10240, round_sec=102.1
+[Round 69] avg_loss=0.0442, proxy_fid=1.1784, total_samples=10240, round_sec=100.4
+[Round 70] avg_loss=0.0439, proxy_fid=0.5533, total_samples=10240, round_sec=99.9, classifier_fid=124.37, conf=0.956
+[Round 71] avg_loss=0.0442, proxy_fid=1.1836, total_samples=10240, round_sec=99.7
+[Round 72] avg_loss=0.0438, proxy_fid=0.5504, total_samples=10240, round_sec=100.5
+[Round 73] avg_loss=0.0446, proxy_fid=1.5538, total_samples=10240, round_sec=99.7
+[Round 74] avg_loss=0.0442, proxy_fid=0.6832, total_samples=10240, round_sec=101.1
+[Round 75] avg_loss=0.0431, proxy_fid=1.6369, total_samples=10240, round_sec=99.8, classifier_fid=166.45, conf=0.961
+[Round 76] avg_loss=0.0439, proxy_fid=0.8501, total_samples=10240, round_sec=100.4
+[Round 77] avg_loss=0.0435, proxy_fid=0.8196, total_samples=10240, round_sec=101.4
+[Round 78] avg_loss=0.0437, proxy_fid=1.0511, total_samples=10240, round_sec=99.9
+[Round 79] avg_loss=0.0442, proxy_fid=0.8071, total_samples=10240, round_sec=99.4
+[Round 80] avg_loss=0.0432, proxy_fid=1.2385, total_samples=10240, round_sec=100.7, classifier_fid=179.99, conf=0.958
+[Round 81] avg_loss=0.0433, proxy_fid=1.2390, total_samples=10240, round_sec=101.0
+[Round 82] avg_loss=0.0431, proxy_fid=0.6547, total_samples=10240, round_sec=99.3
+[Round 83] avg_loss=0.0431, proxy_fid=1.2894, total_samples=10240, round_sec=101.0
+[Round 84] avg_loss=0.0433, proxy_fid=0.8062, total_samples=10240, round_sec=100.9
+[Round 85] avg_loss=0.0433, proxy_fid=0.9131, total_samples=10240, round_sec=99.6, classifier_fid=109.14, conf=0.943
+[Round 86] avg_loss=0.0433, proxy_fid=0.5358, total_samples=10240, round_sec=100.1
+[Round 87] avg_loss=0.0430, proxy_fid=0.9682, total_samples=10240, round_sec=102.1
+[Round 88] avg_loss=0.0431, proxy_fid=0.5791, total_samples=10240, round_sec=100.8
+[Round 89] avg_loss=0.0440, proxy_fid=0.8620, total_samples=10240, round_sec=102.1
+[Round 90] avg_loss=0.0430, proxy_fid=1.0318, total_samples=10240, round_sec=102.8, classifier_fid=185.72, conf=0.953
+[Round 91] avg_loss=0.0430, proxy_fid=1.7000, total_samples=10240, round_sec=99.7
+[Round 92] avg_loss=0.0438, proxy_fid=0.4901, total_samples=10240, round_sec=99.1
+[Round 93] avg_loss=0.0430, proxy_fid=0.6563, total_samples=10240, round_sec=100.2
+[Round 94] avg_loss=0.0432, proxy_fid=0.7568, total_samples=10240, round_sec=100.6

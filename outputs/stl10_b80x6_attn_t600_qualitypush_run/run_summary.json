@@ -1,0 +1,31 @@
+{
+  "config_path": "/home/scd/feddiffsecure_minimal/configs/stl10_b80x6_attn_t600_qualitypush.yaml",
+  "started_at": "2026-04-18T23:41:47.634360+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "stl10",
+  "model_params_total": 184857707,
+  "model_params_trainable": 184857707,
+  "num_clients": 1,
+  "rounds": 260,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 96,
+  "dirichlet_alpha": 0.0,
+  "lr": 6e-05,
+  "batch_size": 4,
+  "ema_decay": 0.9995,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 20,
+  "trainable_param_tensors": 594,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 594,
+  "train_examples": 5000,
+  "resume_count": 0,
+  "completed_at": "2026-04-19T08:37:04.865289+08:00",
+  "wall_clock_seconds": 32117.23,
+  "avg_round_seconds": 111.936,
+  "max_round_seconds": 112.601
+}

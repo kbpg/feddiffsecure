@@ -1,0 +1,52 @@
+{
+  "sampling": {
+    "mnist_measured": [
+      {
+        "label": "MNIST 快速预览 · 4 张图 · 100 步 · DDIM",
+        "elapsed_sec": 17.13,
+        "sec_per_image": 4.28,
+        "source": "基于 mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run 的 best semantic checkpoint 实测"
+      },
+      {
+        "label": "MNIST 中档预览 · 4 张图 · 250 步 · DDIM",
+        "elapsed_sec": 36.61,
+        "sec_per_image": 9.15,
+        "source": "基于 mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run 的 best semantic checkpoint 实测"
+      },
+      {
+        "label": "MNIST 全质量展示 · 4 张图 · 500 步 · DDPM",
+        "elapsed_sec": 71.25,
+        "sec_per_image": 17.81,
+        "source": "基于 mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run 的 best semantic checkpoint 实测"
+      },
+      {
+        "label": "MNIST 全质量批量展示 · 8 张图 · 500 步 · DDPM",
+        "elapsed_sec": 76.95,
+        "sec_per_image": 9.62,
+        "source": "同一 checkpoint 的批量采样实测结果"
+      }
+    ],
+    "stl10_estimated": [
+      {
+        "label": "STL10 快速预览 · 4 张图 · 100 步",
+        "elapsed_sec_estimate": 604.0,
+        "minutes_estimate": 10.1,
+        "basis": "由 MNIST 预览 benchmark 按像素数量、通道数和步数比例估算"
+      },
+      {
+        "label": "STL10 全质量展示 · 4 张图 · 300 步",
+        "elapsed_sec_estimate": 1508.0,
+        "minutes_estimate": 25.1,
+        "basis": "由 MNIST 全质量 benchmark 按图像分辨率、通道数和扩散步数缩放估算"
+      }
+    ]
+  },
+  "training": {
+    "stl10_v3_current_provisional_eta_hours": {
+      "low": 22.0,
+      "point": 25.1,
+      "high": 28.0,
+      "basis": "基于 STL10 v3 第 2 轮的较稳定耗时 655.907 秒估算，并剔除首轮冷启动干扰"
+    }
+  }
+}

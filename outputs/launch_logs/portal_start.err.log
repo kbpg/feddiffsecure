@@ -1,0 +1,2 @@
+Demo portal did not start because 127.0.0.1:5055 is already in use.
+Stop the existing portal process first, or launch with a different PAPER_DEMO_PORT.

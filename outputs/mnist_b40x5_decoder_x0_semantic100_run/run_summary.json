@@ -1,0 +1,31 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_semantic100.yaml",
+  "started_at": "2026-04-14T21:52:44.657241+08:00",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 825729,
+  "num_clients": 4,
+  "rounds": 100,
+  "clients_per_round": 4,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 20,
+  "dirichlet_alpha": 0.5,
+  "lr": 0.00015,
+  "batch_size": 128,
+  "ema_decay": 0.0,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 248,
+  "unfreeze_param_prefixes": [
+    "upsamples.3",
+    "decoder_blocks.3",
+    "final_conv.base"
+  ],
+  "enabled_extra_params": 38,
+  "save_carriers": false,
+  "completed_at": "2026-04-15T00:13:16.792588+08:00",
+  "wall_clock_seconds": 8432.136,
+  "avg_round_seconds": 84.185,
+  "max_round_seconds": 126.8
+}

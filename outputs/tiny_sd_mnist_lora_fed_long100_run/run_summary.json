@@ -1,0 +1,27 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\tiny_sd_mnist_lora_fed_long100.yaml",
+  "started_at": "2026-04-20T19:27:00.740187+08:00",
+  "pretrained_model_name_or_path": "./models/tiny-sd",
+  "dataset": "mnist",
+  "resolution": 128,
+  "training_mode": "federated_lora_sd15",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "rounds": 100,
+  "num_clients": 4,
+  "clients_per_round": 2,
+  "client_epochs": 1,
+  "max_steps_per_client": 12,
+  "lora_rank": 16,
+  "lora_alpha": 16,
+  "target_modules": [
+    "to_q",
+    "to_k",
+    "to_v",
+    "to_out.0"
+  ],
+  "sample_seed": 123,
+  "train_examples": 60000,
+  "lora_numel": 1726464,
+  "audit_enabled": true
+}

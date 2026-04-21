@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}采样实验室 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Sampling Lab</div>
+  <h2>100 轮长线实验的样图预览、阶段走势与主对照入口</h2>
+  <p class="muted">这页只服务当前论文主线。重点是看长线 LoRA 联邦安全更新在不同数据集上的样图、进度和对照关系。</p>
+</section>
+
+{% if comparison_rows %}
+<section class="comparison-axis-grid">
+  {% for row in comparison_rows %}
+  <article class="comparison-axis-card">
+    <div class="panel-kicker">主实验四向对照</div>
+    <h3>{{ row.dimension }}</h3>
+    <div class="comparison-axis-values">
+      {% for cell in row.cells %}
+      <div class="comparison-axis-item">
+        <strong>{{ cell.label }}</strong>
+        <p>{{ cell.value }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="grid three-up">
+  <article class="panel">
+    <div class="panel-kicker">阅读顺序</div>
+    <h3>先看 STL10 主对照</h3>
+    <p>中心化、联邦审计版、全客户端版和 rank=4 消融构成论文里最重要的样图与训练对照矩阵。</p>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">泛化证据</div>
+    <h3>再看 Fashion / MNIST / CIFAR-10</h3>
+    <p>这些数据集更适合支撑“LoRA 联邦安全更新能稳定迁移到不同数据域”，不直接替代主图。</p>
+  </article>
+  <article class="panel">
+    <div class="panel-kicker">当前口径</div>
+    <h3>重点看走势，不只看最终一张图</h3>
+    <p>同一页同时保留当前最好指标、平均上传负载和审计状态，避免只凭单张样图判断实验价值。</p>
+  </article>
+</section>
+
+{% for dataset, items in dataset_groups.items() %}
+<section class="panel result-gallery sampling-group">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">{{ dataset }}</div>
+      <h3>{{ dataset }} 长线样图板</h3>
+      <p class="muted">优先看当前预览图、训练组织方式和指标走势；管理员可以进一步进入实验详情查看完整样图和最近轮次记录。</p>
+    </div>
+  </div>
+  <div class="card-grid result-card-grid">
+    {% for run in items %}
+    <article class="result-card accent-{{ run.accent }}">
+      <div class="result-preview">
+        {% if run.preview_image_path %}
+        <img src="{{ url_for('preview_artifact', relpath=run.preview_image_path) }}" alt="{{ run.title }} 预览图">
+        {% else %}
+        <div class="preview-placeholder">
+          <strong>{{ run.status_label }}</strong>
+          <span>这组长线实验已经登记，启动后会自动补齐样图、指标和审计记录。</span>
+        </div>
+        {% endif %}
+      </div>
+      <div class="result-card-body">
+        <div class="card-topline">{{ run.mode }}</div>
+        <h3>{{ run.title }}</h3>
+        <p>{{ run.role }}</p>
+        <div class="metric-chip-row">
+          <span class="metric-chip">{{ run.status_label }}</span>
+          <span class="metric-chip">{{ run.progress_text }}</span>
+          <span class="metric-chip">{{ run.best_metric_display }}</span>
+        </div>
+        <dl class="fact-grid">
+          <div>
+            <dt>训练组织</dt>
+            <dd>{{ run.training_pattern }}</dd>
+          </div>
+          <div>
+            <dt>LoRA 设置</dt>
+            <dd>{{ run.lora_setting }}</dd>
+          </div>
+          <div>
+            <dt>平均上传负载</dt>
+            <dd>{{ run.payload_display }}</dd>
+          </div>
+          <div>
+            <dt>审计状态</dt>
+            <dd>{{ run.audit_status_text }}</dd>
+          </div>
+        </dl>
+        <p class="muted">{{ run.metric_story }}</p>
+        <div class="result-card-actions">
+          {% if current_role == "admin" %}
+          <a class="inline-link" href="{{ url_for('experiment_detail', run_id=run.id) }}">查看实验详情</a>
+          {% endif %}
+          {% if run.preview_image_path %}
+          <a class="inline-link" href="{{ url_for('preview_artifact', relpath=run.preview_image_path) }}" target="_blank" rel="noopener">单独打开样图</a>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

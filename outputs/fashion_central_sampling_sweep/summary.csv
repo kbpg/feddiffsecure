@@ -1,0 +1,4 @@
+sample_steps,proxy_fid,sampler,sampler_requested,sampler_effective,ddim_eta,clip_denoised,checkpoint_kind_loaded,classifier_fid,top1_confidence_mean,top1_confident_ratio,predicted_class_entropy,predicted_unique_classes,evaluator_test_accuracy
+25,26.943317120584656,ddim,ddpm,ddim,0.0,True,best,769.0222015706079,0.5135554075241089,0.0,0.9655594825744629,3,0.9115
+50,26.977015098405285,ddim,ddpm,ddim,0.0,True,best,769.5205001441319,0.5126048922538757,0.0,0.975710928440094,3,0.9115
+100,24.643425478216535,ddpm,ddpm,ddpm,0.0,True,best,748.9939652392304,0.500930905342102,0.0,1.0942068099975586,4,0.9115

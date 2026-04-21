@@ -1,0 +1,17 @@
+{
+  "last_round": {
+    "round": 60,
+    "avg_client_loss": 0.07496,
+    "proxy_fid": 4.61026,
+    "total_samples": 60000,
+    "aggregated_clients": 4
+  },
+  "best_proxy_fid_round": {
+    "round": 35,
+    "avg_client_loss": 0.084915,
+    "proxy_fid": 3.536722,
+    "total_samples": 60000,
+    "aggregated_clients": 4
+  },
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b32_decoder_x0_long_run\\global_model_best.pt"
+}

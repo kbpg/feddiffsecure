@@ -1,0 +1,31 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\fashion_b48_stage5_attn_t300_qualitypush.yaml",
+  "started_at": "2026-04-19T15:51:59.127610+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "fashion_mnist",
+  "model_params_total": 37155801,
+  "model_params_trainable": 37155801,
+  "num_clients": 1,
+  "rounds": 320,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 100,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.00015,
+  "batch_size": 128,
+  "ema_decay": 0.9995,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 0,
+  "trainable_param_tensors": 554,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 554,
+  "train_examples": 60000,
+  "resume_count": 0,
+  "completed_at": "2026-04-19T20:01:26.616970+08:00",
+  "wall_clock_seconds": 14967.461,
+  "avg_round_seconds": 45.392,
+  "max_round_seconds": 71.895
+}

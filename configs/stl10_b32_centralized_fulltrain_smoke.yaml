@@ -1,0 +1,50 @@
+seed: 42
+
+dataset:
+  name: stl10
+  root: ./data
+  image_size: 96
+  channels: 3
+
+centralized:
+  rounds: 1
+  max_steps_per_round: 4
+
+model:
+  architecture: unet
+  base_channels: 32
+  channel_multipliers: [1, 2, 4, 8, 8]
+  blocks_per_level: 2
+  lora_rank: 4
+  lora_alpha: 4.0
+
+diffusion:
+  timesteps: 300
+  sample_steps: 300
+  sampler: ddpm
+  ddim_eta: 0.0
+  clip_denoised: true
+  x0_loss_weight: 0.1
+
+training:
+  batch_size: 8
+  lr: 0.0001
+  num_workers: 2
+  weight_decay: 0.0
+  ema_decay: 0.999
+  unfreeze_param_prefixes:
+    - "*"
+
+evaluation:
+  num_real_samples: 64
+  num_fake_samples: 64
+  eval_batch_size: 64
+  proxy_feature_size: 8
+  semantic_eval_every: 1
+  evaluator_cache_dir: ./outputs/evaluators
+
+system:
+  device: auto
+  output_dir: ./outputs/stl10_b32_centralized_fulltrain_smoke_run
+  save_every_round: false
+  save_final_samples: true

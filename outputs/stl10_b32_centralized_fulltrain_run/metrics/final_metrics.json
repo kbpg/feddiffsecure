@@ -1,0 +1,52 @@
+{
+  "last_round": {
+    "round": 120,
+    "avg_client_loss": 0.063647,
+    "proxy_fid": 24.850956,
+    "total_samples": 512,
+    "aggregated_clients": 1,
+    "round_duration_sec": 181.453,
+    "classifier_fid": 167.148681640625,
+    "top1_confidence_mean": 0.27009832859039307,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.7918944358825684,
+    "predicted_unique_classes": 8,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_proxy_fid_round": {
+    "round": 60,
+    "avg_client_loss": 0.070016,
+    "proxy_fid": 17.386599,
+    "total_samples": 512,
+    "aggregated_clients": 1,
+    "round_duration_sec": 180.5,
+    "classifier_fid": 207.42376708984375,
+    "top1_confidence_mean": 0.2973959445953369,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.0389423370361328,
+    "predicted_unique_classes": 6,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 37636.979,
+  "avg_round_seconds": 240.33,
+  "max_round_seconds": 7303.733,
+  "best_classifier_fid_round": {
+    "round": 85,
+    "avg_client_loss": 0.069155,
+    "proxy_fid": 18.982845,
+    "total_samples": 512,
+    "aggregated_clients": 1,
+    "round_duration_sec": 181.077,
+    "classifier_fid": 117.62997436523438,
+    "top1_confidence_mean": 0.3379893898963928,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.4449677467346191,
+    "predicted_unique_classes": 8,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_semantic_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_best_semantic.pt",
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_run\\global_model_ema.pt"
+}

@@ -1,0 +1,28 @@
+train mnist evaluator:   0%|          | 0/5 [00:00<?, ?it/s]train mnist evaluator:   0%|          | 0/5 [00:16<?, ?it/s, loss=0.3273, test_acc=0.9722]train mnist evaluator:  20%|¨€¨€        | 1/5 [00:16<01:04, 16.01s/it, loss=0.3273, test_acc=0.9722]train mnist evaluator:  20%|¨€¨€        | 1/5 [00:31<01:04, 16.01s/it, loss=0.0847, test_acc=0.9801]train mnist evaluator:  40%|¨€¨€¨€¨€      | 2/5 [00:31<00:46, 15.62s/it, loss=0.0847, test_acc=0.9801]train mnist evaluator:  40%|¨€¨€¨€¨€      | 2/5 [00:46<00:46, 15.62s/it, loss=0.0555, test_acc=0.9881]train mnist evaluator:  60%|¨€¨€¨€¨€¨€¨€    | 3/5 [00:46<00:30, 15.34s/it, loss=0.0555, test_acc=0.9881]train mnist evaluator:  60%|¨€¨€¨€¨€¨€¨€    | 3/5 [01:01<00:30, 15.34s/it, loss=0.0445, test_acc=0.9847]train mnist evaluator:  80%|¨€¨€¨€¨€¨€¨€¨€¨€  | 4/5 [01:01<00:15, 15.14s/it, loss=0.0445, test_acc=0.9847]train mnist evaluator:  80%|¨€¨€¨€¨€¨€¨€¨€¨€  | 4/5 [01:15<00:15, 15.14s/it, loss=0.0358, test_acc=0.9889]train mnist evaluator: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 5/5 [01:15<00:00, 14.95s/it, loss=0.0358, test_acc=0.9889]                                                                                                  forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FFFE0E69DED  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFFE262E8D7  Unknown               Unknown  Unknown
+ntdll.dll          00007FFFE37AC48C  Unknown               Unknown  Unknown
+Traceback (most recent call last):
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\run_centralized.py", line 419, in <module>
+    main()
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\run_centralized.py", line 282, in main
+    semantic_metrics = compute_semantic_metrics(
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\feddiffsecure\semantic_metrics.py", line 281, in compute_semantic_metrics
+    classifier_fid = frechet_distance(real_features, fake_features)
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\feddiffsecure\metrics.py", line 76, in frechet_distance
+    middle_sqrt = _matrix_sqrt_psd(middle)
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\feddiffsecure\metrics.py", line 58, in _matrix_sqrt_psd
+    eigvals, eigvecs = torch.linalg.eigh(sym)
+torch._C._LinAlgError: linalg.eigh: The algorithm failed to converge because the input matrix is ill-conditioned or has too many repeated eigenvalues (error code: 12250).
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x000001E0D72303A0>
+Traceback (most recent call last):
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\.venv\lib\site-packages\torch\utils\data\dataloader.py", line 1709, in __del__
+    self._shutdown_workers()
+  File "C:\Users\shenc\Desktop\feddiffsecure_minimal\.venv\lib\site-packages\torch\utils\data\dataloader.py", line 1697, in _shutdown_workers
+    w.terminate()
+  File "C:\Users\shenc\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 133, in terminate
+    self._popen.terminate()
+  File "C:\Users\shenc\AppData\Local\Programs\Python\Python310\lib\multiprocessing\popen_spawn_win32.py", line 123, in terminate
+    _winapi.TerminateProcess(int(self._handle), TERMINATE)
+PermissionError: [WinError 5] ¾Ü¾ø·ÃÎÊ¡£

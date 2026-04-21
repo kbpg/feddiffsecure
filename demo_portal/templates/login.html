@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}登录 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="login-hero">
+  <div class="login-panel">
+    <div class="login-copy">
+      <div class="eyebrow">系统登录</div>
+      <h2>面向论文展示的 LoRA 联邦安全更新原型系统</h2>
+      <p class="login-intro">
+        这套门户统一展示 100 轮长线实验、LoRA 联邦轻量化训练、更新审计、核心思想与实验设计，
+        让论文主线、系统实现和实验结果始终保持同一套口径。
+      </p>
+      <ul class="login-feature-list">
+        <li>统一查看 STL10 主对照、跨数据集泛化、LoRA 轻量化消融和安全更新审计。</li>
+        <li>结果中心、专题页、实验详情和论文说明共用同一套注册表与输出目录。</li>
+        <li>管理员账号可以查看完整样图、训练监控、安全审计和论文资料页。</li>
+      </ul>
+    </div>
+
+    <div class="login-access">
+      <div>
+        <div class="panel-kicker">进入展示系统</div>
+        <h3>账号登录</h3>
+        <p class="muted">管理员适合完整演示，普通用户适合展示门户的阅读权限边界。</p>
+      </div>
+
+      {% if error %}
+      <div class="error-banner">{{ error }}</div>
+      {% endif %}
+
+      <form method="post" class="login-form">
+        <label>
+          <span>用户名</span>
+          <input type="text" name="username" autocomplete="username" required>
+        </label>
+        <label>
+          <span>密码</span>
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit">进入系统</button>
+      </form>
+
+      <div class="login-demo-block">
+        <div class="panel-kicker">演示账号</div>
+        <div class="account-grid">
+          {% for account in demo_accounts %}
+          <div class="account-card">
+            <div class="panel-kicker">{{ "管理员账号" if account.role == "admin" else "普通用户账号" }}</div>
+            <strong>{{ account.display_name }}</strong>
+            <p>用户名：{{ account.username }}</p>
+            <p>密码：{{ account.password }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

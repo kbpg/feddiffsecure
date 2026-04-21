@@ -1,0 +1,10 @@
+[
+  {
+    "round": 1,
+    "avg_client_loss": 0.349751,
+    "proxy_fid": 9.514428,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 55.608
+  }
+]

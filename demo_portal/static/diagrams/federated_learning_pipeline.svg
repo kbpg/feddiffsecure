@@ -1,0 +1,49 @@
+<svg width="1400" height="860" viewBox="0 0 1400 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="860" rx="40" fill="#F7FAFF"/>
+  <rect x="36" y="36" width="1328" height="788" rx="34" fill="white" stroke="#D8E2F6" stroke-width="2"/>
+
+  <text x="82" y="110" fill="#0E2850" font-size="42" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">联邦扩散训练、隐写传输与审计聚合流程</text>
+  <text x="82" y="152" fill="#537095" font-size="24" font-family="Microsoft YaHei, Segoe UI, sans-serif">示意图用于说明客户端本地训练、更新封装、服务端恢复、审计校验与全局聚合之间的关系</text>
+
+  <rect x="82" y="210" width="350" height="230" rx="28" fill="#EEF5FF" stroke="#BCD2FF" stroke-width="2"/>
+  <text x="112" y="255" fill="#1190A8" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">步骤 1</text>
+  <text x="112" y="305" fill="#0E2850" font-size="34" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">客户端本地训练</text>
+  <text x="112" y="352" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="112" dy="0">non-IID 数据保留在本地，</tspan>
+    <tspan x="112" dy="34">仅上传可训练更新，不上传原始样本。</tspan>
+  </text>
+
+  <rect x="525" y="210" width="350" height="230" rx="28" fill="#FFF5EE" stroke="#FFD1B5" stroke-width="2"/>
+  <text x="555" y="255" fill="#F26C2B" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">步骤 2</text>
+  <text x="555" y="305" fill="#0E2850" font-size="34" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">更新压缩与隐写封装</text>
+  <text x="555" y="352" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="555" dy="0">记录原始载荷哈希、压缩大小与 PSNR，</tspan>
+    <tspan x="555" dy="34">让通信链路成为可分析的系统变量。</tspan>
+  </text>
+
+  <rect x="968" y="210" width="314" height="230" rx="28" fill="#F3EEFF" stroke="#CFBEFF" stroke-width="2"/>
+  <text x="998" y="255" fill="#6C4CE3" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">步骤 3</text>
+  <text x="998" y="305" fill="#0E2850" font-size="34" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">服务端恢复与审计</text>
+  <text x="998" y="352" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="998" dy="0">恢复载荷后重新计算 SHA-256，</tspan>
+    <tspan x="998" dy="34">检查封装前后是否完全一致。</tspan>
+  </text>
+
+  <rect x="220" y="520" width="960" height="210" rx="30" fill="#F7F4EA" stroke="#E8DAB1" stroke-width="2"/>
+  <text x="260" y="575" fill="#B48111" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">步骤 4</text>
+  <text x="260" y="625" fill="#0E2850" font-size="36" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">聚合、下发与下一轮训练</text>
+  <text x="260" y="668" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="260" dy="0">服务端聚合恢复后的可训练更新，形成新的全局模型，</tspan>
+    <tspan x="260" dy="34">再下发到下一轮客户端。联邦范式的真正贡献，是把扩散训练变成一个同时受数据异质性、通信成本与审计链路约束的系统问题。</tspan>
+  </text>
+
+  <path d="M432 325H505" stroke="#8FB2F4" stroke-width="12" stroke-linecap="round"/>
+  <path d="M875 325H948" stroke="#F5A36D" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1125 442V485" stroke="#A58AF8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M260 485V520" stroke="#D7C06E" stroke-width="12" stroke-linecap="round"/>
+
+  <circle cx="180" cy="638" r="34" fill="#E1EDFF"/>
+  <circle cx="180" cy="638" r="16" fill="#5E88F6"/>
+  <circle cx="129" cy="638" r="16" fill="#5E88F6"/>
+  <circle cx="231" cy="638" r="16" fill="#5E88F6"/>
+</svg>

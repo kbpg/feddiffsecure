@@ -1,0 +1,738 @@
+
+===== PAGE 1 =====
+
+FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in
+Heterogeneous Federated Learning
+Huan Wang1,*, Haoran Li1,3,*, Huaming Chen2, Jun Yan1, Jiahua Shi3, Jun Shen1,†
+1School of Computing and Information Technology, University of Wollongong, Wollongong, Australia
+2School of Electrical and Computer Engineering, The University of Sydney, Sydney, Australia
+3QLD Alliance for Agriculture and Food Innovation, The University of Queensland, Brisbane, Australia
+hw226@uowmail.edu.au *Equal Contribution †Corresponding Author
+Abstract
+Federated learning aims at training models collaboratively
+across participants while protecting privacy. However, one
+major challenge for this paradigm is the data heterogeneity
+issue, where biased data preferences across multiple clients,
+harming the model’s convergence and performance. In this
+paper, we first introduce powerful diffusion models into the
+federated learning paradigm and show that diffusion repre-
+sentations are effective steers during federated training. To
+explore the possibility of using diffusion representations in
+handling data heterogeneity, we propose a novel diffusion-
+inspired F ederated paradigm withDiffusion Representation
+Collaboration, termed FedDifRC, leveraging meaningful
+guidance of diffusion models to mitigate data heterogeneity.
+The key idea is to construct text-driven diffusion contrasting
+and noise-driven diffusion regularization, aiming to provide
+abundant class-related semantic information and consistent
+convergence signals. On the one hand, we exploit the con-
+ditional feedback from the diffusion model for different text
+prompts to build a text-driven contrastive learning strategy.
+On the other hand, we introduce a noise-driven consistency
+regularization to align local instances with diffusion denois-
+ing representations, constraining the optimization region in
+the feature space. In addition, FedDifRC can be extended
+to a self-supervised scheme without relying on any labeled
+data. We also provide a theoretical analysis forFedDifRC
+to ensure convergence under non-convex objectives. The ex-
+periments on different scenarios validate the effectiveness of
+FedDifRC and the efficiency of crucial components. Code
+is available at https://github.com/hwang52/FedDifRC.
+1. Introduction
+Federated Learning (FL) [34] has become increasingly pop-
+ular as a decentralized training paradigm, with multiple dis-
+tributed clients train their local models without sharing their
+Figure 1. The main idea of FedDifRC with two key modules
+TDCL and NDCR. (a) We leverage conditional generative feed-
+back of the pre-trained diffusion model on various text prompts to
+devise a text-driven contrastive learning strategy, where the input
+embedding is injected as a condition. (b) We extract the diffusion
+denoising feature maps of intermediate layers from the pre-trained
+diffusion model at a specific time step t during the diffusion back-
+ward process to construct a noise-driven regularization.
+private dataset [16, 28] ( i.e., training client models locally
+and aggregating them globally [29]). One major challenge
+faced in FL is the potential discrepancies in the local data
+distributions across distributed clients, which is known as
+the data heterogeneity issue [32, 35, 44]. Specifically, the
+private data is collected from different sources with diverse
+preferences and presents non-independent and identically
+distributed (non-iid) distribution [27, 75]. Suchnon-iid data
+arXiv:2507.06482v2  [cs.LG]  18 Jul 2025
+
+===== PAGE 2 =====
+
+discrepancies can lead to inconsistency in the clients’ local
+objective functions and optimization directions, making the
+model convergence slow and unstable [17, 29, 30, 39, 65].
+To mitigate the negative impact of the data heterogeneity,
+a mainstream of subsequent efforts delves into introducing a
+variety of suited signals to regulate the private model, there
+are mainly two perspectives: i) local model optimization at
+the client side and ii) global model aggregation at the server
+side. The former focuses on optimization strategies to make
+the variance of local updates limited [6, 29]. Another aims
+to improve the efficacy of global model aggregation [36, 69,
+73]. In fact, most of these previous methods force the local
+models to be consistent to the global model. Although they
+have a certain effect by reducing gradient inconsistency, the
+gradually enlarged parameter deviation persists. Hence, we
+argue that local model overfits the local data distribution,
+which is magnified under the data heterogeneity and thus
+hinders the improvement of model’s performance in FL.
+Recently, the development of diffusion models (DMs) [4,
+11, 37, 46] provides fresh opportunities. The diffusion mod-
+els have demonstrated remarkable power in generating the
+diverse and realistic images, showing strong ability to cap-
+ture intricate details and patterns from underlying data. For
+instance, with proper guidance, stable diffusion (SD) [46]
+models can effectively align a text prompt with the corre-
+sponding image context, which suggests their potential abil-
+ity to understand both high-level and low-level contextual
+visual concepts regarding what an image contains. This se-
+mantic generative and visual comprehension capabilities of
+SD models motivate us to think: is it possible to exploit the
+inherent fine-grained visual representation capabilities of
+diffusion models to promote heterogeneous FL training?
+Taking into account both the effectiveness and efficiency,
+we revisit the underlying representations in the SD models,
+which are intermediate feature maps in a diffusion process
+(e.g., denoise or noise an image) produced by multiple call-
+ing a UNet [47]. We argue that diffusion representations are
+effective steers for FL training: i) extensive general knowl-
+edge inherent in diffusion models enhance local semantic
+diversity in FL; ii) smooth correspondences about semantic
+objects in diffusion models is a natural guiding signal in FL.
+Building on these two insights, we first proposeconditional
+diffusion representations by imposing various text prompts
+in the SD model. In this way, each instance is contrastively
+enhanced with a set of text-driven diffusion representations,
+capturing rich domain variance. Then, we devise denoising
+diffusion representations from semantic relations between
+visual and linguistic concepts in the SD model. We extract
+the feature maps from different hierarchies of the UNet de-
+coder in the SD model’s denoising process, serving as guid-
+ance signals to avoid over-optimization in FL local training.
+In this paper, we propose a diffusion-inspired Federated
+framework with Diffusion Representation Collaboration, as
+FedDifRC, to handle the data heterogeneity issue in FL,
+which consists of two key modules (see Fig. 1): i)First, we
+devise Text-driven Diffusion Contrastive Learning (TDCL),
+which utilizes conditional diffusion representations to con-
+struct inter-contrastive learning [1, 9, 26, 58] in a text-driven
+diffusion manner (the sample’s embedding is injected as a
+condition). By maximizing the agreement between the local
+instance and its corresponding representations, TDCL adap-
+tively captures class-relevant information and semantically
+meaningful knowledge. This objective encourages sample’s
+embedding closer to conditional diffusion representations
+with same semantics and away from other negatives, thus
+maintaining a clear decision boundary. ii) Second, we use
+the denoising diffusion representations to build a flat and
+stable convergent target and further propose Noise-driven
+Diffusion Consistent Restriction (NDCR). Concretely, we
+extract denoising feature maps of the noisy input sample in
+the SD model’s backward process, as a regularization term
+to constrain the optimization region of the local model. The
+local sample is forced to align the embedding with its de-
+noising representations at the feature space to promote the
+uniformity for local training.
+Our main contributions are summarized as follows:
+• We explore the possibility of using diffusion models to
+tackle data heterogeneity in FL and devise the conditional
+and denoising diffusion representations as effective steers
+to regulate model training in heterogeneous FL.
+• We propose FedDifRC, a diffusion-inspired FL frame-
+work to handle data heterogeneity by leveraging the com-
+plementary advantages of two key components: i) TDCL
+facilitates the local model to learn more general class-
+relevant knowledge; ii) NDCR enforces the uniformity in
+the feature space for local training.
+• We conduct extensive experiments for different FL sce-
+narios ( e.g., label shift, domain shift, and long-tailed)
+and different application scenarios (i.e., intra-domain and
+cross-domain) to demonstrate the effectiveness of our
+FedDifRC and the indispensability of each component.
+2. Related Work
+2.1. Heterogeneous Federated Learning
+Federated learning is proposed to address privacy concerns
+in a distributed learning environment ( e.g., Federated Av-
+eraging (FedAvg) [34]). Several studies have improved the
+local update process on the client side or the global aggre-
+gation process on the server side to tackle data heterogene-
+ity in FL. The former focuses on local optimization strate-
+gies to make the diversity between the client model and the
+global model limited in the parameter level [6, 12, 13, 17,
+26, 29, 35, 52]. The another branch aims to adopt aggre-
+gation mechanisms on the server to alleviate the negative
+influence of data heterogeneity [23, 43, 60, 62, 69, 73].
+
+===== PAGE 3 =====
+
+Recently, existing FL works that apply diffusion models
+mainly focus on building synthetic datasets [25, 51, 67, 74].
+With the assistance of synthetic datasets, the FL global
+model can be retrained by this data augmentation scheme to
+mitigate data heterogeneity. Although these generated data
+have comparable quality and diversity to client images, the
+local model may overfit local domain distribution, and the
+inherent heterogeneity across clients may not have been ad-
+dressed. In contrast, we focus on how to effectively leverage
+the fine-grained visual representation from diffusion models
+to promote a generalizable FL global model.
+2.2. Diffusion Model Representations
+Recently, diffusion models have shown significant advances
+in image generation, editing, and stylized [4, 11, 37, 46, 66],
+suggesting that they contain rich underlying representations
+to be exploited for different downstream tasks. DIFT [54] is
+used to extract the diffusion features without explicit super-
+vision. Diffusion Hyperfeatures [31] integrates multi-scale
+and multi-timesteps diffusion features into feature descrip-
+tors. The diffusion representations have shown impressive
+results on the vision branch, including being testified as cer-
+tifiable classifiers [3, 24, 63] and semantics correspondence
+learners [54, 64, 72]. In this paper, we expand the diffusion
+models to FL and construct the conditional and denoising
+diffusion representations, offering fruitful class-relevant in-
+formation and consistent convergence signals.
+2.3. Contrastive Learning
+Contrastive learning (CL) has been widely applied to self-
+supervised learning scenarios [1, 7, 9]. Many works are fo-
+cused on learning the encoder where the embeddings of the
+same sample are pulled closer and those of different sam-
+ples are pushed apart [2, 5, 18, 55]. They mainly construct a
+positive pair and some negative pairs for each data instance
+and use InfoNCE [38] to contrast positiveness against nega-
+tiveness. There are some works that incorporate contrastive
+learning into FL to assist local training to achieve higher
+model performance [8, 12, 26, 53]. In our work, Text-driven
+Diffusion Contrastive Learning (TDCL) is devised to pro-
+mote local model by attracting samples to positive repre-
+sentations while pushing away other negatives.
+3. Diffusion Models Help Federated Learning
+In this section, we begin with a brief overview of the general
+FL paradigm and the generative diffusion models (Sec. 3.1).
+Then, we analyze the effectiveness of diffusion representa-
+tions and illustrate our core insights (Sec. 3.2). Finally, we
+will introduce how to extract the conditional and denoising
+diffusion representations in Sec. 3.3 and Sec. 3.4.
+3.1. Preliminaries and Background
+Federated Learning: We focus on the case with K clients
+holding the heterogeneous data partition{D1, D2, . . . ,DK}
+with private dataset Dk = {xi, yi}nk
+i=1 , yi ∈ { 1, . . . ,|C|}
+for the k-th client, where nk denotes the local dataset scale.
+Let nj
+k be the number of samples with label j at client k,
+and Dj
+k = {(x, y) ∈ D k|y = j} denotes the set of samples
+with label j on the k-th client, so the number of samples in
+j-th class is nj = PK
+k=1 nj
+k. The objective of the general
+FL is to learn an optimal global model w across K clients:
+min
+w
+L(w) = 1
+K
+KX
+k=1
+nk
+N Lk(w; Dk), (1)
+where Lk is the k-th client local loss function and w is the
+global model parameters. N is the total number of samples
+among all clients. In the FL training setup, we consider
+the local model f with parameters w = {u, v}. It has two
+modules: i) a feature extractor h(u) with the parameters u
+maps each sample xi to a d-dim (default as 512) vector as
+zi = h(u; xi); ii) a classifier g(v) with parameters v maps
+zi into a |C|-dim output logits as li = g(v; zi).
+Diffusion Models: Given the image sample x from an un-
+derlying distribution p(x), a forward diffusion process as a
+Markov chain to add random Gaussian noise ϵ ∼ N (0, I)
+to the original sample x0, and xt is the noise sample after
+adding t-steps noise:
+xt =
+p
+1 − γtxt−1 + √γtϵt, t ∈ {1, ..., T}, (2)
+where T is the number of diffusion timesteps, γt ∈ (0, 1) is
+a adjustable time variance schedule [11]. By leveraging the
+additive property of the Gaussian distribution, Eq. (2) can
+be further reformulated asxt = √¯αtx0+√1 − ¯αtϵt, where
+αt = 1 − γt and ¯αt
+.= Qt
+i=1 αi. On this basis, the image
+x0 can be obtained from a random noise xt ∼ N (0, I) by
+reversing the above forward diffusion process [11]:
+xt−1 = 1√αt
+(xt− 1 − αt√1 − ¯αt
+ϵθ(xt, t)), t ∈ {T, ..., 1}, (3)
+where ϵθ denotes the denoiser network with the parameters
+θ to predict noise ϵ, and the denoiser network is usually im-
+plemented as a UNet architecture [47]. Further, the denoiser
+ϵθ is optimized using the loss Tθ as follows:
+Tθ = Eϵ,x0,t[||ϵθ(xt, t) − ϵ||2
+2], ϵ ∼ N (0, I), (4)
+where ϵ is the noise in the forward diffusion process, andϵθ
+is usually implemented as a UNet [47]. Besides, the diffu-
+sion model’s objective in Eq. (4) can be easily extended to
+a conditional diffusion paradigm by adding a condition c to
+the ϵθ. Thus, the training objective should be modified as:
+Tθ = Eϵ,x0,t,c[||ϵθ(xt, t, c) − ϵ||2
+2], ϵ ∼ N (0, I), (5)
+with the denoiser ϵθ(xt, t, c) in Eq. (5), we can generate
+data with a specific conditionc by solving a reverse process.
+
+===== PAGE 4 =====
+
+3.2. Motivation and Analysis
+The diffusion model is a probabilistic generative model de-
+signed for denoising by systematically reversing a progres-
+sive noising process, and recent studies [61, 68] have veri-
+fied that diffusion-based generative models can be effective
+representation learners. Stable diffusion models are able to
+weave from scratch with fruitful and innovative depictions
+of high fidelity and further capture the underlying proper-
+ties, positions, and correspondences from visual concepts.
+Such a phenomenon shows that SD models can align a tex-
+tual prompt with its corresponding image context, demon-
+strating their potential ability in understanding both high-
+level (e.g., semantic relations) and low-level (e.g., textures,
+edge, and structures) visual concepts in an image.
+Autoencoders [71, 76] can learn to reconstruct their input
+at the output and have been one of the dominant approaches
+for representation learning. We assume a linear autoencoder
+expressed as WaWb · x+ Wc · x to imitate UNet [47] used in
+diffusion models, where Wa ∈ Rd×d∗
+, Wb ∈ Rd∗×d, and
+Wc ∈ Rd×d, d∗ < d . For xt = √¯αtx0 + √1 − ¯αtϵt and
+we set E[x0] = 0, thus minimizing the loss Tθ in Eq. (4) is
+equivalent to minimize the modified objective T ∗
+θ :
+T ∗
+θ = Eϵ,x0,t[||ϵθ(√¯αtx0 +
+√
+1 − ¯αtϵt) − ϵ||2
+2],
+≡ min{¯αt(WaWb + Wc)⊤Σx0(WaWb + Wc)}, (6)
+where Σx0 means covariance matrix of x0. Eq. (6) ensures
+a meaningful latent space for the diffusion models, similar
+to the linear autoencoder that encodes data into the principal
+components space. Therefore, the diffusion training process
+is equivalent to encourage the disentanglement of the latent
+representations until good-quality reconstruction is reached.
+To validate the representation ability in diffusion models,
+we use t-SNE [57] to visualize the latent features, shown in
+Fig. 2, without training on the specific MNIST [22] dataset.
+Concretely, we use the pre-trained SD model to extract fea-
+tures of the UNet decoder ϵθ, T means diffusion time-steps,
+L means the layer of the UNet decoderϵθ (L ∈ {1, 2, 3, 4}).
+Our results in Fig. 2 indicate that, even without supervision,
+diffusion models are able to group input samplesat properly
+selected time-steps T and layer L. However, when the T or
+L is too large (e.g., T = 999 or L = 4), the representations
+become inseparable, leading to blurred decision boundaries.
+Furthermore, we apply K-Means clustering (cluster size set
+as 5) on the latent features from the diffusion UNet decoder
+and visually examine whether the diffusion features contain
+consistent semantic information. In Fig. 3, different parts of
+the visual objects are clustered, showing that earlier layers
+(e.g., L = 2) capture coarse yet consistent semantics, while
+later layers (e.g., L = 3) focus on low-level textural details.
+Both t-SNE and K-Means observation results motivate us to
+leverage the fine-grained visual representation capabilities
+from the SD model to promote heterogeneous FL training.
+Figure 2. The t-SNE feature visualization on the MNIST dataset
+from the diffusion UNet decoder,without training, where diffusion
+time-steps T ∈ {100, 300, 500, 999} and layer L ∈ {1, 2, 3, 4}.
+Figure 3. The K-Means clustering feature visualization (each color
+represents a cluster) from the diffusion UNet decoder’s layers.
+Figure 4. The PCA visualization of early (layer 2), later (layer 4),
+and fused features (see Eq. (8)), where the first three components
+of PCA-computed serve as color channels for each image.
+3.3. Conditional Diffusion Representations
+The key idea of our conditional diffusion representations is
+based on cognitive diversity of generative diffusion models
+for different text prompts, via a condition-guided manner.
+Specifically, for the client k, given an input image xi of the
+local dataset Dk = {xi, yi}nk
+i=1, yi ∈ {1, ..., |C|} means the
+label of xi, and we letS represents the set of all class names,
+
+===== PAGE 5 =====
+
+so we use Syi to denote the class name of the labelyi. From
+our implementation, the image xi is fed into the encoder hk
+of the local model fk to obtain the embedding ci, then ci is
+treated as a condition and injected into the diffusion model.
+For a pre-trained SD model, ci is further combined with a
+relevant text prompt Pyi = ‘a photo of aSyi’ and sent to the
+UNet decoder to produce diffusion representationsFi. Note
+that since we do not add noise, we simply set the time-steps
+T = 0 of the diffusion process. Typically, the imagexi size
+is 224×224, and Fi contains 4 feature maps, where theL-th
+layer’s feature mapFi(L) has the spatial size {7, 14, 28, 28}
+(L ∈ {1, 2, 3, 4}), and {1280, 1280, 640, 320} are channels.
+Formally, conditional diffusion representationsFi are com-
+puted by the ϵθ in Eq. (5), image xi, condition ci, text Pyi:
+Fi = ϵθ(xi, τi, T = 0, ci), τ i ← φ(Pyi), (7)
+where φ denotes the text encoder of the SD model and τi is
+the text features with the promptPyi. Inspired by the results
+in Fig. 3, which motivate us tocombine features at different
+layers of Fi to capture both semantics and details. A simple
+concatenation, however, can lead to an unnecessarily high-
+dimensional feature (1280 + 640 + 320 = 2240). To reduce
+high dimension, we apply PCA for each layer L ∈ {2, 3, 4}
+(due to the spatial resolution too low, we do not consider the
+L = 1), and we aggregate them to the same resolution, then
+we connect them together to obtain the fused features eFi:
+eFi = Concat( eFi(L)), eFi(L) = PCA(Fi(L)), (8)
+where L ∈ {2, 3, 4}, we perform PCA: i) for Fi(2), we first
+upsample to the same resolution and apply PCAR1280→256;
+ii) for Fi(3) and Fi(4), we apply PCA R640→128 and PCA
+R320→128. Then, we combine them to form the final fused
+features eFi. As shown in the last column of Fig. 4,the fused
+features strike a balance between high-level and low-level
+visual concepts, focusing on both semantics and textures in
+the image. On the example in the second row of Fig. 4, the
+fused feature yields more accurate matches ( e.g., face and
+computer borders). The comparison results in Table. 2 also
+confirm this viewpoint. We define eFi calculated by Eq. (8)
+as conditional diffusion representations of the sample xi.
+3.4. Denoising Diffusion Representations
+Although we construct the conditional diffusion representa-
+tions from the diffusion model’s generative feedback, eFi is
+still highly variable and depends on the condition generated
+by the local model, which can not ensure a consistent stable
+convergence signal. Based on Eq. (4), we explore the inher-
+ent denoising property in diffusion models: SD model has
+learned extensive general knowledge about identical seman-
+tics via large pre-training, reflected in the UNet denoising
+process. Therefore, we aim to extract the denoising diffu-
+sion representations contained in a pre-trained SD model, to
+align the sample’s embedding with the class semantics uni-
+formly in the feature space. Given the image pair {xi, yi}
+of k-th client’s dataset Dk, we first perform a forward pro-
+cess to add t time-steps random Gaussian noise on xi as
+˜xt
+i = √¯αtxi + √1 − ¯αtϵt, similar to [46], where ¯αt and
+ϵ are the same as defined in the Eq. (3). Next, we set the
+text prompt of ˜xt
+i as Pyi = ‘a photo of a Syi’ used in the
+SD model pre-training [46], to avoid destroying correspon-
+dence between visual and linguistic concepts, and the Syi
+denotes the class name of the label yi. Formally, the de-
+noising diffusion representations eHi of the sample xi are
+calculated by the ϵθ in Eq. (4), noisy sample ˜xt
+i, text Pyi:
+Hi = ϵθ(˜xt
+i, τi, T = t), τ i ← φ(Pyi),
+eHi = Concat( eHi(L)), eHi(L) = PCA(Hi(L)),
+(9)
+where φ denotes the text encoder of the SD model and τi is
+the text features of the text prompt Pyi. We further analyze
+the effects of the time-steps t in Fig. 6. Then, we combine
+the features of layers L ∈ { 2, 3, 4}, like Eq. (8), to obtain
+fused features eHi. Intuitively, eHi is considered as a virtual
+teacher to calibrate the embedding ofxi at the feature-level.
+We define the denoising features eHi calculated by Eq. (9)
+as denoising diffusion representations of the sample xi.
+4. Methodology
+Our proposed FedDifRC leverage conditional and denois-
+ing diffusion representations to obtain diverse class-relevant
+knowledge and consistent convergence signals by two com-
+plementary components: Text-driven Diffusion Contrastive
+Learning in Sec. 4.1 and Noise-driven Diffusion Consistent
+Restriction in Sec. 4.2. Further, we discuss how to extend
+FedDifRC to a self-supervised scheme (Sec. 4.3). Finally,
+we provide a theoretical analysis of FedDifRC under non-
+convex case (Sec. 4.4). Illustration of FedDifRC in Fig. 5.
+4.1. Text-Driven Diffusion Contrasting
+Inspired by success of contrastive learning [1, 9, 26], based
+on Sec. 3.3, conditional diffusion representations eFi of sam-
+ple {xi, yi} ∈ D k can be obtained with the conditionci and
+the text prompt Pyi = ‘a photo of a Syi’, where Syi is the
+class name of the label yi. For each sample’s embedding
+zi = hk(xi) ∈ Rd, we enforce zi to be similar to respective
+positive pair eFi and dissimilar to negative sample pairseFNi,
+where eFNi means the conditional diffusion representations
+with the same condition ci and the unmatched text prompts
+Pj = ‘a photo of a Sj’ (Sj ∈ S and Sj ̸= Syi). Then, we
+define the similarity between zi and eFi as follows:
+s(zi, eFi) = zi · eFi
+U(∥zi∥2 × ∥ eFi∥2)
+, U = 1
+nk
+nkX
+m=1
+∥zm − eFi∥2,
+(10)
+
+===== PAGE 6 =====
+
+Figure 5. Illustration of FedDifRC, including two complemen-
+tary modules: TDCL (Sec. 4.1) builds an inter-contrastive learning
+strategy by conditional diffusion representations (Sec. 3.3), NDCR
+(Sec. 4.2) designs a consistent regularization penalty via denoising
+diffusion representations (Sec. 3.4), jointly promoting FL training.
+where nk is total number of samples at client k, U is a nor-
+malization factor for similarity, where we set U to denote
+the average distance betweenzm|nk
+m=1 and eFi on dataset Dk.
+Next, we introduce TDCL to quantify and regulate the local
+model training, which can be formulated as follows:
+LT DCL = log(1 +
+P
+eFj ∈ eFNi
+exp(s(zi, eFj)/τ)
+exp(s(zi, eFi)/τ)
+), (11)
+where τ denotes a temperature parameter to control repre-
+sentation strength [1]. By minimizing Eq. (11), for client k,
+the local model brings each sample’s embedding zi closer
+to the positive pair and away from other negative pairs.
+4.2. Noise-Driven Diffusion Regularization
+Despite each local model aligning sample’s embedding with
+conditional diffusion representations by optimizingLT DCL
+in Eq. (11). Since conditional diffusion representations are
+dynamically built from text-driven cross-modal matching
+and depend on generated condition ci at each round, which
+could not offer a stable convergence direction. Therefore,
+we aim to leverage denoising diffusion representations ( eHi
+in Eq. (9)) to devise a consistent regularization penalty, con-
+straining model’s optimization region in the feature space.
+We design Noise-driven Diffusion Consistent Restriction
+(NDCR) and utilize a regularization term to pull the sam-
+ple’s embeddingzi closer to the respective eHi:
+LN DCR =
+dX
+q=1
+(zi(q) − eHi(q))2, (12)
+where q indexes the dimension d of the embedding vector.
+Based on Eq. (12), we expect to align the sample’s embed-
+ding with the corresponding denoising diffusion representa-
+tions, enforcing semantics uniformity of the feature space.
+Besides, we construct CrossEntropy loss and use the log-
+its output vector li = g(zi) = f(xi) with the original label
+yi to optimize the local discriminative ability for each client.
+Formally, given the sample pair {xi, yi} to calculate LCE :
+LCE = −1yi log(ψ(f(xi))), (13)
+where ψ denotes the Softmax function, f is the local model
+with parameters {u, v} maps xi into a |C|-dim output logits
+li = f(xi) = g(h(xi)). Finally, for the k-th client, we carry
+out the following optimization objective in local training:
+L = LT DCL(Eq. (11)) +LN DCR(Eq. (12)) +LCE . (14)
+The algorithm of FedDifRC is given in Appendix A.
+4.3. Expanding to Self-Supervised Scheme
+FedDifRC can be extended to the self-supervised scheme
+without relying on any labeled data source. Specifically, for
+LT DCL in Eq. (11), we only need to modify text template
+slightly: i) we set the text promptPyi = ‘a photo of a similar
+object’ in Eq. (7) to generate eFi as the positive pair; ii) then
+we randomly select from the set of all class names in Tiny-
+ImageNet [21] to get SNi, and set Pyi = ‘a photo of a SNi’
+to obtain eFNi as negative pairs. For theLN DCR in Eq. (12),
+we set Pyi = ‘a photo of a visual object’ in Eq. (9) to geteHi
+as consistent signal to align the sample’s embedding. Note
+that it is also possible to use class names of other datasets
+(e.g., CIFAR100 [20]) to generate eFNi as negative pairs. By
+this self-supervised way, the objective term of local training
+becomes LT DCL +LN DCR. The results in Table. 5 validate
+the effectiveness of FedDifRC’s self-supervised scheme.
+4.4. Convergence Analysis
+We proved convergence ofFedDifRC in non-convex case.
+We denote L (Eq. (14)) as Lr with the round r, assumptions
+(Appendix B.2) are similar to existing works [6, 29, 30, 69].
+Convergence Rate of FedDifRC: Let the round r from
+0 to R − 1, given any ξ > 0, the L will converge when,
+R > 2(L0 − L∗)
+ξEη (2 − L1η) − Ω1 − Ω2
+, (15)
+and we can further get the following condition for η,
+η < 2ξ − 2(|C| − 1)L2B
+L1(ξ + σ2) , (16)
+where Ω1 = 2(|C| − 1)L2EηB , Ω2 = L1Eη 2σ2, and L∗
+denotes the optimal solution of L, {L1, L2, B, σ2} are con-
+stants in the assumptions from Appendix B.2, and|C| as the
+number of classes, E as local epochs. Eq. (15) and Eq. (16)
+ensure convergence rate of FedDifRC, after selecting the
+number of rounds R and the learning rate η. So the smaller
+ξ is, the larger R is, which means that the tighter the bound
+is, the more rounds R is required. The detailed assumptions
+and proofs are formally provided in Appendix B.
+
+===== PAGE 7 =====
+
+CIFAR10(keepρ= 1.0)TDCL NDCR NID10.05 NID10.2 NID10.5 NID2 A VG
+78.27 84.65 86.11 72.60 80.41
+✓ 81.39 86.03 88.16 75.67 82.81
+✓ 80.35 86.40 87.54 75.33 82.40
+✓ ✓ 83.14 88.27 89.31 76.45 84.29
+CIFAR10-LT(keepNID10.2)TDCL NDCR ρ= 10 ρ= 50 ρ= 100 ρ= 200 A VG
+75.94 63.25 52.97 49.69 60.46
+✓ 76.62 64.66 53.62 50.33 61.31
+✓ 76.19 64.75 54.39 50.67 61.50
+✓ ✓ 77.58 65.30 55.01 51.12 62.25
+Table 1. Ablation study for two key modules: TDCL and NDCR.
+Scenarios L= 1 L= 2 L= 3 L= 4 Fused △
+NID10.05 80.21 82.60 82.19 81.33 83.14 +0.54
+NID10.2 86.15 87.28 87.81 85.92 88.27 +0.46
+NID10.5 87.10 89.03 88.93 87.17 89.31 +0.28
+NID2 74.26 75.73 75.61 75.00 76.45 +0.72
+Table 2. Comparison of features from different layers L and fused
+features (L ∈ {2, 3, 4}) in Eq. (8) and Eq. (9) to obtain eFi and eHi,
+best in bold and second with underline, △ means accuracy gap.
+Figure 6. Analysis of FedDifRC with time-steps t in Eq. (9) (left)
+and temperature τ in Eq. (11) (right) on CIFAR10 with NID10.2.
+5. Experiments
+5.1. Experimental Setup
+Datasets: We adopt popular benchmark datasets, including
+CIFAR10 & CIFAR100 [20], TinyImageNet [21]; we build
+unbalanced versions of these datasets by [15]: CIFAR10-LT
+& CIFAR100-LT, and TinyImageNet-LT; we use Digits [41]
+and Office-Caltech [19] for the domain shift task in FL.
+Scenarios: i) label shift: we consider two non-iid settings:
+NID1α follows Dirichlet distribution [59], where α denotes
+the heterogeneity level; NID2 is a more extreme setting con-
+sists of 6 biased clients (each has only a single category) and
+1 unbiased client has all categories. ii) imbalance shift: we
+shape the original dataset into a long-tailed distribution with
+ρ follow [15], ρ means the ratio between sample sizes of the
+most frequent and least frequent class, asρ = maxj / minj.
+iii) domain shift: Digits [41] includes 4 domains as MNIST
+(M), USPS (U), SVHN (SV), SYN (SY) with 10 categories.
+Office-Caltech [19] also consists 4 domains as Caltech (C),
+Webcam (W), Amazon (A), DSLR (D) with 10 overlapping
+categories. We initialize 10 clients and assign them domains
+randomly: Digits (M: 1, U: 4, SV: 3, SY: 2), Office-Caltech
+(C: 3, W: 2, A: 2, D: 3). Each client’s dataset is randomly
+selected from domains (Digits: 10%, Office-Caltech: 20%).
+Configurations: The global rounds R as 100 and clients K
+as 10, all methods have little or no gain with more roundsR.
+To facilitate fair comparison, we follow in [26, 29], and use
+SGD optimizer to update models with a learning rate 0.01,
+a momentum of 0.9, a batch size of 64, the weight decay of
+10−5, and local epochs E = 10. We use MobileNetV2 [48]
+for TinyImageNet, ResNet-10 [14] for others. The dimen-
+sion d as 512, τ (Eq. (11)) as 0.06, t (Eq. (9)) as 150.
+Baselines: We compare our against several SOTA methods:
+standard-based FedAvg [34], FedProx [29]; contrast-based
+MOON [26], FedRCL [50]; aggregate-based FedCDA [60],
+FedDisco [69]; unsupervised FedEMA [77], FedLID [42];
+prototype-based FedProto [52], FedNH [70].
+5.2. Validation Analysis
+We give ablation study in Table. 1: i) TDCL brings signifi-
+cant performance improvements over the baseline, showing
+that TDCL is able to promote semantic spread-out property;
+ii) NDCR also yields solid gains, proving the importance of
+aligning instance embedding via consistency regularization;
+iii) combining TDCL and NDCR attain better performance,
+supporting our motivation to unleash meaningful guidance
+of diffusion representations to promote FL local training.
+Then, we prove the advantage of fused features (Eq. (8)).
+As shown in Table. 2, results on CIFAR10 reveal that fused
+features capture both semantics and local details, better than
+features on a single layer L, and if the features with too low
+resolution (L=1) or over-matching (L=4) would damage the
+model’s performance. To explore the influence of different
+time-steps t (Eq. (9)), we conduct experiments on CIFAR10
+with NID10.2 in Fig. 6 left, we add different amount of noise
+to get ˜xt
+i in Eq. (9). We find thatFedDifRC is robust to the
+choice of t ∈ [100, 300] (t=150 achieves the highest value).
+As shown in Fig. 6 right, we present results with different
+τ in Eq. (11), which reveals that FedDifRC is not sensi-
+tive to the τ ∈ [0.04, 0.08], indicating the effectiveness of
+U (Eq. (10)), to balance relative distances among different
+samples. The accuracy no longer increases after τ=0.06.
+Extra results of t and τ are provided in Appendix C.2.5.
+5.3. Evaluation Results
+The results on different settings (NID1, NID2, ρ) in Table. 3,
+FedDifRC consistently outperforms these counterparts, it
+confirms that FedDifRC effectively leverages the inherent
+fine-grained visual representation capabilities of diffusion
+models to promote heterogeneous FL training. The results
+of Office-Caltech with domain shift are shown in Table. 4,
+indicating that FedDifRC can acquire well-generalizable
+
+===== PAGE 8 =====
+
+CIFAR10 CIFAR100 TinyImageNet CIFAR10-LT(keepNID10.2)FL Baselines
+NID10.05 NID10.2 NID2 NID10.05 NID10.2 NID2 NID10.05 NID10.2 NID2 ρ= 10 ρ= 50 ρ= 100 ρ= 200
+FedAvg[AISTAT’17] 78.27 84.65 72.60 55.97 60.08 50.56 40.41 42.84 35.15 75.94 63.25 52.97 49.69
+FedProx[MLSys’20] 78.42 84.59 72.81 56.27 60.21 50.29 40.20 42.16 35.62 76.02 63.43 52.86 49.10
+MOON[CVPR’21] 80.79 86.10 73.35 56.79 61.48 51.81 40.79 43.63 36.11 75.73 63.80 53.17 49.31
+FedProto[AAAI’22] 77.86 83.90 70.84 54.48 59.26 48.60 39.29 41.02 34.68 74.31 62.23 50.37 47.26
+FedNH[AAAI’23] 80.25 85.82 73.65 56.68 61.45 51.31 40.25 43.30 36.21 76.15 63.36 52.49 48.92
+FedDisco[ICML’23] 81.35 86.63 74.72 57.34 61.79 52.05 40.83 43.92 37.69 76.27 64.40 53.33 49.75
+FedCDA[ICLR’24] 81.70 86.89 75.07 57.76 62.17 52.35 41.18 44.09 38.24 76.45 64.30 53.85 50.08
+FedRCL[CVPR’24] 82.02 87.11 75.13 57.98 62.05 52.49 41.33 44.21 38.86 76.34 64.17 53.41 49.91
+FedDifRC 83.14 88.27 76.45 59.22 63.32 53.87 42.63 45.28 40.05 77.58 65.30 55.01 51.12
+Table 3. Comparison results on several settings (label shift and imbalance shift) and datasets, the best in bold and second with underline.
+Office-CaltechFL Baselines
+Caltech Webcam Amazon DSLR A VG
+FedDisco[ICML’23] 62.39 45.95 77.31 45.20 57.71
+FedCDA[ICLR’24] 62.25 46.53 76.58 46.14 57.87
+FedRCL[CVPR’24] 60.13 42.76 75.60 43.77 55.56
+FedDifRC 63.32 50.19 78.67 48.12 60.08
+Table 4. Comparison results on Office-Caltech with domain shift.
+CIFAR100FL Baselines Clients
+NID10.05 NID10.2 NID10.5 NID2
+FedEMA[ICLR’22] K= 10 26.90 29.41 30.64 21.52
+FedLID[ICCV’23] K= 10 28.84 30.43 31.22 23.65
+FedDifRC K= 10 30.61 31.45 32.30 25.73
+Table 5. Comparison results on self-supervised setting (Sec. 4.3).
+CIFAR10 CIFAR10-LT(NID10.2)FL BaselinesNID10.05 NID10.2 NID2 ρ= 10 ρ= 50 ρ= 100FedDDA[PRCV’23] 82.05 86.94 74.49 76.31 63.95 53.15FedDISC[AAAI’24] 82.33 87.15 75.42 76.60 64.23 54.07
+FedRCL (♢/†) 82.30♢/80.95† 87.25♢/86.16† 75.37♢/73.85† 76.50♢/76.12† 64.26♢/62.91† 53.65♢/52.20†
+FedRCL (♢+†) 81.52 86.48 74.35 76.22 63.69 52.93FedDifRC83.14 88.27 76.45 77.58 65.30 55.01
+Table 6. More comparison results on CIFAR10 and CIFAR10-LT.
+HAM10000[56] EuroSAT[40]FL Baselines
+NID10.2 NID10.5 NID2 NID10.2 NID10.5 NID2
+FedDisco[ICML’23] 50.26 53.68 44.63 78.76 82.36 70.34
+FedCDA[ICLR’24] 51.65 54.05 45.16 80.45 83.38 71.10
+FedRCL[CVPR’24] 52.21 54.20 45.48 79.80 83.69 70.73
+FedDifRC 53.79 55.60 47.17 82.49 86.05 73.14
+Table 7. Comparison results on the HAM10000 and EuroSAT.
+property in the feature space. With self-supervised scenario,
+in Table. 5, ourFedDifRC achieves excellent performance
+by leveraging the visual perception capability of diffusion
+models, without requiring any labeled data. Please refer to
+Appendix C for more details and results (e.g., domain shift,
+convergence rates, different SD versions, etc).
+CIFAR10 CIFAR10-LT(NID10.2)Pre-trained Models
+NID10.05 NID10.2 NID2 ρ= 10 ρ= 50 ρ= 100
+CLIP-ViT-B/16 [45] 79.72 84.91 73.97 74.89 62.44 50.87
+MAE-ViT-B/16 [10] 80.74 85.38 73.24 75.45 63.27 52.55
+DINO-ViT-B/16 [33] 80.57 86.14 74.16 75.25 62.70 51.92
+FedDifRC 83.14 88.27 76.45 77.58 65.30 55.01
+Table 8. Experiments on aligning features of pre-trained models.
+To further elaborate on the core idea of our FedDifRC,
+we then perform the following experiments:
+i) To ensure a fair comparison, we also compare diffusion-
+based FL methods FedDISC [67] and FedDDA [74], we
+generate data for each client (same amount) by the SD
+model as ♢, and align SD features (the image is fed directly
+into the SD model) by L2 loss as †. Table. 6 shows that di-
+rectly matching SD features may even hurt the performance,
+which further illustrates the superiority of our FedDifRC.
+ii) We focus on visual perception ability of diffusion models
+to understand an image (e.g., textures and structures) rather
+than pre-trained prior knowledge. We conduct experiments
+on medical and remote sensing datasets HAM10000 [56]
+and EuroSAT [40], which are not crossed in SD pre-training
+dataset LAION-5B [49]. Table. 7 show that the success of
+FedDifRC is based on the fine-grained visual representa-
+tion rather than the large prior knowledge in SD model.
+iii) The SD model can implicitly provide both high-level and
+low-level visual concepts of semantic objects, while foun-
+dation models focus more on sparse visual matching. The
+Table. 8 show thatFedDifRC can capture underlying prop-
+erties and correspondences of visual objects.
+6. Conclusion
+In this paper, we aim to exploit the fine-grained visual repre-
+sentation capabilities of diffusion models to handle data het-
+erogeneity in FL. We propose a novel diffusion-inspired FL
+framework FedDifRC to regulate local training via denois-
+ing and conditional diffusion representations. By leveraging
+complementary strength of TDCL and NDCR, FedDifRC
+achieves superior performance in heterogeneous FL.

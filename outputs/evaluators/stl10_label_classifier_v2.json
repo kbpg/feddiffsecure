@@ -1,0 +1,10 @@
+{
+  "dataset_name": "stl10",
+  "checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\evaluators\\stl10_label_classifier_v2.pt",
+  "num_classes": 10,
+  "feature_dim": 128,
+  "evaluator_version": 2,
+  "test_accuracy": 0.4375,
+  "epochs": 5,
+  "batch_size": 64
+}

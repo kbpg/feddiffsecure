@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}正式论文表格页 | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">Paper Tables</div>
+  <h2>{{ paper_table_bundle.title }}</h2>
+  <p class="muted">{{ paper_table_bundle.subtitle }}</p>
+</section>
+
+<section class="grid three-up">
+  {% for stat in paper_table_bundle.summary_cards %}
+  <article class="panel">
+    <div class="panel-kicker">{{ stat.label }}</div>
+    <h3>{{ stat.value }}</h3>
+    <p class="muted">{{ stat.detail }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="panel">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">主表</div>
+      <h3>STL10 100 轮主实验正式表格</h3>
+      <p class="muted">这张表优先服务论文正文，集中展示中心化上界、联邦审计版、全客户端版和 rank=4 消融。</p>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table class="comparison-summary-table comparison-summary-table--curated">
+      <thead>
+        <tr>
+          {% for column in paper_table_bundle.mainline_columns %}
+          <th>{{ column.label }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in paper_table_bundle.mainline_rows %}
+        <tr>
+          {% for column in paper_table_bundle.mainline_columns %}
+          <td>{{ row[column.key] }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="paper-header">
+    <div>
+      <div class="panel-kicker">跨数据集表</div>
+      <h3>泛化与扩展实验正式表格</h3>
+      <p class="muted">这张表更适合放在论文的泛化、补充实验或附录部分，统一比较不同公开数据集上的联邦 LoRA 安全更新表现。</p>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table class="comparison-summary-table comparison-summary-table--curated">
+      <thead>
+        <tr>
+          {% for column in paper_table_bundle.dataset_columns %}
+          <th>{{ column.label }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in paper_table_bundle.dataset_rows %}
+        <tr>
+          {% for column in paper_table_bundle.dataset_columns %}
+          <td>{{ row[column.key] }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="grid two-up">
+  <article class="panel prose">
+    <h3>主表 Markdown 版</h3>
+    <pre class="markdown-export">{{ paper_table_bundle.mainline_markdown }}</pre>
+  </article>
+  <article class="panel prose">
+    <h3>跨数据集表 Markdown 版</h3>
+    <pre class="markdown-export">{{ paper_table_bundle.dataset_markdown }}</pre>
+  </article>
+</section>
+
+<section class="panel">
+  <div class="panel-kicker">使用建议</div>
+  <h3>论文写作时怎么用这页</h3>
+  <ul class="metric-list">
+    {% for item in paper_table_bundle.notes %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

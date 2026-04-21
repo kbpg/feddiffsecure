@@ -1,0 +1,952 @@
+
+===== PAGE 1 =====
+
+Joint Lossless Compression and Steganography for Medical Images via Large
+Language Models
+Pengcheng Zheng1, Xiaorong Pu1,2, Kecheng Chen3, Jiaxin Huang 4, Meng Yang1, Bai Feng2,
+Yazhou Ren1,2, Jianan Jiang 1
+1School of Computer Science and Engineering, University of Electronic Science and Technology of China, Chengdu, China
+2Shenzhen Institute for Advanced Study, University of Electronic Science and Technology of China, Shenzhen, China
+3Department of Electrical Engineering and the Centre for Intelligent Multidimensional Data Analysis (CIMDA), City
+University of Hong Kong
+4Mohamed bin Zayed University of Artificial Intelligence
+zpc777@std.uestc.edu.cn, puxiaor@uestc.edu.cn, cs.ckc96@gmail.com, hjx1134@gmail.com, cdut.daoshan@gmail.com,
+bai.liruxz.ai@gmail.com, yazhou.ren@uestc.edu.cn, 202521080616@std.uestc.edu.cn
+Abstract
+Recently, large language models (LLMs) have driven promis-
+ing progress in lossless image compression. However, di-
+rectly adopting existing paradigms for medical images suf-
+fers from an unsatisfactory trade-off between compression
+performance and efficiency. Moreover, existing LLM-based
+compressors often overlook the security of the compres-
+sion process, which is critical in modern medical scenarios.
+To this end, we propose a novel joint lossless compression
+and steganography framework. Inspired by bit plane slicing
+(BPS), we find it feasible to securely embed privacy messages
+into medical images in an invisible manner. Based on this in-
+sight, an adaptive modalities decomposition strategy is first
+devised to partition the entire image into two segments, pro-
+viding global and local modalities for subsequent dual-path
+lossless compression. During this dual-path stage, we inno-
+vatively propose a segmented message steganography algo-
+rithm within the local modality path to ensure the security of
+the compression process. Coupled with the proposed anatom-
+ical priors-based low-rank adaptation (A-LoRA) fine-tuning
+strategy, extensive experimental results demonstrate the su-
+periority of our proposed method in terms of compression ra-
+tios, efficiency, and security. The source code will be made
+publicly available.
+Introduction
+Image compression task aims to reduce image size as much
+as possible, making it essential for high-quality data storage
+and transmission. Driven by the advancement of deep neu-
+ral networks (DNNs), there has been remarkable progress in
+image compression, including lossy and lossless codecs (Li
+et al. 2025; Zheng and Gao 2024; Cai et al. 2024; Mao et al.
+2025; Lu et al. 2025; Zheng et al. 2023). Although existing
+lossy compression methods have shown remarkable perfor-
+mance for natural images, lossless compression for medi-
+cal images has attracted massive attention from the medical
+imaging community, as even subtle degradations (e.g., mild
+blurring of tissues or organs) may compromise diagnostic
+accuracy (Zhang et al. 2024b; Liu et al. 2024; Zheng et al.
+2025).
+Copyright © 2025, Association for the Advancement of Artificial
+Intelligence (www.aaai.org). All rights reserved.
+10010100
+11101010
+11111001
+01110001
+AE
+Value
+ p M
+Value
+ p x Image
+Bits
+Value
+ pJ
+AE
+Joint
+Bits
+Compression 
+Network
+(a) Lossless Compression
+10010100
+11101010
+11111001
+01110001
+Steganography 
+Network
+Stego Y
+Image x 
+Message bits M
+(b) Message Steganography
+Image x 
+Message
+Bits
+Steganography 
+Network
+Stego Y
+Compression 
+Network
+(c) Joint  Lossless Compression and Steganography
+Message bits M
+10010100
+11101010
+11111001
+01110001
+Image x 
+Message bits M
+Figure 1: Standard Lossless Compression and Steganogra-
+phy vs. our proposed joint framework.
+Recently, large language models (LLMs) have shown
+great success in probabilistic modeling and lossless com-
+pression (Chen et al. 2024b; Du et al. 2025; Chen et al.
+2024a). This is own to the so-called philosophy, “Intel-
+ligence” and “Compression” are two sides of the same
+coin (MacKay 2003).Theoretically, minimizing the negative
+log-likelihood loss for next-token prediction is equivalent
+to maximizing the lossless compression objective (Heurtel-
+Depeiges et al. 2024). Meanwhile, entropy coding in loss-
+less compression seeks to accurately model data distribution
+to minimize the coding bitrate (Mao, Pirk, and Xue 2025;
+Valmeekam et al. 2023; Zhang et al. 2023, 2024a; Wang
+et al. 2025). Consequently, LLMs could potentially provide
+an accurate probability distribution of images for entropy
+coding (e.g., arithmetic coding). Recently, this perspective
+is supported by Del´etang et al. (2024) (Del´etang et al. 2024)
+who leverages the pre-trained LLMs to achieve competi-
+tive lossless compression ratios across various modalities,
+including text, audio and images. Whereas it can beat some
+domain-specific compressors by leveraging LLMs’ unprece-
+dented intelligence, its encoding and decoding time are
+much slower than other baselines due to the inherent down-
+arXiv:2508.01782v1  [eess.IV]  3 Aug 2025
+
+===== PAGE 2 =====
+
+side of autoregressive models. Compared to autoregressive
+paradigm, latent variable models, e.g., variational autoen-
+coder (V AE) often demonstrates impressive inference speed
+(Pinheiro Cinelli et al. 2021; Child 2021). By utilizing the
+bits back coding framework (Sugiyama, Suzuki, and Mat-
+suda 2024) (predominantly, bits-back ANS), a V AE can be
+translated into a lossless codec. Whilst it provides an effi-
+cient lossless compression method, its compression ratio is
+always unsatisfactory (Zhou et al. 2018; Jia et al. 2024).
+With broad generality, autoregressive models ( e.g.,
+LLMs) can often be the most powerful but the slowest, while
+variational autoencoders are often the weakest but the fastest
+(Tian et al. 2024; Child 2021; An et al. 2024). To this end,
+a potential option to address the above-mentioned issue is
+the combined use of autoregressive and latent variable mod-
+els, achieving a great trade-off between compression per-
+formance and inference speed. Although existing combined
+methods (Zhang et al. 2024b; Kang et al. 2022) enable the
+efficient capture of both global and local data modalities,
+we argue that scaling them to the medical lossless image
+compression task is still unsatisfactory. First, these meth-
+ods usually ignore the security of compressing medical im-
+ages, where abundant meta information is attached to the
+images, e.g., patients’ name, gender, ID number, and symp-
+toms. For example, the DICOM standard (Varma 2012) sep-
+arately compresses image and its meta information, putting
+patients’ privacy at huge risk of being attacked by hack-
+ers when transmitted over the network. Second, most exist-
+ing combined approaches implicitly learn global and local
+modalities from images, which makes it infeasible to embed
+the privacy message into the compression process, as even
+minimal perturbations of global modalities would change
+the overall appearance of the image. Third, existing com-
+bined methods never attempt to leverage the unprecedented
+intelligence capacity of LLMs, leading to a compromised
+compression ratio. Overall, existing methods struggle with
+maintaining a trade-off between sufficient compression (in-
+telligence) performance and efficiency, and usually ignore
+the security for medical scenarios.
+Towards above question, we propose the joint lossless
+compression and steganography framework (as shown in
+Figure 1) to ensure the security for compressing medical
+images, as well as rendering a great trade off between com-
+pression performance and efficiency. We empirically con-
+duct a confirmatory experiment on bit plane slicing (Tang
+et al. 2016) (BPS), which splits images in the bit plane di-
+mension. As shown in Figure 3, we find that the information
+amount in the image is gradually reducing from the most
+significant plane (MSP) to the least significant plane (LSP).
+Therefore, we pose an intuitive question: can we explicitly
+partition the image x into two segments, i.e., global and lo-
+cal modalities via BPS, thereby offering us a feasible way
+to embed the privacy message into the image in an invisible
+manner? Obviously, the answer is affirmative. Specifically,
+we first devise the adaptive modalities decomposition strat-
+egy to partition the entire image using a slicing index, rang-
+ing in {1, ..., 8}, denoted as s. To this end, the first segment
+comprises the local modalities, represented as x1:s, while
+the second segment includes the global modalities,e.g., low-
+frequency information, represented as xs+1:8. Second, con-
+sidering that latent variable models cannot capture local fea-
+tures well, while a local autoregressive model is capable of
+doing so (Schirrmeister et al. 2020; Shannon 1948), we pro-
+pose the dual-path lossless compression scheme to improve
+the compression ratio. To be note worthy, a novel segmented
+message steganography algorithm is designed in the local
+modality path to ensure a secure compression process for
+medical images. Finally, a simple yet effective fine-tuning
+strategy, i.e., anatomical priors-based low-rank adaptation
+(A-LoRA) is designed to further enhance the compression
+performance and accelerate the training speed. The embed-
+dings of global modality are served as visual prompt to fine-
+tune the LLM, which bridges the gap between the textual
+prior within LLM and visual understanding tasks.
+Our main contributions can be summarized as follows:
+• To explicitly extract the global and local modalities in
+medical images, we propose the adaptive modalities de-
+composition strategy, which lays a strong foundation for
+dual-path compression and provides a feasible way to
+embed the privacy message into the compression process.
+• A dual-path compression scheme is proposed to render
+a trade-off between sufficient compression performance
+and efficiency by leveraging LLM’s unprecedented in-
+telligence (compression) capacity. Specially, we devise
+a novel segmented message steganography algorithm in
+the local modality path, which embeds multiple message
+segments into their corresponding bit planes to ensure the
+security of the medical image compression process.
+• Moreover, an anatomical priors-based low-rank adapta-
+tion (A-LoRA) fine-tuning strategy is designed to en-
+hance the compression performance and accelerate the
+training speed.
+• To the best of our knowledge, we are the first to explore
+the unprecedented intelligence of LLMs for medical im-
+ages in a joint lossless compression and steganography
+framework. Extensive experimental results demonstrate
+the superiority of our proposed method in terms of com-
+pression performance, efficiency, and security.
+Related Work
+Latent Variable Models for Compression
+Latent variable models employ deep neural networks
+(DNNs) to map high-dimensional images into low-
+dimensional latent variables, integrating the bits-back cod-
+ing framework to render lossless image compression. For in-
+stance, L3C (Mentzer et al. 2019) employs DNNs to extract
+latent variables as auxiliary information for lossless com-
+pression. However, the DNN-based transform is difficult to
+satisfy a tight bound on the maximum reconstruction error of
+each pixel. Therefore, Bai et al. (Bai et al. 2021) propose a
+new joint lossy image and residual compression framework
+for learning lossless compression. However, these methods
+are under the risk of posterior collapse. To this end, ArIB-
+BPS (Zhang et al. 2024b) provides different importance for
+hierarchical latent variables, demonstrating superior com-
+pression performance with comparable inference speed.
+
+===== PAGE 3 =====
+
+Image x 
+xs+1:8 
+x1:s 
+Message bits:
+1 0 0 1 0 1 1 0 0 0 0 1… 
+R R R
+x1 
+x2 
+xs 
+… 
+ 
+M∈{0,1}L 
+… 
+Y1 
+… 
+Y2 
+Ys 
+Y1:s Bitmap B 
+(We send L1, L2,  …, Ls and B to the receiver )
+Stego Bit Planes
+Pretrained LLM
+Encoder
+𝒒𝝋 𝐳|𝐱𝑠+𝟏:𝟖  
+Initial
+ Bits
+A D
+Decoder
+𝑷𝞡 𝐱𝒔+𝟏:𝟖|𝐳  
+A E
+Embedding 
+Layer
+Visual 
+Prompt 
+Embeddings
+Value
+Prob.
+A E
+𝑷 𝐳  A E
+Stego Bit Planes
+Y1:s 
+Location
+index i
+A-LoRA
+ 𝝋 
+𝞡 
+𝐳 
+L1 
+L2 
+Ls 
+Training
+ Frozen
+AE: Arithmetic Encoder
+R Element-wise Replace
+AD: Arithmetic Decoder
+ (We send i  to
+ the receiver )
+Figure 2: Overview of the proposed framework. In the encoding process, the image is firstly decomposed into global and local
+modalities via adaptive modalities decomposition strategy. Then, the global modalities are compressed using V AE with bits-
+back coding scheme. The local modalities are compressed by leveraging the unprecedented intelligence of LLM. The final
+bitstream are concatenated from the dual-path outputs. The decoding order is the reverse of the encoding process.
+Nonetheless, latent variable models struggle to capture lo-
+cal features, resulting in suboptimal performance for images
+with intricate textures, e.g., medical images, where subtle
+details would significantly influence diagnostic accuracy.
+Large Language Models for Compression
+LLMs have been widely adopted for computer vision tasks,
+e.g., image classification and segmentation (Gou et al. 2024;
+Yang et al. 2023) due to their accurate next token predic-
+tion capacity. Recently, literature (Huang et al. 2024) im-
+plies the linear growth relation between compression per-
+formance and LLM’s intelligence, which provides a new
+perspective for lossless community. Theoretically, the neg-
+ative log-loss minimization for the next-token prediction of
+LLMs is equivalent to optimizing a lossless compression ob-
+jective. Deletang et al. (Del ´etang et al. 2024) are pioneered
+to demonstrate that LLMs, when viewed as compressors, can
+outperform classical codecs like PNG (Boutell 1997) in loss-
+less compression for images, highlighting their potential in
+lossless compression community.
+To the best of our knowledge, we are the first to lever-
+age the unprecedented intelligence of LLMs in a joint loss-
+less compression and steganography framework for medical
+images, achieving sufficient compression performance while
+maintaining security.
+Methodology
+Preliminary and Overview
+Preliminary In this paper, we exploit two paradigms for
+lossless compression. Latent variable models approximate
+the true data distribution pdata (x) with a marginal distribu-
+tion pθ(x) defined by
+pθ(x) =
+Z
+pθ(x, z)dz =
+Z
+pθ(x|z)p(z)dz, (1)
+where z is an unobserved latent variable. Since exactly eval-
+uating and optimizing pθ(x) is intractable, we can rewrite
+the marginal likelihood pθ(x) by introducing an inference
+model qφ(z|x):
+log pθ(x) = Eqφ(z|x) log pθ(x, z)
+qφ(z|x)| {z }
+ELBO(q,x;θ,φ)
++ Eqφ(z|x) log qφ(z|x)
+p(z|x)| {z }
+=DKL(qφ(z|x)∥p(z|x))
+.
+(2)
+As DKL (qφ(z|x)∥p(z|x)) ≥ 0, the inference and genera-
+tive model can be found by jointly optimizing the Evidence
+Lower BOund (ELBO) (i.e., maximum ELBO(q, x; θ, φ)).
+With the help of the inference network qφ(z|x), it is pos-
+sible to losslessly compress image x with bits back cod-
+ing via the following steps. Step1: Decode z with qφ(z|x)
+from initial bits. Step2: Encode x with pθ(x|z). Step3: En-
+code z with p(z). Proceeding in the reverse order, with the
+encode and decode operations swapped can losslessly re-
+cover the image. Another paradigm is autoregressive mod-
+els. In this paper, we focus on LLMs, which minimize the
+negative log-likelihood loss for next-token prediction. As
+a result, according to the Shannon’s source coding theo-
+rem (Yamamoto 1994), the cost of compressing the dataset
+
+===== PAGE 4 =====
+
+D = {x1, x2, . . . , xn} can be represented as:
+|S| = − log Pf (D) + |f |
+= −
+nX
+i=1
+log p (xi | x1, x2, · · · , xi−1) + |f |
+= LLLM + |f | ,
+(3)
+where |f | is the code description of the compression method.
+Eq. 3 reveals that current LLM training protocols use
+a maximum-compression objective. It suggests that LLM
+could potentially serve as a powerful tool for entropy cod-
+ing, positioning the LLM as a general-purpose compressor
+for any modality.
+Overall Pipelines The overall framework of our proposed
+lossless image compression pipeline is illustrated in Figure.
+2. The original imagex is firstly split into 8-bit planes (as the
+pixel values of image is in the range of [0, 255]), adaptively
+producing the global modality (significant planes) xs+1:8
+and local modality (insignificant planes) x1:s, where s is the
+slicing index. Subsequently, we compress the global modal-
+ity via variational autoencoders combined with bits back
+coding scheme. For the local modality, LLM is employed
+to render an accurate probability representation of each en-
+coded symbol for arithmetic coding. The embeddings of
+global modality are used as visual prompt for fine-tuning
+LLM, which bridges the gap between the textual prior within
+LLM and visual compression tasks. Meanwhile, we intro-
+duce a segmented message steganography algorithm when
+compressing the local modality. Finally, the bitstreams from
+dual-path are concatenated to generate the final bitstream.
+The decoding order is the reverse of the encoding process.
+Adaptive Modalities Decomposition
+The current methods (Chen et al. 2024a; Del ´etang et al.
+2024) compress the entire image with LLM. Although these
+methods beat classical and learning image compression
+(LIC)-based codecs by leveraging the unprecedented intel-
+ligence within LLM. Their compression efficiency is un-
+satisfactory due to the inherent downside of autoregressive
+models. Moreover, they ignore the security when compress-
+ing medical images, which is much more urgent for medical
+scenarios. To this end, it is urgent to render a more efficient
+and secure compression results for medical images. An intu-
+itive idea is to partition the image into differently significant
+sub-parts. Specifically, given a image x with pixel values in
+the range of [0, 255], we can decompose it into 8-binary bit
+planes via:
+xl =
+
+x/28−l
+mod 2 , (4)
+where xl is the lth bit plane, ⌊x⌋ denotes the largest integer
+less than or equal to x. The original image x can be recon-
+structed losslessly through the equation:
+x =
+8X
+l=1
+28−l × xl, (5)
+As illustrated in Figure 3, the volume of global data modal-
+ity decreases from the MSP to the LSP. Based on this find-
+ing, we adaptively partition the image into global modality
+Figure 3: Visualize each bit plane, with the planes organized
+from the MSP to the LSP, arranged in a left-to-right and top-
+to-bottom manner.
+xs+1:8 and local modality x1:s with a slicing index s, which
+can be determined by:
+s∗ = inf
+ 
+s |
+sX
+i=1
+I
+ 
+xi; x
+
+!
+≥ β ∗ I (x; x) , (6)
+where I(xi; x) denotes the mutual information between the
+i-th bit plane and the original image, I (x; x) equals to the
+entropy of the image x, i.e., the total information content of
+the image 1. β ∈ [0, 1] is a hyperparameter controlling in-
+formation retention (the choice of β is studied in experiment
+section). inf is the lower bound, ensuring that when the cu-
+mulative mutual information value is greater than the target
+information value for the first time, s∗ is the slicing index.
+Dual-Path Lossless Compression
+Among all current algorithms, latent variable models are of-
+ten the weakest but the fastest, while LLM-based models
+can often be the most powerful but the slowest. As sug-
+gested by many previous works (Schirrmeister et al. 2020;
+Shannon 1948), latent variable models cannot capture local
+modalities, while LLM-based models are capable of doing
+so. Thus, an intuitive idea would be to exploit LLM to com-
+press local modalities, and a latent variable model for more
+global ones. This design can not only achieve a great trade
+off between model efficiency and performance but also al-
+lows us to embed the privacy message into the image in an
+invisible manner.
+Latent Variable Path for Global Modality By recalling
+the paradigm of latent variable model with bits back cod-
+ing scheme in the preliminary, we compress the global
+modality via the following steps. Step1: Decode z with
+qφ(z|xs+1:8) from initial bits, where initial bits are gen-
+erated from the auxiliary random source. Step2: Encode
+xs+1:8 with pθ(xs+1:8|z). Step3: Encode z with p(z). The
+posterior distribution qφ(z|xs+1:8) and the likelihood proba-
+bility distribution pθ(xs+1:8|z) are predicted by the residual
+block based encoder parameterized by φ and the residual
+block based decoder parameterized by θ, respectively. The
+decompression order is the reverse of the compression pro-
+cess, i.e., Step1: decode z with p(z). Step2: decode xs+1:8
+with pθ(xs+1:8|z). Step3: Encode z with qφ(z|xs+1:8).
+LLM Path for Local Modality Since the information of
+local modality is relatively insignificant, modifying it will
+1We give a detailed proof in the supplementary material.
+
+===== PAGE 5 =====
+
+generally not affect the overall appearance of the image. To
+achieve an invisible and more secure message steganogra-
+phy, we carefully design a segmented message steganog-
+raphy algorithm in this path, which embeds the message
+into the medical image. Given the binary identity message
+M ∈ { 0, 1}L with a sampling length of L, we first split
+it into s sub-message segments. The length of i-th message
+segments is represented as Li, wherePs
+i=1 Li = L. Rather
+than the vanilla LSB steganography algorithm (Neeta, Sne-
+hal, and Jacobs 2006), which directly replaces the each pixel
+value in the LSB plane (i.e., the 1-th bit planes) with the bits
+from the entire secret message, we replace the each binary
+pixel value of xi with its corresponding message segment
+MLi. Figure 4 gives an example of the encryption and de-
+cryption process. The encryption process of our proposed
+segmented message steganography algorithm can be formu-
+lated by
+{Yi}s
+i=1 = {xi}s
+i=1 ˙R{Li}s
+i=1
+{MLi}s
+i=1,
+{Bi}s
+i=1 = {xi}s
+i=1 ⊕ {Yi}s
+i=1,
+(7)
+where Yi and Bi represent the i-th stego bit plane and thei-
+th bitmap, respectively. We define ˙RLi as a novel operation,
+which uses the Li-length binary message of the segmented
+message MLi to replace the binary value of thei-th bit plane
+xi element by element. When performing the replace opera-
+tion, we follow the sequence from top to bottom, and within
+each row, from left to right. The symbol⊕ is the XOR oper-
+ation. With the aid of {Li}s
+i=1 and {Bi}s
+i=1, we can recover
+the original message {MLi}s
+i=1 and image {xi}s
+i=1, respec-
+tively:
+{MLi}s
+i=1 = {Yi}s
+i=1 ˙E{Li}s
+i=1
+,
+{xi}s
+i=1 = {Yi}s
+i=1 ⊕ {Bi}s
+i=1,
+(8)
+where ˙ELi represents extracting Li-length binary message
+from Yi. The extract sequence is also from top to bot-
+tom, and within each row, from left to right. After ob-
+taining the stego bit planes, a learnable embeddinng layer
+with 4-convolution layers is employed to extract image em-
+beddings. For image compression task, the embeddings of
+global modality are used as visual prompt, which supplies
+the LLM with visual information about the image. This de-
+sign allows to integrate image information with the LLM’s
+prior knowledge, bridging the gap between image and text
+tasks, ultimately enhancing compression efficiency. Follow-
+ing (Chen et al. 2024a), we leverage the two-step lossless
+pixel tokenization strategy for pixel sequence semantic un-
+derstanding, and the predictive distribution sampling algo-
+rithm is employed to obtain the probability distribution of
+each pixel from the output of LLM. With the encoded pixel
+values and corresponding probability distribution, we can
+conduct arithmetic encoder to get the bitstream. Finally, we
+concatenate the bitstreams from the dual-path to get the
+complete bitstream. The location index i ensures us to ac-
+curately recover the original dual bits.
+Anatomical Priors-based Fine-Tuning
+The naive LoRA fine-tuning (Hu et al. 2022) algorithm uses
+a random Gaussian initialization forA and zero forB, which
+0 0
+1 0
+0 1
+0 1
+x1 
+xs 
+… 
+0 1 0
+… 1 1 0 0
+𝐌𝑳𝟏 
+𝐌𝑳𝒔 
+0 1
+0 0
+1 1
+0 0
+Y1 
+Ys 
+… 
+0 1
+1 0
+1 0
+0 1
+B1 
+Bs 
+… 
+Image xMessage M
+Stego YBitmap B
+Encrypt
+Decrypt
+(𝑳𝟏 = 𝟑) 
+(𝑳𝒔 = 𝟒 ) 
+Figure 4: An example of the encryption and decryption pro-
+cess. We send L1, L2, Ls, and Bitmap B to the receiver to
+ensure image x and message M can be losslessly recovered.
+does not take into account the inherent priors ( e.g., the sta-
+tistical properties of anatomical features) within medical im-
+ages. To further enhance the compression performance and
+accelerate the fine-tuning process, we design a simple yet
+effective fine-tuning strategy, coined as anatomical priors-
+based fine-tuning (A-LoRA). In A-LoRA, we first use the
+pretrained MobileNetV3-S (Howard et al. 2019) to extract
+the anatomical features from medical image dataset. Then,
+the mean µf and var σ2
+f of anatomical features are leveraged
+to initialize the A, i.e., A = N
+ 
+Y1:s; µf , σ2
+f
+
+. This simple
+design guides the adaptation process of LLM in the field of
+medical image processing, resulting in a faster fine-tuning
+speed and better compression performance.
+Experiments
+Experimental Settings
+Datasets Following (Rhee and Cho 2023), we use the
+Flickr2k2 as the training dataset to fine-tune the LLM, where
+all images are uniformly center-cropped into 128 ×128
+patches. For comprehensive evaluation of lossless compres-
+sion performance, we adopt diverse medical image datasets
+spanning multiple modalities and anatomical regions. De-
+tailed statistics of these datasets are provided in the supple-
+mentary material.
+Implementation Details In this paper, we utilize the pre-
+trained Qwen2.5-7B 3 base model as the default LLM. A-
+LoRA is applied to fine-tune the LLM. Similar to vanilla
+LoRA, the A-LoRA also approximates a large matrix by two
+low-rank decomposed matrices, with performance governed
+by rank r and the scaling factor α. We ablate the rank in
+some predefined values, and the alpha coefficient is twice as
+much as the rank for a defaulted setting. After ablation stud-
+ies, we set r and α as 64, and 128, respectively (see ablation
+studies in the supplementary material). The local modality is
+then cropped into patches of size 16 ×16 (see ablation stud-
+ies in the supplementary material), which serves as inputs
+to the LLM. We use the randomly but differently generated
+binary sequences to represent different patient identity mes-
+sages M. We train the entire framework using the AdamW
+2https://github.com/limbee/NTIRE2017.
+3https://huggingface.co/Qwen/Qwen2.5-7B.
+
+===== PAGE 6 =====
+
+Codec C-19-R C-19-C Lung CT Head CT L- Spine B-Ultra Brain Tumor
+PNG (1997) 3.10 +37.8% 4.56 +9.1% 4.32 +136.1% 3.70 +140.3% 3.53 +35.3% 3.45 +29.2% 3.52 +29.4%
+JPEG2000 (2000) 2.77 +23.1% 4.47 +6.9% 4.52 +147.0% 4.66 +202.6% 4.16 +59.4% 3.01 +12.7% 3.34 +22.8%
+WebP (2015) 2.79 +24.0% 4.35 +4.1% 3.52 +92.4% 3.00 +94.8% 3.30 +26.4% 3.08 +15.4% 3.27 +20.2%
+FLIF (ICIP’2016) 2.59 +15.1% 4.27 +2.2% 3.36 +83.6% 2.63 +70.8% 3.14 +20.3% 2.86 +7.1% 3.15 +15.8%
+JPEG-XL (2019) 2.42 +7.6% 4.34 +3.8% 3.43 +87.4% 2.61 +69.5% 3.06 +17.2% 2.85 +6.7% 3.13 +15.1%
+L3C (CVPR’2019) 3.05 +35.6% 5.11 +22.3% 4.21 +130.1% 3.63 +135.7% 4.98 +90.8% 3.21 +20.2% 3.38 +24.3%
+L-Infinite (CVPR’2021) 2.73 +21.3% 4.80 +14.8% 4.02 +119.7% 3.52 +128.6% 4.71 +80.5% 3.09 +15.7% 3.20 +17.6%
+LC-FDNet (CVPR’2022) 2.40 +6.7% 4.27 +2.2% 3.21 +75.4% 2.39 +55.2% 2.84 +8.8% 2.78 +4.1% 2.91 +7.0%
+LC-FDNet++ (CVPR’2023) 2.44 +8.4% 4.24 +1.4% 1.96 +7.1% 1.63 +5.8% 2.75 +5.4% 2.83 +6.0% 2.87 +5.5%
+DLPR (TPAMI’2024) 2.34 +4.0% 4.21 +0.7% 3.19 +74.3% 2.27 +47.4% 2.77 +6.1% 2.76 +3.4% 2.88 +5.9%
+Del´etang et al. (ICLR’2024) 3.02 +34.2% 4.48 +7.2% 4.23 +131.2% 3.31 +115.0% 3.17 +21.5% 2.93 +9.7% 3.24 +19.1%
+Ours 2.25 4.18 1.83 1.54 2.64 2.67 2.72
+Table 1: Compression performance of the proposed methods and other codecs in terms of bits per pixel (bpp). We show the
+difference in percentage to our approach, using green. The best is highlighted in bold, and the second is underlined.
+optimizer (Loshchilov and Hutter 2017) with an initial learn-
+ing rate of 1 × 10−4 and decreases by cosine decay learning
+scheduler (Loshchilov and Hutter 2016). Our method is im-
+plemented using the PyTorch framework and requires 3 days
+to train the entire model on 4 NVIDIA A100 GPUs.
+Baseline Codecs To validate the effectiveness of our
+proposed method, we compare it against some compara-
+tive codecs, which can be categorized into three types: 1)
+Classical Codecs. These methods rely on manually de-
+signed priors and carefully crafted frameworks. We adopt
+some widely used classical codecs, including PNG (Boutell
+1997), JPEG2000 (Marcellin et al. 2000), WebP (Si
+and Shen 2015), FLIF (Sneyers and Wuille 2016), and
+JPEG-XL (Alakuijala et al. 2019). 2) Learned Image
+Compression (LIC). LIC models typically optimize the
+rate-distortion trade-off directly through deep neural net-
+work architectures. Representative LIC models include:
+L3C (Mentzer et al. 2019), L-Infinite (Bai et al. 2021), LC-
+FDNet (Rhee et al. 2022), LC-FDNet++ (Rhee and Cho
+2023) and DLPR (Bai et al. 2024). 3) LLM-based Com-
+pressor .We also reproduce the LLM-based lossless image
+codec proposed by Del ´etang et al. (Del ´etang et al. 2024)
+in our experiments. Since the LLM used in their approach
+is not open-source, we substitute it with Qwen2.5-7B as the
+default model while following their other settings.
+Metrics In this study, we utilize bits per pixel (bpp) as
+the metric for evaluating compression ratios. This metric is
+calculated by dividing the total number of bits in the com-
+pressed file by the total number of pixels in the original im-
+age. For bpp, the lower, the better.
+Experimental Results
+Model Performance As shown in Table 1, our proposed
+method achieves the new state-of-the-art (SOTA) compres-
+sion performance compared to previous methods. Specif-
+ically, it outperforms all other methods in seven medical
+image datasets across multiple imaging modalities, includ-
+ing CT, MRI and ultrasonoscopy. On the C-19-R and L-
+Spine datasets, our approach further reduces file size by
+7.6%-17.2% compared to the best classical codec, JPEG-
+XL. When compared to SOTA LIC codecs such as L3C
+and DLPR, our approach also demonstrates superior results.
+For example, the bpp of DLPR is 2.34, while our method
+achieves 2.25, reflecting 4.0% improvement. Additionally,
+in comparison with a LLM-based codec, our method reduces
+the bpp from 3.02 to 2.25 on the C-19-R dataset. These re-
+sults underscore how our architecture, enhanced with dual-
+path compression and A-LoRA significantly improves the
+performance in the lossless image compression task.
+Runtime and LLM Size We present the encoding and
+decoding speed for some competitive methods on the C-
+19-R dataset in Table 2. The encoding and decoding time
+are dramatically decreasing compared to the LLM-based
+codec (Del´etang et al. 2024). This phenomenon is attributed
+to the dual-path compression scheme, where LLMs only
+need to compress the local modality. Compared to other
+codecs, our method (1.5B) also renders a competitive infer-
+ence speed while maintaining the SOTA compression per-
+formance. Furthermore, we conduct experiments utilizing
+three Qwen models with varying parameters to evaluate the
+impact of LLM size on compression performance. The re-
+sults indicate that the degradation of compression perfor-
+mance is not prominent as the model size decreases, i.e.,
+smaller models can still achieve acceptable performance.
+Security Validation and Visualization of Stego Images
+As shown in Figure 5, our proposed segmented message
+steganography algorithm achieves a remarkable invisibility
+to human observers, as the visual fidelity metrics are excel-
+lent, e.g., PSNR of 68.79 dB (very high - above 40 dB is
+considered excellent), and SSIM of 0.999998 (nearly perfect
+structural similarity) (Kaissis et al. 2020). Meanwhile, only
+292 pixels out of 82,928 total pixels are changed (0.3521%
+change ratio), indicating efficient embedding with minimal
+alterations. The histogram of pixel difference distribution
+has a very high peak at 0, indicating that most of the pix-
+els have not been modified.
+
+===== PAGE 7 =====
+
+Codec Bpp ↓ Params. Enc. Time Dec. Time
+JPEG-XL 2.42 − 0.79s 0.12s
+L3C 3.05 5M 8.21s 7.91s
+LC-FDNet 2.40 23.70M 1.60s 1.60s
+DLPR 2.34 22.2M 1.53s 2.07s
+Deletang et al. 3.02 8B 10.47s 287.30s
+Ours (1.5B) 2.25 1.5B+2M 1.55s 39.91s
+Ours (3B) 2.27 3B+3M 3.21s 64.30s
+Ours (7B) 2.25 7B+4M 6.37s 141.60s
+Table 2: Runtime analysis and LLM size analysis on the C-
+19-R dataset. 8 NVIDIA A100 GPUs (#batch size:16, #sub-
+progress: 2 per GPU) for parallel processing.
+Original Image
+Steganography
+ Result
+Difference Map
+(Max diff: 3)
+Image Quality Metrics:
+ ● MSE: 0.008598
+ ● PSNR: 68.79 dB
+ ● SSIM: 0.999998
+Modification Statistics:
+ ● Total pixels: 82, 928
+ ● Changed pixels: 292
+ ● Change ratio: 0.3521%
+Original Bit Plane 1
+Modified Bit Plane 1
+Message: 10101101... Original Bit Plane 2
+Modified Bit Plane 2
+Message: 10110101...
+Pixel Difference Distribution
+Difference Value
+Frequency
+Figure 5: Visualization of stego images. The proposed seg-
+mented message steganography algorithm achieves an invis-
+ible message encryption.
+Ablation Studies
+To further analyze our architecture, we conduct ablation
+studies on the C-19-R dataset.
+Visual Prompt and A-LoRA We begin by establishing
+a baseline model where LLM is fixed, without the use of
+visual prompts. Table 3 shows that employing the embed-
+dings of global modality as visual prompts reduces the bpp
+from 3.34 to 2.77, underscoring the effectiveness of vi-
+sual prompts in bridging the gap between the textual prior
+within LLM and image compression tasks. After apply-
+ing the LoRA fine-tuning, our visual prompts continue to
+achieve a performance gain of bpp. As shown in Figure 6, it
+is evident that utilizing A-LoRA fine-tuning strategy rather
+than vanilla LoRA further improves the compression perfor-
+mance and accelerates the training speed.
+Choice of Retention hyperparameter β The retention
+hyperparameter β controls the proportion of information al-
+Baseline Visual Prompt LoRA A-LoRA Bpp ↓
+✓ ✗ ✗ ✗ 3.34
+✓ ✓ ✗ ✗ 2.77
+✓ ✓ ✓ ✗ 2.40
+✓ ✓ ✗ ✓ 2.25
+Table 3: Component ablation experimental results on the C-
+19-R dataset, using bpp as the metric.
+0 100 200 300 400 500 600
+Epochs
+2
+3
+4
+5
+6
+7
+8
+9Bpp
+Final Bpp: 2.401
+Final Bpp: 2.253
+LoRA Fine-Tuning
+A-LoRA Fine-Tuning
+Figure 6: The bpp score tendency of our method with differ-
+ent fine-tuning strategy during the training period.
+located to global modalities during the adaptive modalities
+decomposition process. To determine its optimal value, we
+conducted experiments on the C-19-R dataset, evaluating the
+compression performance for β ∈ { 0.6, 0.7, 0.8, 0.9}. The
+results are presented in Table 4. The results demonstrate that
+β = 0 .8 provides the optimal trade-off between global and
+local information retention, achieving the best compression
+performance. Smaller values of β (e.g., 0.6, 0.7) underuti-
+lize global information, while larger value ( e.g., 0.9) com-
+promises the effectiveness of local modality compression.
+Therefore, we setβ = 0.8 as the default value in our method.
+β 0.6 0.7 0.8 0.9
+Bpp ↓ 2.52 2.41 2.25 2.38
+Table 4: Impact of β on Compression Performance.
+Conclusion
+In this paper, we propose the joint lossless compression
+and steganography framework, which ensures the security
+for compressing medical images. Under this framework, the
+adaptive modalities decomposition strategy is first designed
+to explicitly decompose images into global and local modal-
+ities. Then, we present a dual-path compression scheme,
+which takes the first attempt to deploy LLMs’ unprece-
+
+===== PAGE 8 =====
+
+dented intelligence for arithmetic coding in the combined
+paradigm. Combined with the carefully designed anatomi-
+cal priors-based low-rank adaptation (A-LoRA) fine-tuning
+strategy, our method achieves superior compression perfor-
+mance against other SOTA codecs with comparable infer-
+ence time. As this framework is still in its early stages,
+future works could focus on developing more lightweight
+LLMs for compression, which makes it feasible to deploy
+the method in resource-constrained medical scenarios.
+References
+Alakuijala, J.; Van Asseldonk, R.; Boukortt, S.; Bruse,
+M.; Coms, a, I.-M.; Firsching, M.; Fischbacher, T.; Kliuch-
+nikov, E.; Gomez, S.; Obryk, R.; et al. 2019. JPEG XL
+next-generation image compression architecture and coding
+tools. In Applications of digital image processing XLII, vol-
+ume 11137, 112–124. SPIE.
+An, H.; Chen, Y .; Sun, Z.; and Li, X. 2024. SentenceV AE:
+Enable Next-sentence Prediction for Large Language Mod-
+els with Faster Speed, Higher Accuracy and Longer Context.
+arXiv preprint arXiv:2408.00655.
+Bai, Y .; Liu, X.; Wang, K.; Ji, X.; Wu, X.; and Gao, W. 2024.
+Deep Lossy Plus Residual Coding for Lossless and Near-
+Lossless Image Compression. IEEE Transactions on Pattern
+Analysis and Machine Intelligence, 46(5): 3577–3594.
+Bai, Y .; Liu, X.; Zuo, W.; Wang, Y .; and Ji, X. 2021. Learn-
+ing Scalable ℓ∞-constrained Near-lossless Image Compres-
+sion via Joint Lossy Image and Residual Compression. In
+IEEE/CVF Conference on Computer Vision and Pattern
+Recognition (CVPR).
+Boutell, T. 1997. PNG (Portable Network Graphics) Speci-
+fication Version 1.0. Technical report, W3C.
+Cai, S.; Chen, L.; Zhong, S.; Yan, L.; Zhou, J.; and Zou,
+X. 2024. Make lossy compression meaningful for low-light
+images. In Proceedings of the AAAI Conference on Artificial
+Intelligence, volume 38, 8236–8245.
+Chen, K.; Zhang, P.; Liu, H.; Liu, J.; Liu, Y .; Huang, J.;
+Wang, S.; Yan, H.; and Li, H. 2024a. Large Language Mod-
+els for Lossless Image Compression: Next-Pixel Prediction
+in Language Space is All You Need. arXiv:2411.12448.
+Chen, K.; Zhang, P.; Qin, T.; Wang, S.; Yan, H.; and Li, H.
+2024b. Test-time adaptation for image compression with
+distribution regularization. arXiv:2410.12191.
+Child, R. 2021. Very Deep V AEs Generalize Autore-
+gressive Models and Can Outperform Them on Images.
+arXiv:2011.10650.
+Del´etang, G.; Ruoss, A.; Duquenne, P.; Catt, E.; Genewein,
+T.; Mattern, C.; Grau-Moya, J.; Wenliang, L. K.; Aitchison,
+M.; Orseau, L.; Hutter, M.; and Veness, J. 2024. Language
+Modeling Is Compression. In ICLR.
+Du, J.; Zhou, C.; Cao, N.; Chen, G.; Chen, Y .; Cheng,
+Z.; Song, L.; Lu, G.; and Zhang, W. 2025. Large Lan-
+guage Model for Lossless Image Compression with Visual
+Prompts. arXiv:2502.16163.
+Gou, C.; Felemban, A.; Khan, F. F.; Zhu, D.; Cai, J.;
+Rezatofighi, H.; and Elhoseiny, M. 2024. How Well Can
+Vision Language Models See Image Details? arXiv preprint
+arXiv:2408.03940.
+Heurtel-Depeiges, D.; Ruoss, A.; Veness, J.; and Ge-
+newein, T. 2024. Compression via pre-trained transform-
+ers: A study on byte-level multimodal data. arXiv preprint
+arXiv:2410.05078.
+Howard, A.; Sandler, M.; Chu, G.; Chen, L.-C.; Chen, B.;
+Tan, M.; Wang, W.; Zhu, Y .; Pang, R.; Vasudevan, V .; et al.
+2019. Searching for mobilenetv3. In Proceedings of the
+IEEE/CVF international conference on computer vision ,
+1314–1324.
+Hu, E. J.; Shen, Y .; Wallis, P.; Allen-Zhu, Z.; Li, Y .; Wang,
+S.; Wang, L.; Chen, W.; et al. 2022. Lora: Low-rank adapta-
+tion of large language models. ICLR, 1(2): 3.
+Huang, Y .; Zhang, J.; Shan, Z.; and He, J. 2024. Com-
+pression represents intelligence linearly. arXiv preprint
+arXiv:2404.09937.
+Jia, Z.; Li, J.; Li, B.; Li, H.; and Lu, Y . 2024. Generative
+Latent Coding for Ultra-Low Bitrate Image Compression.
+In Proceedings of the IEEE/CVF Conference on Computer
+Vision and Pattern Recognition (CVPR), 26088–26098.
+Kaissis, G. A.; Makowski, M. R.; R ¨uckert, D.; and Braren,
+R. F. 2020. Secure, privacy-preserving and federated ma-
+chine learning in medical imaging. Nature Machine Intelli-
+gence, 2(6): 305–311.
+Kang, N.; Qiu, S.; Zhang, S.; Li, Z.; and Xia, S.-T. 2022.
+Pilc: Practical image lossless compression with an end-to-
+end gpu oriented neural framework. In Proceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern
+Recognition, 3739–3748.
+Li, D.; Bai, Y .; Wang, K.; Jiang, J.; Liu, X.; and Gao, W.
+2025. CALLIC: Content Adaptive Learning for Lossless
+Image Compression. InProceedings of the AAAI Conference
+on Artificial Intelligence, volume 39, 4679–4688.
+Liu, X.; Wang, M.; Wang, S.; and Kwong, S. 2024. Bilat-
+eral Context Modeling for Residual Coding in Lossless 3D
+Medical Image Compression. IEEE Transactions on Image
+Processing, 33: 2502–2513.
+Loshchilov, I.; and Hutter, F. 2016. Sgdr: Stochas-
+tic gradient descent with warm restarts. arXiv preprint
+arXiv:1608.03983.
+Loshchilov, I.; and Hutter, F. 2017. Decoupled weight decay
+regularization. arXiv preprint arXiv:1711.05101.
+Lu, J.; Zhang, L.; Zhou, X.; Li, M.; Li, W.; and Gu, S. 2025.
+Learned Image Compression with Dictionary-based Entropy
+Model. In Proceedings of the Computer Vision and Pattern
+Recognition Conference (CVPR), 12850–12859.
+MacKay, D. J. 2003. Information theory, inference and
+learning algorithms. Cambridge university press.
+Mao, Y .; Pirk, H.; and Xue, C. J. 2025. Lossless Compres-
+sion of Large Language Model-Generated Text via Next-
+Token Prediction. arXiv preprint arXiv:2505.06297.
+Mao, Y .; Wang, J.; Guan, N.; and Xue, C. J. 2025. WISE:
+A Framework for Gigapixel Whole-Slide-Image Lossless
+Compression. In Proceedings of the Computer Vision and
+Pattern Recognition Conference (CVPR), 29342–29351.

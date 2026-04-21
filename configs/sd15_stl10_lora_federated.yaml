@@ -1,0 +1,59 @@
+seed: 42
+
+model:
+  pretrained_model_name_or_path: stable-diffusion-v1-5/stable-diffusion-v1-5
+  hf_token: ""
+
+dataset:
+  name: stl10
+  root: ./data
+  resolution: 512
+  caption_mode: stl10_class_prompt
+  caption_dropout: 0.1
+
+federated:
+  num_clients: 4
+  clients_per_round: 2
+  rounds: 20
+  client_epochs: 1
+  max_steps_per_client: 40
+  dirichlet_alpha: 0.5
+
+lora:
+  rank: 16
+  alpha: 16
+  dropout: 0.0
+  target_modules:
+    - to_q
+    - to_k
+    - to_v
+    - to_out.0
+
+training:
+  batch_size: 1
+  grad_accum_steps: 4
+  lr: 0.0001
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  num_workers: 0
+  mixed_precision: fp16
+  gradient_checkpointing: true
+
+sampling:
+  scheduler: dpmpp_2m
+  num_inference_steps: 30
+  guidance_scale: 7.5
+  height: 512
+  width: 512
+  seed: 123
+  eval_every: 5
+  negative_prompt: "blurry, noisy, low quality, distorted"
+  prompts:
+    - a photo of an airplane
+    - a photo of a bird
+    - a photo of a car
+    - a photo of a cat
+
+system:
+  device: auto
+  output_dir: ./outputs/sd15_stl10_lora_federated_run

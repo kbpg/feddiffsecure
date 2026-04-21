@@ -1,0 +1,167 @@
+[queue] start
+[queue] resume mnist_t500_repro_clean_v2
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2.yaml",
+  "started_at": "2026-04-16T21:21:39.641096+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 22444929,
+  "num_clients": 1,
+  "rounds": 180,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 80,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.0001,
+  "batch_size": 128,
+  "ema_decay": 0.999,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 342,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 342,
+  "train_examples": 60000,
+  "resume_count": 1,
+  "resumed_from_round": 99,
+  "last_resumed_at": "2026-04-17T11:06:56.996383+08:00",
+  "elapsed_wall_clock_seconds_before_resume": 10779.279
+}
+================================================================================
+[Round 100] avg_loss=0.0420, proxy_fid=1.8031, total_samples=10240, round_sec=79.6, classifier_fid=192.41, conf=0.970
+[Round 101] avg_loss=0.0423, proxy_fid=0.6485, total_samples=10240, round_sec=77.0
+[Round 102] avg_loss=0.0422, proxy_fid=0.5350, total_samples=10240, round_sec=77.6
+[Round 103] avg_loss=0.0427, proxy_fid=1.2218, total_samples=10240, round_sec=76.9
+[Round 104] avg_loss=0.0423, proxy_fid=1.0715, total_samples=10240, round_sec=76.7
+[Round 105] avg_loss=0.0423, proxy_fid=0.5462, total_samples=10240, round_sec=77.5, classifier_fid=99.73, conf=0.968
+[Round 106] avg_loss=0.0428, proxy_fid=0.5862, total_samples=10240, round_sec=77.1
+[Round 107] avg_loss=0.0426, proxy_fid=0.7657, total_samples=10240, round_sec=77.3
+[Round 108] avg_loss=0.0425, proxy_fid=0.4890, total_samples=10240, round_sec=77.9
+[Round 109] avg_loss=0.0419, proxy_fid=1.0492, total_samples=10240, round_sec=80.1
+[Round 110] avg_loss=0.0422, proxy_fid=0.6493, total_samples=10240, round_sec=83.4, classifier_fid=112.92, conf=0.952
+[Round 111] avg_loss=0.0424, proxy_fid=1.1486, total_samples=10240, round_sec=104.6
+[Round 112] avg_loss=0.0419, proxy_fid=0.6066, total_samples=10240, round_sec=98.9
+[Round 113] avg_loss=0.0421, proxy_fid=0.5133, total_samples=10240, round_sec=114.4
+[Round 114] avg_loss=0.0420, proxy_fid=1.0470, total_samples=10240, round_sec=125.0
+[Round 115] avg_loss=0.0422, proxy_fid=0.5948, total_samples=10240, round_sec=133.7, classifier_fid=93.07, conf=0.955
+[Round 116] avg_loss=0.0423, proxy_fid=1.4292, total_samples=10240, round_sec=127.7
+[Round 117] avg_loss=0.0417, proxy_fid=0.6058, total_samples=10240, round_sec=127.1
+[Round 118] avg_loss=0.0424, proxy_fid=0.8386, total_samples=10240, round_sec=120.0
+[Round 119] avg_loss=0.0414, proxy_fid=0.8165, total_samples=10240, round_sec=117.2
+[Round 120] avg_loss=0.0422, proxy_fid=0.6038, total_samples=10240, round_sec=108.8, classifier_fid=83.11, conf=0.964
+[Round 121] avg_loss=0.0420, proxy_fid=1.0418, total_samples=10240, round_sec=113.0
+[Round 122] avg_loss=0.0420, proxy_fid=0.7489, total_samples=10240, round_sec=113.4
+[Round 123] avg_loss=0.0423, proxy_fid=1.1872, total_samples=10240, round_sec=113.4
+[Round 124] avg_loss=0.0419, proxy_fid=0.7310, total_samples=10240, round_sec=112.4
+[Round 125] avg_loss=0.0419, proxy_fid=0.8339, total_samples=10240, round_sec=114.9, classifier_fid=111.85, conf=0.965
+[Round 126] avg_loss=0.0412, proxy_fid=0.8443, total_samples=10240, round_sec=115.8
+[Round 127] avg_loss=0.0418, proxy_fid=0.6554, total_samples=10240, round_sec=126.7
+[Round 128] avg_loss=0.0418, proxy_fid=0.9271, total_samples=10240, round_sec=128.2
+[Round 129] avg_loss=0.0414, proxy_fid=0.7446, total_samples=10240, round_sec=116.1
+[Round 130] avg_loss=0.0420, proxy_fid=0.6104, total_samples=10240, round_sec=84.4, classifier_fid=171.14, conf=0.949
+[Round 131] avg_loss=0.0414, proxy_fid=0.8210, total_samples=10240, round_sec=86.3
+[Round 132] avg_loss=0.0413, proxy_fid=0.7015, total_samples=10240, round_sec=81.8
+[Round 133] avg_loss=0.0416, proxy_fid=0.9697, total_samples=10240, round_sec=82.1
+[Round 134] avg_loss=0.0420, proxy_fid=1.1335, total_samples=10240, round_sec=84.3
+[Round 135] avg_loss=0.0416, proxy_fid=0.7060, total_samples=10240, round_sec=98.4, classifier_fid=98.19, conf=0.961
+[Round 136] avg_loss=0.0413, proxy_fid=1.0410, total_samples=10240, round_sec=97.4
+[Round 137] avg_loss=0.0418, proxy_fid=1.8209, total_samples=10240, round_sec=99.2
+[Round 138] avg_loss=0.0409, proxy_fid=0.7467, total_samples=10240, round_sec=95.0
+[Round 139] avg_loss=0.0414, proxy_fid=0.6611, total_samples=10240, round_sec=96.9
+[Round 140] avg_loss=0.0418, proxy_fid=0.7721, total_samples=10240, round_sec=95.2, classifier_fid=108.42, conf=0.957
+[Round 141] avg_loss=0.0411, proxy_fid=0.7941, total_samples=10240, round_sec=92.8
+[Round 142] avg_loss=0.0413, proxy_fid=0.6510, total_samples=10240, round_sec=93.9
+[Round 143] avg_loss=0.0415, proxy_fid=1.4208, total_samples=10240, round_sec=91.7
+[Round 144] avg_loss=0.0411, proxy_fid=0.5957, total_samples=10240, round_sec=92.2
+[Round 145] avg_loss=0.0418, proxy_fid=1.5580, total_samples=10240, round_sec=94.0, classifier_fid=232.62, conf=0.965
+[Round 146] avg_loss=0.0417, proxy_fid=0.4479, total_samples=10240, round_sec=90.3
+[Round 147] avg_loss=0.0410, proxy_fid=0.9348, total_samples=10240, round_sec=85.9
+[Round 148] avg_loss=0.0415, proxy_fid=0.7514, total_samples=10240, round_sec=84.9
+[Round 149] avg_loss=0.0412, proxy_fid=1.0395, total_samples=10240, round_sec=84.4
+[Round 150] avg_loss=0.0412, proxy_fid=1.0668, total_samples=10240, round_sec=92.3, classifier_fid=221.95, conf=0.970
+[Round 151] avg_loss=0.0417, proxy_fid=0.4592, total_samples=10240, round_sec=110.9
+[Round 152] avg_loss=0.0411, proxy_fid=1.4387, total_samples=10240, round_sec=125.4
+[Round 153] avg_loss=0.0413, proxy_fid=0.7342, total_samples=10240, round_sec=125.4
+[Round 154] avg_loss=0.0410, proxy_fid=0.5737, total_samples=10240, round_sec=124.1
+[Round 155] avg_loss=0.0410, proxy_fid=1.0083, total_samples=10240, round_sec=120.9, classifier_fid=120.36, conf=0.964
+[Round 156] avg_loss=0.0409, proxy_fid=2.0145, total_samples=10240, round_sec=120.2
+[Round 157] avg_loss=0.0416, proxy_fid=0.7667, total_samples=10240, round_sec=120.8
+[Round 158] avg_loss=0.0411, proxy_fid=1.0851, total_samples=10240, round_sec=118.2
+[Round 159] avg_loss=0.0409, proxy_fid=0.8827, total_samples=10240, round_sec=113.1
+[Round 160] avg_loss=0.0409, proxy_fid=0.6939, total_samples=10240, round_sec=117.4, classifier_fid=113.50, conf=0.966
+[Round 161] avg_loss=0.0412, proxy_fid=0.7708, total_samples=10240, round_sec=115.6
+[Round 162] avg_loss=0.0405, proxy_fid=0.6105, total_samples=10240, round_sec=113.1
+[Round 163] avg_loss=0.0410, proxy_fid=0.8105, total_samples=10240, round_sec=116.4
+[Round 164] avg_loss=0.0417, proxy_fid=0.5202, total_samples=10240, round_sec=115.0
+[Round 165] avg_loss=0.0411, proxy_fid=0.7460, total_samples=10240, round_sec=116.0, classifier_fid=147.61, conf=0.969
+[Round 166] avg_loss=0.0408, proxy_fid=0.6265, total_samples=10240, round_sec=113.4
+[Round 167] avg_loss=0.0408, proxy_fid=0.8301, total_samples=10240, round_sec=113.3
+[Round 168] avg_loss=0.0405, proxy_fid=0.4928, total_samples=10240, round_sec=119.3
+[Round 169] avg_loss=0.0407, proxy_fid=0.8909, total_samples=10240, round_sec=118.9
+[Round 170] avg_loss=0.0411, proxy_fid=0.8109, total_samples=10240, round_sec=110.6, classifier_fid=118.10, conf=0.960
+[Round 171] avg_loss=0.0401, proxy_fid=1.5639, total_samples=10240, round_sec=106.0
+[Round 172] avg_loss=0.0405, proxy_fid=1.2870, total_samples=10240, round_sec=127.3
+[Round 173] avg_loss=0.0412, proxy_fid=0.5351, total_samples=10240, round_sec=125.1
+[Round 174] avg_loss=0.0410, proxy_fid=1.2981, total_samples=10240, round_sec=126.6
+[Round 175] avg_loss=0.0405, proxy_fid=0.9633, total_samples=10240, round_sec=120.6, classifier_fid=95.80, conf=0.967
+[Round 176] avg_loss=0.0405, proxy_fid=0.5658, total_samples=10240, round_sec=121.9
+[Round 177] avg_loss=0.0405, proxy_fid=0.7064, total_samples=10240, round_sec=126.7
+[Round 178] avg_loss=0.0410, proxy_fid=1.8150, total_samples=10240, round_sec=121.9
+[Round 179] avg_loss=0.0411, proxy_fid=0.7904, total_samples=10240, round_sec=117.8
+[Round 180] avg_loss=0.0407, proxy_fid=0.9824, total_samples=10240, round_sec=119.0, classifier_fid=166.61, conf=0.974
+
+Done.
+{
+  "last_round": {
+    "round": 180,
+    "avg_client_loss": 0.040686,
+    "proxy_fid": 0.982366,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 118.998,
+    "classifier_fid": 166.61401483815285,
+    "top1_confidence_mean": 0.973700225353241,
+    "top1_confident_ratio": 0.9140625,
+    "predicted_class_entropy": 2.2410213947296143,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  "best_proxy_fid_round": {
+    "round": 146,
+    "avg_client_loss": 0.041663,
+    "proxy_fid": 0.447948,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 90.259
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 19491.376,
+  "avg_round_seconds": 107.425,
+  "max_round_seconds": 133.711,
+  "best_classifier_fid_round": {
+    "round": 120,
+    "avg_client_loss": 0.042223,
+    "proxy_fid": 0.603848,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 108.793,
+    "classifier_fid": 83.10801651246484,
+    "top1_confidence_mean": 0.9641833305358887,
+    "top1_confident_ratio": 0.8958333134651184,
+    "predicted_class_entropy": 2.246089220046997,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  "best_semantic_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run\\global_model_best_semantic.pt",
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run\\global_model_ema.pt"
+}
+Artifacts saved to: outputs\mnist_b40x5_decoder_x0_centralized_t500_repro_clean_v2_run
+[queue] mnist_t500_repro_clean_v2 exit=
+[queue] start stl10_b40x5_v3

@@ -1,0 +1,52 @@
+{
+  "last_round": {
+    "round": 1,
+    "avg_client_loss": 1.369887,
+    "proxy_fid": 35.618114,
+    "total_samples": 32,
+    "aggregated_clients": 1,
+    "round_duration_sec": 144.704,
+    "classifier_fid": 380.4039306640625,
+    "top1_confidence_mean": 0.8157968521118164,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": -0.0,
+    "predicted_unique_classes": 1,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_proxy_fid_round": {
+    "round": 1,
+    "avg_client_loss": 1.369887,
+    "proxy_fid": 35.618114,
+    "total_samples": 32,
+    "aggregated_clients": 1,
+    "round_duration_sec": 144.704,
+    "classifier_fid": 380.4039306640625,
+    "top1_confidence_mean": 0.8157968521118164,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": -0.0,
+    "predicted_unique_classes": 1,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_smoke_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_smoke_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 398.834,
+  "avg_round_seconds": 144.704,
+  "max_round_seconds": 144.704,
+  "best_classifier_fid_round": {
+    "round": 1,
+    "avg_client_loss": 1.369887,
+    "proxy_fid": 35.618114,
+    "total_samples": 32,
+    "aggregated_clients": 1,
+    "round_duration_sec": 144.704,
+    "classifier_fid": 380.4039306640625,
+    "top1_confidence_mean": 0.8157968521118164,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": -0.0,
+    "predicted_unique_classes": 1,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_semantic_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_smoke_run\\global_model_best_semantic.pt",
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\stl10_b32_centralized_fulltrain_smoke_run\\global_model_ema.pt"
+}

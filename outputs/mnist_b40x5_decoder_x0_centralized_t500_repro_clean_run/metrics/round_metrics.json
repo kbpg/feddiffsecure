@@ -1,0 +1,172 @@
+[
+  {
+    "round": 1,
+    "avg_client_loss": 0.528601,
+    "proxy_fid": 9.724027,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 91.977
+  },
+  {
+    "round": 2,
+    "avg_client_loss": 0.143715,
+    "proxy_fid": 3.5827,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 86.233
+  },
+  {
+    "round": 3,
+    "avg_client_loss": 0.112511,
+    "proxy_fid": 2.032918,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 89.889
+  },
+  {
+    "round": 4,
+    "avg_client_loss": 0.099609,
+    "proxy_fid": 1.345008,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 91.181
+  },
+  {
+    "round": 5,
+    "avg_client_loss": 0.089269,
+    "proxy_fid": 1.724961,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 90.132,
+    "classifier_fid": 963.4039306640625,
+    "top1_confidence_mean": 0.7050175666809082,
+    "top1_confident_ratio": 0.2473958283662796,
+    "predicted_class_entropy": 1.9798997640609741,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  {
+    "round": 6,
+    "avg_client_loss": 0.083011,
+    "proxy_fid": 1.365835,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 89.78
+  },
+  {
+    "round": 7,
+    "avg_client_loss": 0.076721,
+    "proxy_fid": 1.257054,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 89.837
+  },
+  {
+    "round": 8,
+    "avg_client_loss": 0.073796,
+    "proxy_fid": 0.990727,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 90.346
+  },
+  {
+    "round": 9,
+    "avg_client_loss": 0.068504,
+    "proxy_fid": 1.074744,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 90.526
+  },
+  {
+    "round": 10,
+    "avg_client_loss": 0.065341,
+    "proxy_fid": 0.840932,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 90.582,
+    "classifier_fid": 368.9291687011719,
+    "top1_confidence_mean": 0.8295838832855225,
+    "top1_confident_ratio": 0.5494791865348816,
+    "predicted_class_entropy": 2.270979166030884,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  {
+    "round": 11,
+    "avg_client_loss": 0.064032,
+    "proxy_fid": 0.906403,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 92.148
+  },
+  {
+    "round": 12,
+    "avg_client_loss": 0.062992,
+    "proxy_fid": 2.714361,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 81.533
+  },
+  {
+    "round": 13,
+    "avg_client_loss": 0.060068,
+    "proxy_fid": 1.051295,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 80.463
+  },
+  {
+    "round": 14,
+    "avg_client_loss": 0.059122,
+    "proxy_fid": 1.055639,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 80.599
+  },
+  {
+    "round": 15,
+    "avg_client_loss": 0.058293,
+    "proxy_fid": 1.383634,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 81.456,
+    "classifier_fid": 190.30224609375,
+    "top1_confidence_mean": 0.8813603520393372,
+    "top1_confident_ratio": 0.6380208134651184,
+    "predicted_class_entropy": 2.2232582569122314,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.9889
+  },
+  {
+    "round": 16,
+    "avg_client_loss": 0.057641,
+    "proxy_fid": 0.714216,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 81.91
+  },
+  {
+    "round": 17,
+    "avg_client_loss": 0.056184,
+    "proxy_fid": 1.776402,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 87.486
+  },
+  {
+    "round": 18,
+    "avg_client_loss": 0.054784,
+    "proxy_fid": 1.044921,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 83.986
+  },
+  {
+    "round": 19,
+    "avg_client_loss": 0.05445,
+    "proxy_fid": 1.449298,
+    "total_samples": 10240,
+    "aggregated_clients": 1,
+    "round_duration_sec": 84.744
+  }
+]

@@ -1,0 +1,378 @@
+================================================================================
+Centralized diffusion baseline
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\fashion_b48_stage5_attn_t300_qualitypush.yaml",
+  "started_at": "2026-04-19T15:51:59.127610+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "fashion_mnist",
+  "model_params_total": 37155801,
+  "model_params_trainable": 37155801,
+  "num_clients": 1,
+  "rounds": 320,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 100,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.00015,
+  "batch_size": 128,
+  "ema_decay": 0.9995,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 0,
+  "trainable_param_tensors": 554,
+  "unfreeze_param_prefixes": [
+    "*"
+  ],
+  "enabled_extra_params": 554,
+  "train_examples": 60000,
+  "resume_count": 0
+}
+================================================================================
+[Round 1] avg_loss=0.2662, proxy_fid=7.1838, total_samples=12800, round_sec=39.5
+[Round 2] avg_loss=0.1398, proxy_fid=12.9653, total_samples=12800, round_sec=38.7
+[Round 3] avg_loss=0.1201, proxy_fid=11.9670, total_samples=12800, round_sec=39.0
+[Round 4] avg_loss=0.1101, proxy_fid=3.9481, total_samples=12800, round_sec=39.3
+[Round 5] avg_loss=0.1018, proxy_fid=10.0263, total_samples=12800, round_sec=38.8
+[Round 6] avg_loss=0.0987, proxy_fid=7.5246, total_samples=12800, round_sec=39.3
+[Round 7] avg_loss=0.0945, proxy_fid=5.0903, total_samples=12800, round_sec=38.9
+[Round 8] avg_loss=0.0941, proxy_fid=10.2498, total_samples=12800, round_sec=39.0
+[Round 9] avg_loss=0.0903, proxy_fid=7.3637, total_samples=12800, round_sec=38.5
+[Round 10] avg_loss=0.0903, proxy_fid=4.6466, total_samples=12800, round_sec=40.3
+[Round 11] avg_loss=0.0896, proxy_fid=5.0978, total_samples=12800, round_sec=38.6
+[Round 12] avg_loss=0.0868, proxy_fid=3.6172, total_samples=12800, round_sec=38.6
+[Round 13] avg_loss=0.0834, proxy_fid=11.4732, total_samples=12800, round_sec=38.6
+[Round 14] avg_loss=0.0835, proxy_fid=10.9685, total_samples=12800, round_sec=38.6
+[Round 15] avg_loss=0.0840, proxy_fid=6.7256, total_samples=12800, round_sec=38.7
+[Round 16] avg_loss=0.0829, proxy_fid=6.1051, total_samples=12800, round_sec=38.7
+[Round 17] avg_loss=0.0831, proxy_fid=9.2500, total_samples=12800, round_sec=38.7
+[Round 18] avg_loss=0.0819, proxy_fid=7.4834, total_samples=12800, round_sec=38.6
+[Round 19] avg_loss=0.0805, proxy_fid=6.7821, total_samples=12800, round_sec=38.6
+[Round 20] avg_loss=0.0806, proxy_fid=11.2058, total_samples=12800, round_sec=38.8
+[Round 21] avg_loss=0.0799, proxy_fid=3.7862, total_samples=12800, round_sec=38.7
+[Round 22] avg_loss=0.0801, proxy_fid=7.1980, total_samples=12800, round_sec=38.7
+[Round 23] avg_loss=0.0787, proxy_fid=6.2161, total_samples=12800, round_sec=38.7
+[Round 24] avg_loss=0.0779, proxy_fid=11.0609, total_samples=12800, round_sec=38.7
+[Round 25] avg_loss=0.0795, proxy_fid=7.0521, total_samples=12800, round_sec=38.7
+[Round 26] avg_loss=0.0782, proxy_fid=5.8702, total_samples=12800, round_sec=38.9
+[Round 27] avg_loss=0.0781, proxy_fid=3.8561, total_samples=12800, round_sec=38.8
+[Round 28] avg_loss=0.0797, proxy_fid=6.0815, total_samples=12800, round_sec=38.8
+[Round 29] avg_loss=0.0770, proxy_fid=12.9886, total_samples=12800, round_sec=38.7
+[Round 30] avg_loss=0.0774, proxy_fid=6.1434, total_samples=12800, round_sec=38.9
+[Round 31] avg_loss=0.0776, proxy_fid=5.9042, total_samples=12800, round_sec=38.8
+[Round 32] avg_loss=0.0754, proxy_fid=5.4733, total_samples=12800, round_sec=38.8
+[Round 33] avg_loss=0.0767, proxy_fid=4.7197, total_samples=12800, round_sec=38.7
+[Round 34] avg_loss=0.0759, proxy_fid=9.7567, total_samples=12800, round_sec=38.9
+[Round 35] avg_loss=0.0766, proxy_fid=10.9731, total_samples=12800, round_sec=38.7
+[Round 36] avg_loss=0.0739, proxy_fid=5.5761, total_samples=12800, round_sec=38.9
+[Round 37] avg_loss=0.0747, proxy_fid=12.7969, total_samples=12800, round_sec=38.7
+[Round 38] avg_loss=0.0760, proxy_fid=9.2429, total_samples=12800, round_sec=39.0
+[Round 39] avg_loss=0.0746, proxy_fid=7.0004, total_samples=12800, round_sec=38.8
+[Round 40] avg_loss=0.0763, proxy_fid=11.0706, total_samples=12800, round_sec=38.8
+[Round 41] avg_loss=0.0756, proxy_fid=5.6875, total_samples=12800, round_sec=38.8
+[Round 42] avg_loss=0.0732, proxy_fid=14.1293, total_samples=12800, round_sec=38.8
+[Round 43] avg_loss=0.0739, proxy_fid=6.9843, total_samples=12800, round_sec=38.8
+[Round 44] avg_loss=0.0742, proxy_fid=7.3856, total_samples=12800, round_sec=38.8
+[Round 45] avg_loss=0.0745, proxy_fid=6.3992, total_samples=12800, round_sec=38.7
+[Round 46] avg_loss=0.0743, proxy_fid=11.2228, total_samples=12800, round_sec=38.8
+[Round 47] avg_loss=0.0752, proxy_fid=6.6119, total_samples=12800, round_sec=38.9
+[Round 48] avg_loss=0.0744, proxy_fid=6.4824, total_samples=12800, round_sec=38.7
+[Round 49] avg_loss=0.0734, proxy_fid=10.9691, total_samples=12800, round_sec=38.8
+[Round 50] avg_loss=0.0733, proxy_fid=8.7151, total_samples=12800, round_sec=38.8
+[Round 51] avg_loss=0.0744, proxy_fid=7.5400, total_samples=12800, round_sec=38.7
+[Round 52] avg_loss=0.0726, proxy_fid=5.5323, total_samples=12800, round_sec=38.8
+[Round 53] avg_loss=0.0740, proxy_fid=7.7392, total_samples=12800, round_sec=38.8
+[Round 54] avg_loss=0.0737, proxy_fid=8.3104, total_samples=12800, round_sec=38.7
+[Round 55] avg_loss=0.0713, proxy_fid=10.7956, total_samples=12800, round_sec=38.8
+[Round 56] avg_loss=0.0722, proxy_fid=9.2558, total_samples=12800, round_sec=38.8
+[Round 57] avg_loss=0.0729, proxy_fid=10.8869, total_samples=12800, round_sec=38.7
+[Round 58] avg_loss=0.0735, proxy_fid=5.1058, total_samples=12800, round_sec=38.8
+[Round 59] avg_loss=0.0732, proxy_fid=6.2220, total_samples=12800, round_sec=38.8
+[Round 60] avg_loss=0.0725, proxy_fid=10.0802, total_samples=12800, round_sec=38.9
+[Round 61] avg_loss=0.0722, proxy_fid=5.1147, total_samples=12800, round_sec=38.8
+[Round 62] avg_loss=0.0721, proxy_fid=6.7755, total_samples=12800, round_sec=38.8
+[Round 63] avg_loss=0.0726, proxy_fid=4.0138, total_samples=12800, round_sec=38.9
+[Round 64] avg_loss=0.0703, proxy_fid=9.9438, total_samples=12800, round_sec=38.8
+[Round 65] avg_loss=0.0717, proxy_fid=6.9998, total_samples=12800, round_sec=38.8
+[Round 66] avg_loss=0.0713, proxy_fid=6.1746, total_samples=12800, round_sec=38.9
+[Round 67] avg_loss=0.0704, proxy_fid=5.0476, total_samples=12800, round_sec=38.7
+[Round 68] avg_loss=0.0716, proxy_fid=5.8523, total_samples=12800, round_sec=38.8
+[Round 69] avg_loss=0.0707, proxy_fid=9.3789, total_samples=12800, round_sec=38.8
+[Round 70] avg_loss=0.0710, proxy_fid=4.8754, total_samples=12800, round_sec=38.8
+[Round 71] avg_loss=0.0716, proxy_fid=5.3237, total_samples=12800, round_sec=38.8
+[Round 72] avg_loss=0.0725, proxy_fid=6.1106, total_samples=12800, round_sec=38.7
+[Round 73] avg_loss=0.0691, proxy_fid=9.8004, total_samples=12800, round_sec=38.8
+[Round 74] avg_loss=0.0709, proxy_fid=5.6643, total_samples=12800, round_sec=38.9
+[Round 75] avg_loss=0.0713, proxy_fid=7.8881, total_samples=12800, round_sec=38.8
+[Round 76] avg_loss=0.0690, proxy_fid=5.3066, total_samples=12800, round_sec=38.8
+[Round 77] avg_loss=0.0718, proxy_fid=6.3786, total_samples=12800, round_sec=38.9
+[Round 78] avg_loss=0.0704, proxy_fid=8.6207, total_samples=12800, round_sec=38.8
+[Round 79] avg_loss=0.0720, proxy_fid=5.0473, total_samples=12800, round_sec=38.8
+[Round 80] avg_loss=0.0696, proxy_fid=7.8581, total_samples=12800, round_sec=38.8
+[Round 81] avg_loss=0.0717, proxy_fid=4.1793, total_samples=12800, round_sec=38.8
+[Round 82] avg_loss=0.0709, proxy_fid=6.8137, total_samples=12800, round_sec=38.8
+[Round 83] avg_loss=0.0690, proxy_fid=5.3603, total_samples=12800, round_sec=38.8
+[Round 84] avg_loss=0.0696, proxy_fid=5.1406, total_samples=12800, round_sec=38.8
+[Round 85] avg_loss=0.0694, proxy_fid=9.7020, total_samples=12800, round_sec=38.9
+[Round 86] avg_loss=0.0709, proxy_fid=7.5006, total_samples=12800, round_sec=38.8
+[Round 87] avg_loss=0.0691, proxy_fid=9.1740, total_samples=12800, round_sec=38.8
+[Round 88] avg_loss=0.0709, proxy_fid=6.0872, total_samples=12800, round_sec=38.8
+[Round 89] avg_loss=0.0700, proxy_fid=5.2732, total_samples=12800, round_sec=38.8
+[Round 90] avg_loss=0.0680, proxy_fid=4.6147, total_samples=12800, round_sec=38.9
+[Round 91] avg_loss=0.0686, proxy_fid=10.4261, total_samples=12800, round_sec=38.8
+[Round 92] avg_loss=0.0697, proxy_fid=6.6283, total_samples=12800, round_sec=38.8
+[Round 93] avg_loss=0.0703, proxy_fid=5.9790, total_samples=12800, round_sec=38.9
+[Round 94] avg_loss=0.0705, proxy_fid=4.9435, total_samples=12800, round_sec=38.8
+[Round 95] avg_loss=0.0686, proxy_fid=6.6885, total_samples=12800, round_sec=38.8
+[Round 96] avg_loss=0.0712, proxy_fid=6.4288, total_samples=12800, round_sec=38.9
+[Round 97] avg_loss=0.0698, proxy_fid=10.3019, total_samples=12800, round_sec=38.8
+[Round 98] avg_loss=0.0702, proxy_fid=8.5031, total_samples=12800, round_sec=38.9
+[Round 99] avg_loss=0.0688, proxy_fid=10.1833, total_samples=12800, round_sec=38.8
+[Round 100] avg_loss=0.0684, proxy_fid=4.8971, total_samples=12800, round_sec=38.8
+[Round 101] avg_loss=0.0697, proxy_fid=6.5369, total_samples=12800, round_sec=38.8
+[Round 102] avg_loss=0.0698, proxy_fid=8.8935, total_samples=12800, round_sec=38.8
+[Round 103] avg_loss=0.0691, proxy_fid=10.1470, total_samples=12800, round_sec=38.8
+[Round 104] avg_loss=0.0690, proxy_fid=7.7080, total_samples=12800, round_sec=38.9
+[Round 105] avg_loss=0.0689, proxy_fid=4.6978, total_samples=12800, round_sec=38.7
+[Round 106] avg_loss=0.0678, proxy_fid=8.0318, total_samples=12800, round_sec=38.9
+[Round 107] avg_loss=0.0699, proxy_fid=6.7875, total_samples=12800, round_sec=38.8
+[Round 108] avg_loss=0.0687, proxy_fid=12.6409, total_samples=12800, round_sec=38.9
+[Round 109] avg_loss=0.0688, proxy_fid=6.9370, total_samples=12800, round_sec=38.8
+[Round 110] avg_loss=0.0679, proxy_fid=7.9652, total_samples=12800, round_sec=38.9
+[Round 111] avg_loss=0.0696, proxy_fid=6.4278, total_samples=12800, round_sec=38.7
+[Round 112] avg_loss=0.0689, proxy_fid=5.6342, total_samples=12800, round_sec=38.8
+[Round 113] avg_loss=0.0694, proxy_fid=9.5652, total_samples=12800, round_sec=38.8
+[Round 114] avg_loss=0.0684, proxy_fid=11.9305, total_samples=12800, round_sec=38.8
+[Round 115] avg_loss=0.0690, proxy_fid=14.1132, total_samples=12800, round_sec=38.8
+[Round 116] avg_loss=0.0689, proxy_fid=4.9991, total_samples=12800, round_sec=38.8
+[Round 117] avg_loss=0.0686, proxy_fid=3.7026, total_samples=12800, round_sec=38.8
+[Round 118] avg_loss=0.0690, proxy_fid=9.8929, total_samples=12800, round_sec=38.8
+[Round 119] avg_loss=0.0687, proxy_fid=6.0743, total_samples=12800, round_sec=38.8
+[Round 120] avg_loss=0.0679, proxy_fid=9.9166, total_samples=12800, round_sec=38.9
+[Round 121] avg_loss=0.0676, proxy_fid=7.6900, total_samples=12800, round_sec=38.8
+[Round 122] avg_loss=0.0682, proxy_fid=6.9944, total_samples=12800, round_sec=38.9
+[Round 123] avg_loss=0.0701, proxy_fid=7.0045, total_samples=12800, round_sec=38.8
+[Round 124] avg_loss=0.0669, proxy_fid=8.0718, total_samples=12800, round_sec=38.8
+[Round 125] avg_loss=0.0686, proxy_fid=4.6135, total_samples=12800, round_sec=38.9
+[Round 126] avg_loss=0.0679, proxy_fid=4.8935, total_samples=12800, round_sec=38.8
+[Round 127] avg_loss=0.0675, proxy_fid=5.2956, total_samples=12800, round_sec=38.8
+[Round 128] avg_loss=0.0682, proxy_fid=5.3395, total_samples=12800, round_sec=38.9
+[Round 129] avg_loss=0.0688, proxy_fid=5.5110, total_samples=12800, round_sec=38.8
+[Round 130] avg_loss=0.0680, proxy_fid=8.6817, total_samples=12800, round_sec=38.9
+[Round 131] avg_loss=0.0674, proxy_fid=7.5577, total_samples=12800, round_sec=38.8
+[Round 132] avg_loss=0.0674, proxy_fid=13.3896, total_samples=12800, round_sec=38.8
+[Round 133] avg_loss=0.0684, proxy_fid=10.5196, total_samples=12800, round_sec=38.8
+[Round 134] avg_loss=0.0688, proxy_fid=5.8884, total_samples=12800, round_sec=38.8
+[Round 135] avg_loss=0.0686, proxy_fid=6.3442, total_samples=12800, round_sec=38.8
+[Round 136] avg_loss=0.0686, proxy_fid=8.1694, total_samples=12800, round_sec=38.9
+[Round 137] avg_loss=0.0675, proxy_fid=5.1255, total_samples=12800, round_sec=38.8
+[Round 138] avg_loss=0.0668, proxy_fid=7.1515, total_samples=12800, round_sec=38.8
+[Round 139] avg_loss=0.0676, proxy_fid=6.2936, total_samples=12800, round_sec=38.8
+[Round 140] avg_loss=0.0693, proxy_fid=9.0841, total_samples=12800, round_sec=38.8
+[Round 141] avg_loss=0.0673, proxy_fid=6.3097, total_samples=12800, round_sec=38.8
+[Round 142] avg_loss=0.0679, proxy_fid=5.8710, total_samples=12800, round_sec=38.8
+[Round 143] avg_loss=0.0683, proxy_fid=6.7026, total_samples=12800, round_sec=38.8
+[Round 144] avg_loss=0.0699, proxy_fid=10.6025, total_samples=12800, round_sec=38.9
+[Round 145] avg_loss=0.0673, proxy_fid=5.8522, total_samples=12800, round_sec=38.8
+[Round 146] avg_loss=0.0673, proxy_fid=7.5030, total_samples=12800, round_sec=38.8
+[Round 147] avg_loss=0.0677, proxy_fid=8.5095, total_samples=12800, round_sec=38.8
+[Round 148] avg_loss=0.0685, proxy_fid=6.2089, total_samples=12800, round_sec=38.8
+[Round 149] avg_loss=0.0662, proxy_fid=10.6832, total_samples=12800, round_sec=38.9
+[Round 150] avg_loss=0.0676, proxy_fid=4.4102, total_samples=12800, round_sec=38.8
+[Round 151] avg_loss=0.0668, proxy_fid=10.1596, total_samples=12800, round_sec=39.0
+[Round 152] avg_loss=0.0691, proxy_fid=5.4763, total_samples=12800, round_sec=38.9
+[Round 153] avg_loss=0.0680, proxy_fid=4.5607, total_samples=12800, round_sec=38.8
+[Round 154] avg_loss=0.0670, proxy_fid=5.7630, total_samples=12800, round_sec=38.9
+[Round 155] avg_loss=0.0686, proxy_fid=8.4989, total_samples=12800, round_sec=38.8
+[Round 156] avg_loss=0.0675, proxy_fid=4.1997, total_samples=12800, round_sec=38.8
+[Round 157] avg_loss=0.0679, proxy_fid=8.5869, total_samples=12800, round_sec=38.9
+[Round 158] avg_loss=0.0671, proxy_fid=9.0704, total_samples=12800, round_sec=38.8
+[Round 159] avg_loss=0.0668, proxy_fid=5.2116, total_samples=12800, round_sec=38.8
+[Round 160] avg_loss=0.0681, proxy_fid=11.8086, total_samples=12800, round_sec=38.9
+[Round 161] avg_loss=0.0665, proxy_fid=8.7907, total_samples=12800, round_sec=38.8
+[Round 162] avg_loss=0.0663, proxy_fid=5.2427, total_samples=12800, round_sec=38.8
+[Round 163] avg_loss=0.0672, proxy_fid=7.7488, total_samples=12800, round_sec=38.8
+[Round 164] avg_loss=0.0663, proxy_fid=7.5054, total_samples=12800, round_sec=38.8
+[Round 165] avg_loss=0.0674, proxy_fid=9.6262, total_samples=12800, round_sec=38.9
+[Round 166] avg_loss=0.0673, proxy_fid=5.7461, total_samples=12800, round_sec=38.8
+[Round 167] avg_loss=0.0674, proxy_fid=9.4824, total_samples=12800, round_sec=38.8
+[Round 168] avg_loss=0.0681, proxy_fid=8.4010, total_samples=12800, round_sec=38.8
+[Round 169] avg_loss=0.0669, proxy_fid=5.8182, total_samples=12800, round_sec=38.8
+[Round 170] avg_loss=0.0658, proxy_fid=5.7473, total_samples=12800, round_sec=38.8
+[Round 171] avg_loss=0.0677, proxy_fid=10.6910, total_samples=12800, round_sec=38.8
+[Round 172] avg_loss=0.0671, proxy_fid=12.1875, total_samples=12800, round_sec=38.8
+[Round 173] avg_loss=0.0665, proxy_fid=4.1718, total_samples=12800, round_sec=38.9
+[Round 174] avg_loss=0.0675, proxy_fid=7.2291, total_samples=12800, round_sec=38.8
+[Round 175] avg_loss=0.0667, proxy_fid=5.9455, total_samples=12800, round_sec=38.8
+[Round 176] avg_loss=0.0674, proxy_fid=11.1935, total_samples=12800, round_sec=38.9
+[Round 177] avg_loss=0.0671, proxy_fid=5.1696, total_samples=12800, round_sec=38.8
+[Round 178] avg_loss=0.0662, proxy_fid=4.9327, total_samples=12800, round_sec=38.8
+[Round 179] avg_loss=0.0675, proxy_fid=6.8753, total_samples=12800, round_sec=38.8
+[Round 180] avg_loss=0.0666, proxy_fid=8.3924, total_samples=12800, round_sec=38.8
+[Round 181] avg_loss=0.0678, proxy_fid=6.9833, total_samples=12800, round_sec=38.9
+[Round 182] avg_loss=0.0672, proxy_fid=6.7652, total_samples=12800, round_sec=38.8
+[Round 183] avg_loss=0.0657, proxy_fid=5.5595, total_samples=12800, round_sec=38.8
+[Round 184] avg_loss=0.0668, proxy_fid=9.4814, total_samples=12800, round_sec=38.9
+[Round 185] avg_loss=0.0656, proxy_fid=8.4970, total_samples=12800, round_sec=38.8
+[Round 186] avg_loss=0.0664, proxy_fid=6.9858, total_samples=12800, round_sec=38.9
+[Round 187] avg_loss=0.0667, proxy_fid=5.3292, total_samples=12800, round_sec=38.8
+[Round 188] avg_loss=0.0659, proxy_fid=4.9151, total_samples=12800, round_sec=38.8
+[Round 189] avg_loss=0.0665, proxy_fid=9.2127, total_samples=12800, round_sec=38.8
+[Round 190] avg_loss=0.0668, proxy_fid=7.5258, total_samples=12800, round_sec=38.8
+[Round 191] avg_loss=0.0665, proxy_fid=9.3410, total_samples=12800, round_sec=38.8
+[Round 192] avg_loss=0.0673, proxy_fid=9.4558, total_samples=12800, round_sec=38.8
+[Round 193] avg_loss=0.0663, proxy_fid=7.8145, total_samples=12800, round_sec=38.8
+[Round 194] avg_loss=0.0662, proxy_fid=6.2305, total_samples=12800, round_sec=38.7
+[Round 195] avg_loss=0.0656, proxy_fid=6.6229, total_samples=12800, round_sec=38.9
+[Round 196] avg_loss=0.0669, proxy_fid=7.9078, total_samples=12800, round_sec=38.7
+[Round 197] avg_loss=0.0668, proxy_fid=9.1603, total_samples=12800, round_sec=38.8
+[Round 198] avg_loss=0.0655, proxy_fid=5.2510, total_samples=12800, round_sec=38.8
+[Round 199] avg_loss=0.0663, proxy_fid=9.1015, total_samples=12800, round_sec=38.8
+[Round 200] avg_loss=0.0669, proxy_fid=6.9717, total_samples=12800, round_sec=38.8
+[Round 201] avg_loss=0.0668, proxy_fid=4.6588, total_samples=12800, round_sec=38.7
+[Round 202] avg_loss=0.0660, proxy_fid=5.0854, total_samples=12800, round_sec=38.7
+[Round 203] avg_loss=0.0662, proxy_fid=4.8437, total_samples=12800, round_sec=38.8
+[Round 204] avg_loss=0.0665, proxy_fid=4.3851, total_samples=12800, round_sec=38.7
+[Round 205] avg_loss=0.0655, proxy_fid=5.3269, total_samples=12800, round_sec=38.8
+[Round 206] avg_loss=0.0650, proxy_fid=6.0330, total_samples=12800, round_sec=38.8
+[Round 207] avg_loss=0.0652, proxy_fid=11.2070, total_samples=12800, round_sec=38.7
+[Round 208] avg_loss=0.0659, proxy_fid=7.6453, total_samples=12800, round_sec=38.8
+[Round 209] avg_loss=0.0657, proxy_fid=4.4745, total_samples=12800, round_sec=38.7
+[Round 210] avg_loss=0.0662, proxy_fid=9.7753, total_samples=12800, round_sec=38.7
+[Round 211] avg_loss=0.0650, proxy_fid=8.8725, total_samples=12800, round_sec=38.8
+[Round 212] avg_loss=0.0666, proxy_fid=6.4949, total_samples=12800, round_sec=38.7
+[Round 213] avg_loss=0.0659, proxy_fid=6.2609, total_samples=12800, round_sec=38.8
+[Round 214] avg_loss=0.0657, proxy_fid=6.8095, total_samples=12800, round_sec=38.7
+[Round 215] avg_loss=0.0662, proxy_fid=8.0289, total_samples=12800, round_sec=38.7
+[Round 216] avg_loss=0.0670, proxy_fid=7.5840, total_samples=12800, round_sec=38.9
+[Round 217] avg_loss=0.0660, proxy_fid=7.3882, total_samples=12800, round_sec=38.8
+[Round 218] avg_loss=0.0664, proxy_fid=4.9055, total_samples=12800, round_sec=38.8
+[Round 219] avg_loss=0.0668, proxy_fid=8.3402, total_samples=12800, round_sec=38.9
+[Round 220] avg_loss=0.0656, proxy_fid=6.7107, total_samples=12800, round_sec=38.8
+[Round 221] avg_loss=0.0644, proxy_fid=7.8265, total_samples=12800, round_sec=38.8
+[Round 222] avg_loss=0.0660, proxy_fid=12.4277, total_samples=12800, round_sec=38.7
+[Round 223] avg_loss=0.0664, proxy_fid=5.9761, total_samples=12800, round_sec=38.7
+[Round 224] avg_loss=0.0663, proxy_fid=8.2036, total_samples=12800, round_sec=38.8
+[Round 225] avg_loss=0.0656, proxy_fid=7.2937, total_samples=12800, round_sec=38.7
+[Round 226] avg_loss=0.0657, proxy_fid=7.7324, total_samples=12800, round_sec=38.8
+[Round 227] avg_loss=0.0657, proxy_fid=5.3543, total_samples=12800, round_sec=38.8
+[Round 228] avg_loss=0.0652, proxy_fid=7.5785, total_samples=12800, round_sec=38.7
+[Round 229] avg_loss=0.0659, proxy_fid=4.4649, total_samples=12800, round_sec=38.8
+[Round 230] avg_loss=0.0654, proxy_fid=7.9040, total_samples=12800, round_sec=38.7
+[Round 231] avg_loss=0.0655, proxy_fid=7.5096, total_samples=12800, round_sec=38.7
+[Round 232] avg_loss=0.0655, proxy_fid=9.4757, total_samples=12800, round_sec=38.8
+[Round 233] avg_loss=0.0645, proxy_fid=5.1905, total_samples=12800, round_sec=38.8
+[Round 234] avg_loss=0.0665, proxy_fid=9.0484, total_samples=12800, round_sec=69.1
+[Round 235] avg_loss=0.0655, proxy_fid=10.2489, total_samples=12800, round_sec=65.5
+[Round 236] avg_loss=0.0664, proxy_fid=5.5111, total_samples=12800, round_sec=62.3
+[Round 237] avg_loss=0.0655, proxy_fid=6.7281, total_samples=12800, round_sec=61.8
+[Round 238] avg_loss=0.0660, proxy_fid=8.6100, total_samples=12800, round_sec=63.1
+[Round 239] avg_loss=0.0650, proxy_fid=6.5484, total_samples=12800, round_sec=62.4
+[Round 240] avg_loss=0.0660, proxy_fid=4.5556, total_samples=12800, round_sec=62.8
+[Round 241] avg_loss=0.0662, proxy_fid=6.8802, total_samples=12800, round_sec=65.3
+[Round 242] avg_loss=0.0654, proxy_fid=5.6822, total_samples=12800, round_sec=66.3
+[Round 243] avg_loss=0.0661, proxy_fid=8.4009, total_samples=12800, round_sec=63.1
+[Round 244] avg_loss=0.0654, proxy_fid=9.7935, total_samples=12800, round_sec=69.0
+[Round 245] avg_loss=0.0666, proxy_fid=8.7799, total_samples=12800, round_sec=69.2
+[Round 246] avg_loss=0.0651, proxy_fid=7.2243, total_samples=12800, round_sec=68.8
+[Round 247] avg_loss=0.0648, proxy_fid=4.7738, total_samples=12800, round_sec=66.7
+[Round 248] avg_loss=0.0650, proxy_fid=7.7227, total_samples=12800, round_sec=70.2
+[Round 249] avg_loss=0.0662, proxy_fid=7.4054, total_samples=12800, round_sec=71.8
+[Round 250] avg_loss=0.0657, proxy_fid=6.6963, total_samples=12800, round_sec=67.0
+[Round 251] avg_loss=0.0667, proxy_fid=7.5177, total_samples=12800, round_sec=61.9
+[Round 252] avg_loss=0.0653, proxy_fid=6.0429, total_samples=12800, round_sec=65.8
+[Round 253] avg_loss=0.0662, proxy_fid=7.8721, total_samples=12800, round_sec=65.5
+[Round 254] avg_loss=0.0658, proxy_fid=6.9692, total_samples=12800, round_sec=65.7
+[Round 255] avg_loss=0.0645, proxy_fid=7.4324, total_samples=12800, round_sec=64.0
+[Round 256] avg_loss=0.0652, proxy_fid=7.4878, total_samples=12800, round_sec=65.0
+[Round 257] avg_loss=0.0636, proxy_fid=8.5224, total_samples=12800, round_sec=61.1
+[Round 258] avg_loss=0.0661, proxy_fid=4.7701, total_samples=12800, round_sec=62.0
+[Round 259] avg_loss=0.0656, proxy_fid=6.4673, total_samples=12800, round_sec=62.9
+[Round 260] avg_loss=0.0664, proxy_fid=5.1263, total_samples=12800, round_sec=64.2
+[Round 261] avg_loss=0.0656, proxy_fid=10.4296, total_samples=12800, round_sec=61.1
+[Round 262] avg_loss=0.0651, proxy_fid=9.1363, total_samples=12800, round_sec=61.9
+[Round 263] avg_loss=0.0653, proxy_fid=9.3691, total_samples=12800, round_sec=64.7
+[Round 264] avg_loss=0.0654, proxy_fid=5.6014, total_samples=12800, round_sec=62.2
+[Round 265] avg_loss=0.0646, proxy_fid=6.9318, total_samples=12800, round_sec=63.3
+[Round 266] avg_loss=0.0666, proxy_fid=10.8528, total_samples=12800, round_sec=60.7
+[Round 267] avg_loss=0.0652, proxy_fid=5.1989, total_samples=12800, round_sec=64.0
+[Round 268] avg_loss=0.0657, proxy_fid=9.1275, total_samples=12800, round_sec=59.6
+[Round 269] avg_loss=0.0642, proxy_fid=11.6885, total_samples=12800, round_sec=61.9
+[Round 270] avg_loss=0.0647, proxy_fid=9.5051, total_samples=12800, round_sec=62.2
+[Round 271] avg_loss=0.0655, proxy_fid=7.9270, total_samples=12800, round_sec=65.1
+[Round 272] avg_loss=0.0643, proxy_fid=6.3777, total_samples=12800, round_sec=66.6
+[Round 273] avg_loss=0.0655, proxy_fid=9.6834, total_samples=12800, round_sec=65.7
+[Round 274] avg_loss=0.0668, proxy_fid=6.0307, total_samples=12800, round_sec=63.5
+[Round 275] avg_loss=0.0648, proxy_fid=5.3591, total_samples=12800, round_sec=62.4
+[Round 276] avg_loss=0.0650, proxy_fid=7.6744, total_samples=12800, round_sec=69.1
+[Round 277] avg_loss=0.0640, proxy_fid=7.9126, total_samples=12800, round_sec=68.0
+[Round 278] avg_loss=0.0660, proxy_fid=9.6207, total_samples=12800, round_sec=71.9
+[Round 279] avg_loss=0.0653, proxy_fid=8.6963, total_samples=12800, round_sec=65.2
+[Round 280] avg_loss=0.0656, proxy_fid=8.0463, total_samples=12800, round_sec=60.2
+[Round 281] avg_loss=0.0657, proxy_fid=6.9897, total_samples=12800, round_sec=61.6
+[Round 282] avg_loss=0.0643, proxy_fid=9.0240, total_samples=12800, round_sec=61.9
+[Round 283] avg_loss=0.0641, proxy_fid=6.6015, total_samples=12800, round_sec=58.9
+[Round 284] avg_loss=0.0655, proxy_fid=8.7604, total_samples=12800, round_sec=60.2
+[Round 285] avg_loss=0.0640, proxy_fid=7.8019, total_samples=12800, round_sec=62.4
+[Round 286] avg_loss=0.0662, proxy_fid=5.1037, total_samples=12800, round_sec=61.2
+[Round 287] avg_loss=0.0654, proxy_fid=6.8497, total_samples=12800, round_sec=59.3
+[Round 288] avg_loss=0.0660, proxy_fid=6.1141, total_samples=12800, round_sec=61.6
+[Round 289] avg_loss=0.0640, proxy_fid=4.2419, total_samples=12800, round_sec=63.7
+[Round 290] avg_loss=0.0657, proxy_fid=7.4477, total_samples=12800, round_sec=59.3
+[Round 291] avg_loss=0.0655, proxy_fid=7.7549, total_samples=12800, round_sec=62.3
+[Round 292] avg_loss=0.0648, proxy_fid=12.0671, total_samples=12800, round_sec=61.4
+[Round 293] avg_loss=0.0633, proxy_fid=8.0428, total_samples=12800, round_sec=63.2
+[Round 294] avg_loss=0.0644, proxy_fid=6.7659, total_samples=12800, round_sec=60.0
+[Round 295] avg_loss=0.0649, proxy_fid=8.8358, total_samples=12800, round_sec=61.4
+[Round 296] avg_loss=0.0653, proxy_fid=3.9879, total_samples=12800, round_sec=61.2
+[Round 297] avg_loss=0.0654, proxy_fid=6.8927, total_samples=12800, round_sec=61.4
+[Round 298] avg_loss=0.0651, proxy_fid=10.1343, total_samples=12800, round_sec=59.4
+[Round 299] avg_loss=0.0643, proxy_fid=10.0096, total_samples=12800, round_sec=59.9
+[Round 300] avg_loss=0.0647, proxy_fid=4.7038, total_samples=12800, round_sec=61.3
+[Round 301] avg_loss=0.0649, proxy_fid=7.3168, total_samples=12800, round_sec=61.5
+[Round 302] avg_loss=0.0640, proxy_fid=6.7137, total_samples=12800, round_sec=58.8
+[Round 303] avg_loss=0.0634, proxy_fid=8.5937, total_samples=12800, round_sec=60.0
+[Round 304] avg_loss=0.0652, proxy_fid=10.5472, total_samples=12800, round_sec=61.5
+[Round 305] avg_loss=0.0644, proxy_fid=6.5749, total_samples=12800, round_sec=60.7
+[Round 306] avg_loss=0.0657, proxy_fid=6.4919, total_samples=12800, round_sec=59.7
+[Round 307] avg_loss=0.0634, proxy_fid=6.5195, total_samples=12800, round_sec=60.4
+[Round 308] avg_loss=0.0652, proxy_fid=6.6460, total_samples=12800, round_sec=63.0
+[Round 309] avg_loss=0.0645, proxy_fid=5.7753, total_samples=12800, round_sec=60.4
+[Round 310] avg_loss=0.0653, proxy_fid=6.3611, total_samples=12800, round_sec=60.2
+[Round 311] avg_loss=0.0647, proxy_fid=9.3438, total_samples=12800, round_sec=60.2
+[Round 312] avg_loss=0.0647, proxy_fid=5.6575, total_samples=12800, round_sec=63.9
+[Round 313] avg_loss=0.0641, proxy_fid=4.3716, total_samples=12800, round_sec=59.4
+[Round 314] avg_loss=0.0651, proxy_fid=8.1153, total_samples=12800, round_sec=60.0
+[Round 315] avg_loss=0.0652, proxy_fid=11.0515, total_samples=12800, round_sec=61.0
+[Round 316] avg_loss=0.0651, proxy_fid=9.4041, total_samples=12800, round_sec=63.5
+[Round 317] avg_loss=0.0655, proxy_fid=8.4429, total_samples=12800, round_sec=59.9
+[Round 318] avg_loss=0.0639, proxy_fid=9.6594, total_samples=12800, round_sec=60.8
+[Round 319] avg_loss=0.0646, proxy_fid=5.0477, total_samples=12800, round_sec=62.0
+[Round 320] avg_loss=0.0651, proxy_fid=7.5272, total_samples=12800, round_sec=62.1
+
+Done.
+{
+  "last_round": {
+    "round": 320,
+    "avg_client_loss": 0.065086,
+    "proxy_fid": 7.527157,
+    "total_samples": 12800,
+    "aggregated_clients": 1,
+    "round_duration_sec": 62.134
+  },
+  "best_proxy_fid_round": {
+    "round": 12,
+    "avg_client_loss": 0.086791,
+    "proxy_fid": 3.617205,
+    "total_samples": 12800,
+    "aggregated_clients": 1,
+    "round_duration_sec": 38.644
+  },
+  "best_checkpoint_metric": "proxy_fid",
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\fashion_b48_stage5_attn_t300_qualitypush_run\\global_model_best.pt",
+  "best_proxy_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\fashion_b48_stage5_attn_t300_qualitypush_run\\global_model_best_proxy.pt",
+  "wall_clock_seconds": 14967.461,
+  "avg_round_seconds": 45.392,
+  "max_round_seconds": 71.895,
+  "ema_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\fashion_b48_stage5_attn_t300_qualitypush_run\\global_model_ema.pt"
+}
+Artifacts saved to: outputs\fashion_b48_stage5_attn_t300_qualitypush_run

@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% block title %}{{ comparison.title }} | FedDiffSecure{% endblock %}
+{% block content %}
+<section class="section-heading">
+  <div class="eyebrow">{{ comparison.dataset }} 对比页</div>
+  <h2>{{ comparison.title }}</h2>
+  <p class="muted">{{ comparison.description }}</p>
+</section>
+
+{% if comparison.page_note %}
+<section class="summary-callout">
+  <strong>{{ comparison.page_note.title }}</strong>
+  <p>{{ comparison.page_note.text }}</p>
+</section>
+{% endif %}
+
+{% if comparison.highlights %}
+<section class="grid three-up comparison-highlight-grid">
+  {% for item in comparison.highlights %}
+  <article class="story-card comparison-highlight-card">
+    <div class="panel-kicker">{{ item.kicker }}</div>
+    <h3>{{ item.title }}</h3>
+    <p class="comparison-highlight-value">{{ item.value }}</p>
+    <p>{{ item.note }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if comparison.metric_rows and comparison.metric_columns %}
+<section class="panel">
+  <div class="panel-kicker">核心指标</div>
+  <h3>精简后的横向对照表</h3>
+  <div class="table-wrap">
+    <table class="comparison-summary-table comparison-summary-table--curated">
+      <thead>
+        <tr>
+          {% for column in comparison.metric_columns %}
+          <th>{{ column.label }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in comparison.metric_rows %}
+        <tr>
+          {% for column in comparison.metric_columns %}
+          <td>{{ row[column.key] }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+{% if comparison.reference_image_rel %}
+<section class="panel">
+  <div class="panel-kicker">当前主展示图</div>
+  <div class="comparison-reference-card">
+    <div class="image-viewer comparison-image-viewer" data-image-viewer>
+      <div class="image-viewer-toolbar">
+        <div class="image-viewer-meta">
+          <div class="panel-kicker">对比预览</div>
+          <strong data-image-caption-output>{{ comparison.reference_title }}</strong>
+        </div>
+        <div class="image-viewer-actions">
+          <span class="image-scale-indicator" data-image-scale-label>100%</span>
+          <button type="button" class="image-action-button" data-image-action="zoom-out">缩小</button>
+          <button type="button" class="image-action-button" data-image-action="reset">重置</button>
+          <button type="button" class="image-action-button" data-image-action="zoom-in">放大</button>
+          <a
+            class="inline-link image-original-link"
+            href="{{ url_for('preview_artifact', relpath=comparison.reference_image_rel) }}"
+            target="_blank"
+            rel="noopener"
+            data-image-original-link
+          >原图</a>
+        </div>
+      </div>
+      <div class="image-stage comparison-image-stage">
+        <img
+          class="paper-hero"
+          src="{{ url_for('preview_artifact', relpath=comparison.reference_image_rel) }}"
+          alt="{{ comparison.reference_title }}"
+          data-zoom-image
+        >
+      </div>
+    </div>
+    <div class="comparison-reference-copy">
+      <h3>{{ comparison.reference_title }}</h3>
+      <p>{{ comparison.reference_description }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if comparison.run_cards %}
+<section class="comparison-run-grid">
+  {% for card in comparison.run_cards %}
+  <article class="comparison-run-card accent-{{ card.accent }}">
+    <div class="comparison-run-preview">
+      {% if card.preview_image_rel %}
+      <div class="image-viewer comparison-image-viewer" data-image-viewer>
+        <div class="image-viewer-toolbar">
+          <div class="image-viewer-meta">
+            <div class="panel-kicker">{{ card.image_label }}</div>
+            <strong data-image-caption-output>{{ card.title }}</strong>
+          </div>
+          <div class="image-viewer-actions">
+            <span class="image-scale-indicator" data-image-scale-label>100%</span>
+            <button type="button" class="image-action-button" data-image-action="zoom-out">缩小</button>
+            <button type="button" class="image-action-button" data-image-action="reset">重置</button>
+            <button type="button" class="image-action-button" data-image-action="zoom-in">放大</button>
+            <a
+              class="inline-link image-original-link"
+              href="{{ url_for('preview_artifact', relpath=card.preview_image_rel) }}"
+              target="_blank"
+              rel="noopener"
+              data-image-original-link
+            >原图</a>
+          </div>
+        </div>
+        <div class="image-stage comparison-image-stage">
+          <img
+            class="paper-hero"
+            src="{{ url_for('preview_artifact', relpath=card.preview_image_rel) }}"
+            alt="{{ card.title }}"
+            data-zoom-image
+          >
+        </div>
+      </div>
+      {% else %}
+      <div class="preview-placeholder">
+        <strong>等待样图</strong>
+        <span>这组实验已经进入注册表，等长线实验继续推进后会自动补上预览。</span>
+      </div>
+      {% endif %}
+    </div>
+    <div class="comparison-run-body">
+      <div class="card-topline">{{ card.mode }}</div>
+      <h3>{{ card.title }}</h3>
+      <p class="comparison-run-lead">{{ card.role }}</p>
+      <div class="metric-chip-row">
+        {% for chip in card.chips %}
+        <span class="metric-chip">{{ chip }}</span>
+        {% endfor %}
+      </div>
+      <dl class="comparison-fact-grid">
+        {% for fact in card.facts %}
+        <div class="comparison-fact-item">
+          <dt>{{ fact.label }}</dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      {% if card.summary_text %}
+      <p class="comparison-card-summary">{{ card.summary_text }}</p>
+      {% endif %}
+      <div class="result-card-actions">
+        {% if card.run_id and session.get("role") == "admin" %}
+        <a class="inline-link" href="{{ url_for('experiment_detail', run_id=card.run_id) }}">查看实验详情</a>
+        {% endif %}
+        {% if card.preview_image_rel %}
+        <a class="inline-link" href="{{ url_for('preview_artifact', relpath=card.preview_image_rel) }}" target="_blank" rel="noopener">单独打开样图</a>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+{% endblock %}

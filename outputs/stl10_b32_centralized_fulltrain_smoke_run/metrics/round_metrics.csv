@@ -1,0 +1,2 @@
+round,avg_client_loss,proxy_fid,total_samples,aggregated_clients,round_duration_sec,classifier_fid,top1_confidence_mean,top1_confident_ratio,predicted_class_entropy,predicted_unique_classes,evaluator_test_accuracy
+1,1.369887,35.618114,32,1,144.704,380.4039306640625,0.8157968521118164,0.0,-0.0,1,0.4375

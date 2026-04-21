@@ -1,0 +1,46 @@
+{
+  "last_round": {
+    "round": 180,
+    "avg_client_loss": 0.057649,
+    "proxy_fid": 10.369551,
+    "total_samples": 384,
+    "aggregated_clients": 1,
+    "round_duration_sec": 109.467,
+    "classifier_fid": 99.02761220592771,
+    "top1_confidence_mean": 0.3336486518383026,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.9260268211364746,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_proxy_fid_round": {
+    "round": 177,
+    "avg_client_loss": 0.049799,
+    "proxy_fid": 8.151779,
+    "total_samples": 384,
+    "aggregated_clients": 1,
+    "round_duration_sec": 109.395
+  },
+  "best_checkpoint_metric": "classifier_fid",
+  "best_checkpoint_path": "/home/scd/feddiffsecure_minimal/outputs/stl10_b40x5_centralized_t500_semantic10_run/global_model_best.pt",
+  "best_proxy_checkpoint_path": "/home/scd/feddiffsecure_minimal/outputs/stl10_b40x5_centralized_t500_semantic10_run/global_model_best_proxy.pt",
+  "wall_clock_seconds": 19953.425,
+  "avg_round_seconds": 109.449,
+  "max_round_seconds": 109.651,
+  "best_classifier_fid_round": {
+    "round": 180,
+    "avg_client_loss": 0.057649,
+    "proxy_fid": 10.369551,
+    "total_samples": 384,
+    "aggregated_clients": 1,
+    "round_duration_sec": 109.467,
+    "classifier_fid": 99.02761220592771,
+    "top1_confidence_mean": 0.3336486518383026,
+    "top1_confident_ratio": 0.0,
+    "predicted_class_entropy": 1.9260268211364746,
+    "predicted_unique_classes": 10,
+    "evaluator_test_accuracy": 0.4375
+  },
+  "best_semantic_checkpoint_path": "/home/scd/feddiffsecure_minimal/outputs/stl10_b40x5_centralized_t500_semantic10_run/global_model_best_semantic.pt",
+  "ema_checkpoint_path": "/home/scd/feddiffsecure_minimal/outputs/stl10_b40x5_centralized_t500_semantic10_run/global_model_ema.pt"
+}

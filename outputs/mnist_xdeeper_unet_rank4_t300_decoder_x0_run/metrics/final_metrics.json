@@ -1,0 +1,17 @@
+{
+  "last_round": {
+    "round": 45,
+    "avg_client_loss": 0.076784,
+    "proxy_fid": 3.306165,
+    "total_samples": 60000,
+    "aggregated_clients": 4
+  },
+  "best_proxy_fid_round": {
+    "round": 43,
+    "avg_client_loss": 0.077278,
+    "proxy_fid": 2.727157,
+    "total_samples": 60000,
+    "aggregated_clients": 4
+  },
+  "best_checkpoint_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\outputs\\mnist_xdeeper_unet_rank4_t300_decoder_x0_run\\global_model_best.pt"
+}

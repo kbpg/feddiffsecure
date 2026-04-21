@@ -1,0 +1,49 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="820" rx="40" fill="#F8FBFF"/>
+  <rect x="36" y="36" width="1328" height="748" rx="34" fill="white" stroke="#DCE7F5" stroke-width="2"/>
+
+  <text x="82" y="110" fill="#0E2850" font-size="42" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">论文三线叙事技术路线图</text>
+  <text x="82" y="152" fill="#537095" font-size="24" font-family="Microsoft YaHei, Segoe UI, sans-serif">把“联邦能不能训”“中心化能训多好”“高分辨率能不能扩展”三件事讲清楚</text>
+
+  <rect x="88" y="220" width="360" height="470" rx="30" fill="#EEF5FF" stroke="#BFD6FF" stroke-width="2"/>
+  <text x="124" y="272" fill="#1190A8" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">路线 1</text>
+  <text x="124" y="324" fill="#0E2850" font-size="34" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">MNIST 联邦安全基线</text>
+  <text x="124" y="378" fill="#385072" font-size="24" font-family="Microsoft YaHei, Segoe UI, sans-serif">核心作用：</text>
+  <text x="124" y="416" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="124" dy="0">证明分布式扩散训练可以跑通，</tspan>
+    <tspan x="124" dy="34">同时展示隐写传输与审计校验闭环。</tspan>
+  </text>
+  <text x="124" y="520" fill="#0E2850" font-size="26" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">最适合强调</text>
+  <text x="124" y="558" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="124" dy="0">non-IID、通信成本、客户端漂移，</tspan>
+    <tspan x="124" dy="34">以及更新传输可审计。</tspan>
+  </text>
+
+  <rect x="520" y="220" width="360" height="470" rx="30" fill="#FFF6EE" stroke="#FFD6B7" stroke-width="2"/>
+  <text x="556" y="272" fill="#F26C2B" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">路线 2</text>
+  <text x="556" y="324" fill="#0E2850" font-size="34" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">MNIST 中心化上界</text>
+  <text x="556" y="378" fill="#385072" font-size="24" font-family="Microsoft YaHei, Segoe UI, sans-serif">核心作用：</text>
+  <text x="556" y="416" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="556" dy="0">说明相同架构在理想条件下的</tspan>
+    <tspan x="556" dy="34">质量上界，为联邦结果提供直接对照。</tspan>
+  </text>
+  <text x="556" y="520" fill="#0E2850" font-size="26" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">最适合强调</text>
+  <text x="556" y="558" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="556" dy="0">质量上界、最佳 FID、</tspan>
+    <tspan x="556" dy="34">以及主结果复现能力。</tspan>
+  </text>
+
+  <rect x="952" y="220" width="360" height="470" rx="30" fill="#F4F0FF" stroke="#D8C7FF" stroke-width="2"/>
+  <text x="988" y="272" fill="#6C4CE3" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">路线 3</text>
+  <text x="988" y="324" fill="#0E2850" font-size="34" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">STL10 高分辨率探索</text>
+  <text x="988" y="378" fill="#385072" font-size="24" font-family="Microsoft YaHei, Segoe UI, sans-serif">核心作用：</text>
+  <text x="988" y="416" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="988" dy="0">展示方法向自然图像与更高分辨率延伸，</tspan>
+    <tspan x="988" dy="34">同时保留“质量仍待提升”的诚实结论。</tspan>
+  </text>
+  <text x="988" y="520" fill="#0E2850" font-size="26" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-weight="700">最适合强调</text>
+  <text x="988" y="558" fill="#385072" font-size="22" font-family="Microsoft YaHei, Segoe UI, sans-serif">
+    <tspan x="988" dy="0">高分辨率延展性，</tspan>
+    <tspan x="988" dy="34">以及后续工作的方向。</tspan>
+  </text>
+</svg>

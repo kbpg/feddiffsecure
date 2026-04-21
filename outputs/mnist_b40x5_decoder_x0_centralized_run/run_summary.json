@@ -1,0 +1,28 @@
+{
+  "config_path": "C:\\Users\\shenc\\Desktop\\feddiffsecure_minimal\\configs\\mnist_b40x5_decoder_x0_centralized.yaml",
+  "started_at": "2026-04-15T00:13:47.065050+08:00",
+  "training_mode": "centralized",
+  "device": "cuda",
+  "dataset": "mnist",
+  "model_params_total": 22444929,
+  "model_params_trainable": 825729,
+  "num_clients": 1,
+  "rounds": 100,
+  "clients_per_round": 1,
+  "local_epochs": 1,
+  "max_steps_per_epoch": 80,
+  "dirichlet_alpha": 0.0,
+  "lr": 0.00015,
+  "batch_size": 128,
+  "ema_decay": 0.0,
+  "x0_loss_weight": 0.1,
+  "semantic_eval_every": 5,
+  "trainable_param_tensors": 248,
+  "unfreeze_param_prefixes": [
+    "upsamples.3",
+    "decoder_blocks.3",
+    "final_conv.base"
+  ],
+  "enabled_extra_params": 38,
+  "train_examples": 60000
+}

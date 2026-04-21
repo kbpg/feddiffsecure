@@ -1,0 +1,100 @@
+<svg width="1600" height="820" viewBox="0 0 1600 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="90" x2="1480" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FAFF"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#6A5AF9"/>
+      <stop offset="1" stop-color="#8E7CFF"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#00B4D8"/>
+      <stop offset="1" stop-color="#56D6EF"/>
+    </linearGradient>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FF4D8D"/>
+      <stop offset="1" stop-color="#FF8AB3"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1600" height="820" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#697AA2" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="820" rx="36" fill="url(#bg)"/>
+  <circle cx="170" cy="120" r="100" fill="#6A5AF9" fill-opacity="0.08"/>
+  <circle cx="1450" cy="120" r="120" fill="#00B4D8" fill-opacity="0.08"/>
+  <circle cx="1380" cy="710" r="140" fill="#FF4D8D" fill-opacity="0.08"/>
+
+  <text x="100" y="94" fill="#00A5C8" font-size="26" font-weight="700" font-family="Segoe UI, Arial, sans-serif" letter-spacing="4">FASHION SPOTLIGHT</text>
+  <text x="100" y="148" fill="#1D2640" font-size="52" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Three Fashion-MNIST Training Paradigms</text>
+  <text x="100" y="192" fill="#5E6C89" font-size="24" font-family="Segoe UI, Arial, sans-serif">Quality upper bound, federated compromise, and full-client coverage in one view.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="96" y="248" width="420" height="446" rx="32" fill="white"/>
+    <rect x="96" y="248" width="420" height="12" rx="6" fill="url(#cyan)"/>
+
+    <text x="132" y="304" fill="#00A5C8" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">CENTRALIZED</text>
+    <text x="132" y="348" fill="#1D2640" font-size="36" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Quality Upper Bound</text>
+
+    <rect x="132" y="382" width="348" height="86" rx="22" fill="#F3FAFD" stroke="#CBEFF6"/>
+    <text x="156" y="418" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Data Layout</text>
+    <text x="156" y="452" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">All samples join one single training loop.</text>
+
+    <rect x="132" y="488" width="348" height="86" rx="22" fill="#F7F8FE" stroke="#DDE3FF"/>
+    <text x="156" y="524" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Best For</text>
+    <text x="156" y="558" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">Explaining the cleanest quality reference.</text>
+
+    <rect x="132" y="594" width="348" height="64" rx="20" fill="#FFF7FA" stroke="#FFD3E3"/>
+    <text x="156" y="634" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Limit: no distributed transport or audit story</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="590" y="214" width="420" height="480" rx="32" fill="white"/>
+    <rect x="590" y="214" width="420" height="12" rx="6" fill="url(#purple)"/>
+
+    <text x="626" y="270" fill="#6A5AF9" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">FED QUICK</text>
+    <text x="626" y="314" fill="#1D2640" font-size="36" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Deployment-Like Compromise</text>
+
+    <rect x="626" y="348" width="348" height="96" rx="22" fill="#F7F5FF" stroke="#DDD7FF"/>
+    <text x="650" y="384" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Data Layout</text>
+    <text x="650" y="418" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">4 clients keep local data.</text>
+    <text x="650" y="448" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">Only 2 upload updates each round.</text>
+
+    <rect x="626" y="464" width="348" height="96" rx="22" fill="#F3FAFD" stroke="#CBEFF6"/>
+    <text x="650" y="500" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Best For</text>
+    <text x="650" y="534" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">Lower communication with near-central quality.</text>
+    <text x="650" y="564" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">Still keeps the stego + audit chain alive.</text>
+
+    <rect x="626" y="580" width="348" height="80" rx="20" fill="#FFF7FA" stroke="#FFD3E3"/>
+    <text x="650" y="616" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Risk: partial participation and client drift</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1084" y="248" width="420" height="446" rx="32" fill="white"/>
+    <rect x="1084" y="248" width="420" height="12" rx="6" fill="url(#rose)"/>
+
+    <text x="1120" y="304" fill="#F34A88" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">FED FULL</text>
+    <text x="1120" y="348" fill="#1D2640" font-size="36" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Coverage and Cost</text>
+
+    <rect x="1120" y="382" width="348" height="86" rx="22" fill="#FFF7FA" stroke="#FFD3E3"/>
+    <text x="1144" y="418" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Data Layout</text>
+    <text x="1144" y="452" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">All 4 clients upload updates every round.</text>
+
+    <rect x="1120" y="488" width="348" height="86" rx="22" fill="#F7F8FE" stroke="#DDE3FF"/>
+    <text x="1144" y="524" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Best For</text>
+    <text x="1144" y="558" fill="#4B5A78" font-size="20" font-family="Segoe UI, Arial, sans-serif">Showing wider coverage and a fuller audit trace.</text>
+
+    <rect x="1120" y="594" width="348" height="64" rx="20" fill="#F3FAFD" stroke="#CBEFF6"/>
+    <text x="1144" y="634" fill="#1D2640" font-size="22" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Reminder: more clients does not guarantee better quality</text>
+  </g>
+
+  <path d="M516 472C548 472 558 454 590 454" stroke="#9AA8C5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M1010 454C1042 454 1052 472 1084 472" stroke="#9AA8C5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M576 454L592 446L592 462L576 454Z" fill="#9AA8C5"/>
+  <path d="M1070 472L1086 464L1086 480L1070 472Z" fill="#9AA8C5"/>
+
+  <text x="650" y="742" fill="#5E6C89" font-size="24" font-family="Segoe UI, Arial, sans-serif">
+    Storyline: upper bound first, federated balance second, coverage-vs-stability tradeoff last.
+  </text>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "records": [
+    {
+      "sample_steps": 25,
+      "proxy_fid": 26.943317120584656,
+      "sampler": "ddim",
+      "sampler_requested": "ddpm",
+      "sampler_effective": "ddim",
+      "ddim_eta": 0.0,
+      "clip_denoised": true,
+      "checkpoint_kind_loaded": "best",
+      "classifier_fid": 769.0222015706079,
+      "top1_confidence_mean": 0.5135554075241089,
+      "top1_confident_ratio": 0.0,
+      "predicted_class_entropy": 0.9655594825744629,
+      "predicted_unique_classes": 3,
+      "evaluator_test_accuracy": 0.9115
+    },
+    {
+      "sample_steps": 50,
+      "proxy_fid": 26.977015098405285,
+      "sampler": "ddim",
+      "sampler_requested": "ddpm",
+      "sampler_effective": "ddim",
+      "ddim_eta": 0.0,
+      "clip_denoised": true,
+      "checkpoint_kind_loaded": "best",
+      "classifier_fid": 769.5205001441319,
+      "top1_confidence_mean": 0.5126048922538757,
+      "top1_confident_ratio": 0.0,
+      "predicted_class_entropy": 0.975710928440094,
+      "predicted_unique_classes": 3,
+      "evaluator_test_accuracy": 0.9115
+    },
+    {
+      "sample_steps": 100,
+      "proxy_fid": 24.643425478216535,
+      "sampler": "ddpm",
+      "sampler_requested": "ddpm",
+      "sampler_effective": "ddpm",
+      "ddim_eta": 0.0,
+      "clip_denoised": true,
+      "checkpoint_kind_loaded": "best",
+      "classifier_fid": 748.9939652392304,
+      "top1_confidence_mean": 0.500930905342102,
+      "top1_confident_ratio": 0.0,
+      "predicted_class_entropy": 1.0942068099975586,
+      "predicted_unique_classes": 4,
+      "evaluator_test_accuracy": 0.9115
+    }
+  ]
+}

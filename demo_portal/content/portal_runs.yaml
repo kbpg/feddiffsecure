@@ -1,0 +1,81 @@
+runs:
+  - id: tiny_sd_stl10_lora_fed_audit_long100
+    title: STL10 联邦安全更新长线
+    config_path: configs/tiny_sd_stl10_lora_fed_audit_long100.yaml
+    run_dir: outputs/tiny_sd_stl10_lora_fed_audit_long100_run
+    dataset: STL10
+    mode: 联邦 LoRA 安全更新
+    role: 论文主线实验。冻结预训练底座，只训练并上传 UNet attention LoRA 更新，同时把隐写封装、恢复与完整性审计真正纳入 100 轮训练链路。
+    accent: federated
+
+  - id: tiny_sd_stl10_lora_central_long100
+    title: STL10 中心化 LoRA 长线对照
+    config_path: configs/tiny_sd_stl10_lora_central_long100.yaml
+    run_dir: outputs/tiny_sd_stl10_lora_central_long100_run
+    dataset: STL10
+    mode: 中心化 LoRA 对照
+    role: 与联邦主线共享同一开源底座和同一 LoRA 训练对象，但移除跨端上传与聚合，用作“没有联邦约束时能做到什么”的上界参考。
+    accent: centralized
+
+  - id: tiny_sd_stl10_lora_fullclients_long100
+    title: STL10 全客户端聚合长线
+    config_path: configs/tiny_sd_stl10_lora_fullclients_long100.yaml
+    run_dir: outputs/tiny_sd_stl10_lora_fullclients_long100_run
+    dataset: STL10
+    mode: 联邦 LoRA 全客户端
+    role: 把每轮参与客户端从 2 个提升到 4 个，观察覆盖度、通信代价、审计记录数量和训练稳定性之间的变化。
+    accent: federated
+
+  - id: tiny_sd_stl10_lora_rank4_long100
+    title: STL10 LoRA rank=4 长线消融
+    config_path: configs/tiny_sd_stl10_lora_rank4_long100.yaml
+    run_dir: outputs/tiny_sd_stl10_lora_rank4_long100_run
+    dataset: STL10
+    mode: 联邦 LoRA 轻量化消融
+    role: 通过把 LoRA rank 从 16 压到 4，量化“更轻的更新”能节省多少通信负载，以及会牺牲多少训练能力。
+    accent: ablation
+
+  - id: tiny_sd_fashion_lora_fed_long100
+    title: Fashion-MNIST 联邦长线
+    config_path: configs/tiny_sd_fashion_lora_fed_long100.yaml
+    run_dir: outputs/tiny_sd_fashion_lora_fed_long100_run
+    dataset: Fashion-MNIST
+    mode: 联邦 LoRA 安全更新
+    role: 用更简单的服饰图像数据验证 LoRA 联邦安全更新链路在非自然图像数据域上仍然可训练、可聚合、可审计。
+    accent: generalization
+
+  - id: tiny_sd_fashion_lora_central_long100
+    title: Fashion-MNIST 中心化长线对照
+    config_path: configs/tiny_sd_fashion_lora_central_long100.yaml
+    run_dir: outputs/tiny_sd_fashion_lora_central_long100_run
+    dataset: Fashion-MNIST
+    mode: 中心化 LoRA 对照
+    role: 作为 Fashion-MNIST 数据域上的中心化参考，用来分离联邦约束与任务难度带来的影响。
+    accent: centralized
+
+  - id: tiny_sd_mnist_lora_fed_long100
+    title: MNIST 联邦长线
+    config_path: configs/tiny_sd_mnist_lora_fed_long100.yaml
+    run_dir: outputs/tiny_sd_mnist_lora_fed_long100_run
+    dataset: MNIST
+    mode: 联邦 LoRA 安全更新
+    role: 用最简单的数据域验证联邦 LoRA 更新和安全审计链路的基本可训练性，更适合作为泛化和可迁移性证据。
+    accent: generalization
+
+  - id: tiny_sd_mnist_lora_central_long100
+    title: MNIST 中心化长线对照
+    config_path: configs/tiny_sd_mnist_lora_central_long100.yaml
+    run_dir: outputs/tiny_sd_mnist_lora_central_long100_run
+    dataset: MNIST
+    mode: 中心化 LoRA 对照
+    role: 作为 MNIST 数据域上的对照，帮助区分联邦因素和任务难度因素。
+    accent: centralized
+
+  - id: tiny_sd_cifar10_lora_fed_long100
+    title: CIFAR-10 联邦长线尝试
+    config_path: configs/tiny_sd_cifar10_lora_fed_long100.yaml
+    run_dir: outputs/tiny_sd_cifar10_lora_fed_long100_run
+    dataset: CIFAR-10
+    mode: 联邦 LoRA 安全更新
+    role: 额外的开源图像数据集尝试，用来观察这条联邦 LoRA 安全更新链路能否进一步推广到更多公开视觉数据集。
+    accent: generalization
