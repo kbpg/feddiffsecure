@@ -1,0 +1,33 @@
+seed: 1
+dataset:
+  name: fake_data
+  root: ./data
+  image_size: 28
+  channels: 1
+federated:
+  num_clients: 2
+  clients_per_round: 2
+  rounds: 1
+  dirichlet_alpha: 0.5
+  local_epochs: 1
+  max_steps_per_epoch: 2
+model:
+  base_channels: 8
+  lora_rank: 2
+  lora_alpha: 2.0
+diffusion:
+  timesteps: 10
+  sample_steps: 1
+training:
+  batch_size: 8
+  lr: 0.001
+  num_workers: 0
+  weight_decay: 0.0
+system:
+  device: auto
+  output_dir: ./outputs/smoke_run
+  save_every_round: false
+  save_final_samples: false
+stego:
+  enabled: true
+  key_prefix: FedDiffSecure

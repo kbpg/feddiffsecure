@@ -1,0 +1,65 @@
+seed: 42
+
+model:
+  pretrained_model_name_or_path: ./models/tiny-sd
+  hf_token: ""
+
+dataset:
+  name: stl10
+  root: ./data
+  resolution: 256
+  caption_mode: auto
+  caption_dropout: 0.0
+
+federated:
+  num_clients: 4
+  clients_per_round: 4
+  rounds: 100
+  client_epochs: 1
+  max_steps_per_client: 16
+  dirichlet_alpha: 0.5
+
+lora:
+  rank: 16
+  alpha: 16
+  dropout: 0.0
+  target_modules:
+    - to_q
+    - to_k
+    - to_v
+    - to_out.0
+
+training:
+  batch_size: 1
+  grad_accum_steps: 2
+  lr: 0.00005
+  weight_decay: 0.0
+  optimizer_eps: 0.000001
+  max_grad_norm: 1.0
+  num_workers: 0
+  mixed_precision: bf16
+  gradient_checkpointing: true
+
+sampling:
+  scheduler: dpmpp_2m
+  num_inference_steps: 40
+  guidance_scale: 5.0
+  height: 256
+  width: 256
+  seed: 123
+  eval_every: 20
+  negative_prompt: "blurry, noisy, low quality, distorted"
+  prompts:
+    - a photo of an airplane
+    - a photo of a bird
+    - a photo of a car
+    - a photo of a cat
+
+audit:
+  enabled: true
+  save_carriers: false
+  key_prefix: stl10-fullclients-long100
+
+system:
+  device: auto
+  output_dir: ./outputs/tiny_sd_stl10_lora_fullclients_long100_run

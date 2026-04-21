@@ -1,0 +1,4 @@
+configs/fashion_central_long100_portal.yaml
+configs/fashion_fed_balanced_long100_portal.yaml
+configs/fashion_fed_full_long100_portal.yaml
+configs/fashion_fed_stable_long100_portal.yaml

@@ -1,0 +1,60 @@
+seed: 42
+
+dataset:
+  name: mnist
+  root: ./data
+  image_size: 28
+  channels: 1
+
+federated:
+  num_clients: 4
+  clients_per_round: 4
+  rounds: 100
+  dirichlet_alpha: 0.5
+  local_epochs: 1
+  max_steps_per_epoch: 20
+
+model:
+  architecture: unet
+  base_channels: 40
+  channel_multipliers: [1, 2, 4, 8, 8]
+  blocks_per_level: 2
+  lora_rank: 4
+  lora_alpha: 4.0
+
+diffusion:
+  timesteps: 300
+  sample_steps: 300
+  sampler: ddpm
+  ddim_eta: 0.0
+  clip_denoised: true
+  x0_loss_weight: 0.1
+
+training:
+  batch_size: 128
+  lr: 0.00015
+  num_workers: 2
+  weight_decay: 0.0
+  unfreeze_param_prefixes:
+    - upsamples.3
+    - decoder_blocks.3
+    - final_conv.base
+
+evaluation:
+  num_real_samples: 384
+  num_fake_samples: 384
+  eval_batch_size: 128
+  proxy_feature_size: 8
+  semantic_eval_every: 5
+  evaluator_cache_dir: ./outputs/evaluators
+
+system:
+  device: auto
+  output_dir: ./outputs/mnist_b40x5_decoder_x0_semantic100_run
+  save_every_round: false
+  save_final_samples: true
+
+stego:
+  enabled: true
+  save_carriers: false
+  key_prefix: FedDiffSecure
